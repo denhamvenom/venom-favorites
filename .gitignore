@@ -25,3 +25,6 @@ Thumbs.db
 
 # Test artifacts
 coverage
+
+# Firebase deploy cache
+.firebase
