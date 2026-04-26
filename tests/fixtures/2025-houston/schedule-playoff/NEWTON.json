@@ -1,0 +1,628 @@
+{
+  "Schedule": [
+    {
+      "description": "Match 1 (R1)",
+      "startTime": "2025-04-19T08:30:00",
+      "matchNumber": 1,
+      "field": "Primary",
+      "tournamentLevel": "Playoff",
+      "teams": [
+        {
+          "teamNumber": 2910,
+          "station": "Red1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 1323,
+          "station": "Red2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 4272,
+          "station": "Red3",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 294,
+          "station": "Blue1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 449,
+          "station": "Blue2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 3937,
+          "station": "Blue3",
+          "surrogate": false
+        }
+      ]
+    },
+    {
+      "description": "Match 2 (R1)",
+      "startTime": "2025-04-19T08:39:00",
+      "matchNumber": 2,
+      "field": "Primary",
+      "tournamentLevel": "Playoff",
+      "teams": [
+        {
+          "teamNumber": 125,
+          "station": "Red1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 148,
+          "station": "Red2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 6147,
+          "station": "Red3",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 624,
+          "station": "Blue1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 9072,
+          "station": "Blue2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 4499,
+          "station": "Blue3",
+          "surrogate": false
+        }
+      ]
+    },
+    {
+      "description": "Match 3 (R1)",
+      "startTime": "2025-04-19T08:48:00",
+      "matchNumber": 3,
+      "field": "Primary",
+      "tournamentLevel": "Playoff",
+      "teams": [
+        {
+          "teamNumber": 2468,
+          "station": "Red1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 2832,
+          "station": "Red2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 1778,
+          "station": "Red3",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 188,
+          "station": "Blue1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 7426,
+          "station": "Blue2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 5468,
+          "station": "Blue3",
+          "surrogate": false
+        }
+      ]
+    },
+    {
+      "description": "Match 4 (R1)",
+      "startTime": "2025-04-19T08:57:00",
+      "matchNumber": 4,
+      "field": "Primary",
+      "tournamentLevel": "Playoff",
+      "teams": [
+        {
+          "teamNumber": 3847,
+          "station": "Red1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 868,
+          "station": "Red2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 422,
+          "station": "Red3",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 3538,
+          "station": "Blue1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 6328,
+          "station": "Blue2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 5406,
+          "station": "Blue3",
+          "surrogate": false
+        }
+      ]
+    },
+    {
+      "description": "Match 5 (R2)",
+      "startTime": "2025-04-19T09:06:00",
+      "matchNumber": 5,
+      "field": "Primary",
+      "tournamentLevel": "Playoff",
+      "teams": [
+        {
+          "teamNumber": 294,
+          "station": "Red1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 449,
+          "station": "Red2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 3937,
+          "station": "Red3",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 125,
+          "station": "Blue1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 148,
+          "station": "Blue2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 6147,
+          "station": "Blue3",
+          "surrogate": false
+        }
+      ]
+    },
+    {
+      "description": "Match 6 (R2)",
+      "startTime": "2025-04-19T09:15:00",
+      "matchNumber": 6,
+      "field": "Primary",
+      "tournamentLevel": "Playoff",
+      "teams": [
+        {
+          "teamNumber": 2468,
+          "station": "Red1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 2412,
+          "station": "Red2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 1778,
+          "station": "Red3",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 3538,
+          "station": "Blue1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 1388,
+          "station": "Blue2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 5406,
+          "station": "Blue3",
+          "surrogate": false
+        }
+      ]
+    },
+    {
+      "description": "Match 7 (R2)",
+      "startTime": "2025-04-19T09:24:00",
+      "matchNumber": 7,
+      "field": "Primary",
+      "tournamentLevel": "Playoff",
+      "teams": [
+        {
+          "teamNumber": 2910,
+          "station": "Red1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 1323,
+          "station": "Red2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 4272,
+          "station": "Red3",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 624,
+          "station": "Blue1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 9072,
+          "station": "Blue2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 4499,
+          "station": "Blue3",
+          "surrogate": false
+        }
+      ]
+    },
+    {
+      "description": "Match 8 (R2)",
+      "startTime": "2025-04-19T09:33:00",
+      "matchNumber": 8,
+      "field": "Primary",
+      "tournamentLevel": "Playoff",
+      "teams": [
+        {
+          "teamNumber": 188,
+          "station": "Red1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 7426,
+          "station": "Red2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 5468,
+          "station": "Red3",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 3847,
+          "station": "Blue1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 868,
+          "station": "Blue2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 422,
+          "station": "Blue3",
+          "surrogate": false
+        }
+      ]
+    },
+    {
+      "description": "Match 9 (R3)",
+      "startTime": "2025-04-19T09:42:00",
+      "matchNumber": 9,
+      "field": "Primary",
+      "tournamentLevel": "Playoff",
+      "teams": [
+        {
+          "teamNumber": 624,
+          "station": "Red1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 6459,
+          "station": "Red2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 4499,
+          "station": "Red3",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 3538,
+          "station": "Blue1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 1388,
+          "station": "Blue2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 5406,
+          "station": "Blue3",
+          "surrogate": false
+        }
+      ]
+    },
+    {
+      "description": "Match 10 (R3)",
+      "startTime": "2025-04-19T09:51:00",
+      "matchNumber": 10,
+      "field": "Primary",
+      "tournamentLevel": "Playoff",
+      "teams": [
+        {
+          "teamNumber": 5468,
+          "station": "Red1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 7426,
+          "station": "Red2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 188,
+          "station": "Red3",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 294,
+          "station": "Blue1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 449,
+          "station": "Blue2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 3937,
+          "station": "Blue3",
+          "surrogate": false
+        }
+      ]
+    },
+    {
+      "description": "Match 11 (R4)",
+      "startTime": "2025-04-19T10:03:00",
+      "matchNumber": 11,
+      "field": "Primary",
+      "tournamentLevel": "Playoff",
+      "teams": [
+        {
+          "teamNumber": 2910,
+          "station": "Red1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 1323,
+          "station": "Red2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 4272,
+          "station": "Red3",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 3847,
+          "station": "Blue1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 868,
+          "station": "Blue2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 422,
+          "station": "Blue3",
+          "surrogate": false
+        }
+      ]
+    },
+    {
+      "description": "Match 12 (R4)",
+      "startTime": "2025-04-19T10:12:00",
+      "matchNumber": 12,
+      "field": "Primary",
+      "tournamentLevel": "Playoff",
+      "teams": [
+        {
+          "teamNumber": 294,
+          "station": "Red1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 449,
+          "station": "Red2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 3937,
+          "station": "Red3",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 624,
+          "station": "Blue1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 9072,
+          "station": "Blue2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 4499,
+          "station": "Blue3",
+          "surrogate": false
+        }
+      ]
+    },
+    {
+      "description": "Match 13 (R5)",
+      "startTime": "2025-04-19T10:33:00",
+      "matchNumber": 13,
+      "field": "Primary",
+      "tournamentLevel": "Playoff",
+      "teams": [
+        {
+          "teamNumber": 5535,
+          "station": "Red1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 868,
+          "station": "Red2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 422,
+          "station": "Red3",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 294,
+          "station": "Blue1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 449,
+          "station": "Blue2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 3937,
+          "station": "Blue3",
+          "surrogate": false
+        }
+      ]
+    },
+    {
+      "description": "Final 1",
+      "startTime": "2025-04-19T10:54:00",
+      "matchNumber": 14,
+      "field": "Primary",
+      "tournamentLevel": "Playoff",
+      "teams": [
+        {
+          "teamNumber": 2910,
+          "station": "Red1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 1323,
+          "station": "Red2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 4272,
+          "station": "Red3",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 3847,
+          "station": "Blue1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 868,
+          "station": "Blue2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 422,
+          "station": "Blue3",
+          "surrogate": false
+        }
+      ]
+    },
+    {
+      "description": "Final 2",
+      "startTime": "2025-04-19T11:15:00",
+      "matchNumber": 15,
+      "field": "Primary",
+      "tournamentLevel": "Playoff",
+      "teams": [
+        {
+          "teamNumber": 2910,
+          "station": "Red1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 1323,
+          "station": "Red2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 4272,
+          "station": "Red3",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 3847,
+          "station": "Blue1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 868,
+          "station": "Blue2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 422,
+          "station": "Blue3",
+          "surrogate": false
+        }
+      ]
+    },
+    {
+      "description": "Final Tiebreaker",
+      "startTime": null,
+      "matchNumber": 16,
+      "field": "Primary",
+      "tournamentLevel": "Playoff",
+      "teams": [
+        {
+          "teamNumber": 2910,
+          "station": "Red1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 1323,
+          "station": "Red2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 4272,
+          "station": "Red3",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 3847,
+          "station": "Blue1",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 868,
+          "station": "Blue2",
+          "surrogate": false
+        },
+        {
+          "teamNumber": 422,
+          "station": "Blue3",
+          "surrogate": false
+        }
+      ]
+    }
+  ]
+}

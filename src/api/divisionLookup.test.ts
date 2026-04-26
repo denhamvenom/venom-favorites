@@ -12,9 +12,17 @@ afterEach(() => {
 });
 
 describe('divisionLookup.findTeamDivision', () => {
-  it('returns null when no fixture data is captured (current state)', async () => {
+  it('finds team 8044 in ARCHIMEDES from 2025 captured fixtures', async () => {
     const { findTeamDivision } = await import('./divisionLookup');
     const result = await findTeamDivision(8044, 2025);
+    expect(result).not.toBeNull();
+    expect(result?.division).toBe('ARCHIMEDES');
+    expect(result?.team.teamNumber).toBe(8044);
+  });
+
+  it('returns null for a team number not at the event', async () => {
+    const { findTeamDivision } = await import('./divisionLookup');
+    const result = await findTeamDivision(99999, 2025);
     expect(result).toBeNull();
   });
 

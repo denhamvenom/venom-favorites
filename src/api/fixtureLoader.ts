@@ -46,13 +46,14 @@ const ENDPOINT_MIN_PHASE: Record<FixtureEndpoint, FixturePhase> = {
 };
 
 /**
- * `import.meta.glob` lets Vite statically bundle every fixture JSON.
- * The keys are paths relative to this module; values are loader functions
- * that return the parsed JSON on demand.
+ * `import.meta.glob` bundles the fixture JSON. Gated to dev + fixture-mode builds
+ * so production deploys (live FRC API) don't ship 1.8 MB of 2025 replay data.
+ * The condition is evaluated at compile time — Vite tree-shakes the unused branch.
  */
-const FIXTURE_FILES = import.meta.glob<{ default: unknown }>(
-  '../../tests/fixtures/2025-houston/**/*.json',
-);
+const FIXTURE_FILES: Record<string, () => Promise<{ default: unknown }>> =
+  import.meta.env.DEV || import.meta.env.MODE === 'fixture'
+    ? import.meta.glob<{ default: unknown }>('../../tests/fixtures/2025-houston/**/*.json')
+    : {};
 
 function fixturePath(endpoint: FixtureEndpoint, division?: Field): string {
   const base = `../../tests/fixtures/2025-houston/${endpoint}`;

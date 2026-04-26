@@ -103,4 +103,5 @@ firebase deploy --only hosting:venom-favorites
 
 ## Phase log
 
-- **Phase 0 (scaffold)** — project bootstrapped, Tailwind palette wired, PWA config, multi-site Firebase config, logger + diagnostics stubs. _In progress._
+- **Phase 0 (scaffold)** ✓ — project bootstrapped, Tailwind palette wired, PWA config, multi-site Firebase config, logger + diagnostics stubs.
+- **Phase 1 (FRC API + fixtures)** ✓ — domain types, FRC client with three-way source switch (`live | fixture | proxy`), CORS preflight gate, fixture loader with phase A–E filter, `findTeamDivision()` with paginated roster fetch, 2025 Championship fixtures captured (75 teams × 8 divisions, all schedule + matches + rankings + alliances). Production build is 205 KiB (fixtures excluded via conditional `import.meta.glob`). Dev/fixture-mode build includes them. Auto-detects 8044 → ARCHIMEDES on mount in fixture mode (live mode will detect the actual 2026 division). 18 unit tests passing.

@@ -65,17 +65,62 @@ async function loadEnv(): Promise<{ user: string; token: string }> {
   return { user, token };
 }
 
-async function captureOne(endpoint: Endpoint, division: string, auth: string): Promise<void> {
-  const url = endpoint.url(division);
+interface TeamsEnvelope {
+  teams: unknown[];
+  teamCountTotal: number;
+  teamCountPage: number;
+  pageCurrent: number;
+  pageTotal: number;
+}
+
+async function fetchJson(url: string, auth: string): Promise<{ ok: boolean; status: number; body: unknown }> {
   const res = await fetch(url, { headers: { Authorization: auth, Accept: 'application/json' } });
-  if (!res.ok) {
-    console.warn(`  [warn] ${endpoint.slug}/${division} → HTTP ${res.status}`);
+  if (!res.ok) return { ok: false, status: res.status, body: null };
+  return { ok: true, status: res.status, body: await res.json() };
+}
+
+async function captureTeams(division: string, auth: string, baseUrl: string): Promise<void> {
+  // The /teams endpoint paginates at ~65 per page. Walk every page and merge
+  // into a single envelope so the fixture loader gets a complete roster.
+  const first = await fetchJson(baseUrl, auth);
+  if (!first.ok) {
+    console.warn(`  [warn] teams/${division} → HTTP ${first.status}`);
     return;
   }
-  const json = await res.json();
+  const merged = first.body as TeamsEnvelope;
+  for (let page = 2; page <= merged.pageTotal; page++) {
+    const sep = baseUrl.includes('?') ? '&' : '?';
+    const next = await fetchJson(`${baseUrl}${sep}page=${page}`, auth);
+    if (!next.ok) {
+      console.warn(`  [warn] teams/${division} page ${page} → HTTP ${next.status}`);
+      continue;
+    }
+    const env = next.body as TeamsEnvelope;
+    merged.teams.push(...env.teams);
+  }
+  merged.teamCountPage = merged.teams.length;
+  merged.pageCurrent = 1;
+  merged.pageTotal = 1;
+  const outFile = join(OUT_DIR, 'teams', `${division}.json`);
+  await mkdir(dirname(outFile), { recursive: true });
+  await writeFile(outFile, JSON.stringify(merged, null, 2));
+  process.stdout.write(`.`);
+}
+
+async function captureOne(endpoint: Endpoint, division: string, auth: string): Promise<void> {
+  const url = endpoint.url(division);
+  if (endpoint.slug === 'teams') {
+    await captureTeams(division, auth, url);
+    return;
+  }
+  const result = await fetchJson(url, auth);
+  if (!result.ok) {
+    console.warn(`  [warn] ${endpoint.slug}/${division} → HTTP ${result.status}`);
+    return;
+  }
   const outFile = join(OUT_DIR, endpoint.slug, `${division}.json`);
   await mkdir(dirname(outFile), { recursive: true });
-  await writeFile(outFile, JSON.stringify(json, null, 2));
+  await writeFile(outFile, JSON.stringify(result.body, null, 2));
   process.stdout.write(`.`);
 }
 

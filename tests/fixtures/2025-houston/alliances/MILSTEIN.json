@@ -1,0 +1,85 @@
+{
+  "Alliances": [
+    {
+      "number": 1,
+      "captain": 5940,
+      "round1": 254,
+      "round2": 1318,
+      "round3": 1477,
+      "backup": null,
+      "backupReplaced": null,
+      "name": "Alliance 1"
+    },
+    {
+      "number": 2,
+      "captain": 118,
+      "round1": 5895,
+      "round2": 324,
+      "round3": 957,
+      "backup": null,
+      "backupReplaced": null,
+      "name": "Alliance 2"
+    },
+    {
+      "number": 3,
+      "captain": 7407,
+      "round1": 2137,
+      "round2": 8592,
+      "round3": 2145,
+      "backup": null,
+      "backupReplaced": null,
+      "name": "Alliance 3"
+    },
+    {
+      "number": 4,
+      "captain": 910,
+      "round1": 4152,
+      "round2": 6002,
+      "round3": 3322,
+      "backup": null,
+      "backupReplaced": null,
+      "name": "Alliance 4"
+    },
+    {
+      "number": 5,
+      "captain": 3006,
+      "round1": 2337,
+      "round2": 4122,
+      "round3": 8393,
+      "backup": null,
+      "backupReplaced": null,
+      "name": "Alliance 5"
+    },
+    {
+      "number": 6,
+      "captain": 503,
+      "round1": 1683,
+      "round2": 3604,
+      "round3": 8749,
+      "backup": null,
+      "backupReplaced": null,
+      "name": "Alliance 6"
+    },
+    {
+      "number": 7,
+      "captain": 3674,
+      "round1": 3015,
+      "round2": 3310,
+      "round3": 167,
+      "backup": null,
+      "backupReplaced": null,
+      "name": "Alliance 7"
+    },
+    {
+      "number": 8,
+      "captain": 1942,
+      "round1": 5614,
+      "round2": 3414,
+      "round3": 217,
+      "backup": null,
+      "backupReplaced": null,
+      "name": "Alliance 8"
+    }
+  ],
+  "count": 8
+}

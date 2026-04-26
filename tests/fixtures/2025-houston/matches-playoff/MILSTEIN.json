@@ -1,0 +1,772 @@
+{
+  "Matches": [
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=9T4-lBiz0PM",
+      "description": "Match 1 (R1)",
+      "matchNumber": 1,
+      "scoreRedFinal": 261,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 64,
+      "scoreBlueFinal": 218,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 51,
+      "autoStartTime": "2025-04-19T08:37:01.147",
+      "actualStartTime": "2025-04-19T08:37:01.147",
+      "tournamentLevel": "Playoff",
+      "postResultTime": "2025-04-19T08:40:49.33",
+      "teams": [
+        {
+          "teamNumber": 5940,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1477,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 254,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3414,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5614,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1942,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=B7uWVl04uJU",
+      "description": "Match 2 (R1)",
+      "matchNumber": 2,
+      "scoreRedFinal": 232,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 58,
+      "scoreBlueFinal": 227,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-19T08:44:41.173",
+      "actualStartTime": "2025-04-19T08:44:41.173",
+      "tournamentLevel": "Playoff",
+      "postResultTime": "2025-04-19T08:48:15.133",
+      "teams": [
+        {
+          "teamNumber": 6002,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4152,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 910,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 4122,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2337,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3006,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=QizCgI6igT0",
+      "description": "Match 3 (R1)",
+      "matchNumber": 3,
+      "scoreRedFinal": 250,
+      "scoreRedFoul": 20,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 200,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-19T08:52:06.953",
+      "actualStartTime": "2025-04-19T08:52:06.953",
+      "tournamentLevel": "Playoff",
+      "postResultTime": "2025-04-19T08:56:48.33",
+      "teams": [
+        {
+          "teamNumber": 5895,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 324,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 118,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3310,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3015,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3674,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=hCfssHRneT0",
+      "description": "Match 4 (R1)",
+      "matchNumber": 4,
+      "scoreRedFinal": 247,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 58,
+      "scoreBlueFinal": 231,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 51,
+      "autoStartTime": "2025-04-19T09:00:02.693",
+      "actualStartTime": "2025-04-19T09:00:02.693",
+      "tournamentLevel": "Playoff",
+      "postResultTime": "2025-04-19T09:04:06.54",
+      "teams": [
+        {
+          "teamNumber": 8592,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2137,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 7407,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3604,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 503,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1683,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=b-dILTv87w4",
+      "description": "Match 5 (R2)",
+      "matchNumber": 5,
+      "scoreRedFinal": 194,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 58,
+      "scoreBlueFinal": 232,
+      "scoreBlueFoul": 12,
+      "scoreBlueAuto": 44,
+      "autoStartTime": "2025-04-19T09:08:50.863",
+      "actualStartTime": "2025-04-19T09:08:50.863",
+      "tournamentLevel": "Playoff",
+      "postResultTime": "2025-04-19T09:12:29.62",
+      "teams": [
+        {
+          "teamNumber": 3414,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5614,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1942,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 4122,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2337,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3006,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=Sj2u5hjW2GM",
+      "description": "Match 6 (R2)",
+      "matchNumber": 6,
+      "scoreRedFinal": 219,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 51,
+      "scoreBlueFinal": 239,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-19T09:17:33.57",
+      "actualStartTime": "2025-04-19T09:17:33.57",
+      "tournamentLevel": "Playoff",
+      "postResultTime": "2025-04-19T09:21:35.253",
+      "teams": [
+        {
+          "teamNumber": 3310,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3015,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3674,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3604,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 503,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1683,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=3C8Qm1jO1MM",
+      "description": "Match 7 (R2)",
+      "matchNumber": 7,
+      "scoreRedFinal": 237,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 57,
+      "scoreBlueFinal": 240,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 65,
+      "autoStartTime": "2025-04-19T09:26:21.087",
+      "actualStartTime": "2025-04-19T09:26:21.087",
+      "tournamentLevel": "Playoff",
+      "postResultTime": "2025-04-19T09:30:57.18",
+      "teams": [
+        {
+          "teamNumber": 5940,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1318,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 254,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 6002,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4152,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 910,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=Cl4EjJYZGqc",
+      "description": "Match 8 (R2)",
+      "matchNumber": 8,
+      "scoreRedFinal": 268,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 58,
+      "scoreBlueFinal": 249,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 58,
+      "autoStartTime": "2025-04-19T09:34:35.337",
+      "actualStartTime": "2025-04-19T09:34:35.337",
+      "tournamentLevel": "Playoff",
+      "postResultTime": "2025-04-19T09:38:46.357",
+      "teams": [
+        {
+          "teamNumber": 5895,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 324,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 118,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 8592,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2137,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 7407,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=NwqnHPPueXA",
+      "description": "Match 9 (R3)",
+      "matchNumber": 9,
+      "scoreRedFinal": 214,
+      "scoreRedFoul": 18,
+      "scoreRedAuto": 70,
+      "scoreBlueFinal": 197,
+      "scoreBlueFoul": 8,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-19T09:48:16.713",
+      "actualStartTime": "2025-04-19T09:48:16.713",
+      "tournamentLevel": "Playoff",
+      "postResultTime": "2025-04-19T09:53:42.34",
+      "teams": [
+        {
+          "teamNumber": 5940,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1477,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 254,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 503,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3604,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1683,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=jpUKyAc4Ryg",
+      "description": "Match 10 (R3)",
+      "matchNumber": 10,
+      "scoreRedFinal": 241,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 58,
+      "scoreBlueFinal": 175,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 33,
+      "autoStartTime": "2025-04-19T09:56:37.04",
+      "actualStartTime": "2025-04-19T09:56:37.04",
+      "tournamentLevel": "Playoff",
+      "postResultTime": "2025-04-19T10:00:15.55",
+      "teams": [
+        {
+          "teamNumber": 8592,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2137,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 7407,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 4122,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2337,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 8393,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=HImo-dM1pCc",
+      "description": "Match 11 (R4)",
+      "matchNumber": 11,
+      "scoreRedFinal": 257,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 65,
+      "scoreBlueFinal": 279,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 58,
+      "autoStartTime": "2025-04-19T10:10:49.04",
+      "actualStartTime": "2025-04-19T10:10:49.04",
+      "tournamentLevel": "Playoff",
+      "postResultTime": "2025-04-19T10:15:14.903",
+      "teams": [
+        {
+          "teamNumber": 6002,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4152,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 910,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5895,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 324,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 118,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=xJZJjm8tRBs",
+      "description": "Match 12 (R4)",
+      "matchNumber": 12,
+      "scoreRedFinal": 241,
+      "scoreRedFoul": 2,
+      "scoreRedAuto": 58,
+      "scoreBlueFinal": 248,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 54,
+      "autoStartTime": "2025-04-19T10:19:00.133",
+      "actualStartTime": "2025-04-19T10:19:00.133",
+      "tournamentLevel": "Playoff",
+      "postResultTime": "2025-04-19T10:22:42.437",
+      "teams": [
+        {
+          "teamNumber": 8592,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2137,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 7407,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5940,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1477,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 254,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=iucXdRhw_p4",
+      "description": "Match 13 (R5)",
+      "matchNumber": 13,
+      "scoreRedFinal": 182,
+      "scoreRedFoul": 2,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 247,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 44,
+      "autoStartTime": "2025-04-19T10:45:16.51",
+      "actualStartTime": "2025-04-19T10:45:16.51",
+      "tournamentLevel": "Playoff",
+      "postResultTime": "2025-04-19T10:51:12.487",
+      "teams": [
+        {
+          "teamNumber": 6002,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4152,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 910,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5940,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1477,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 254,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=PXkWAIUQXB4",
+      "description": "Final 1",
+      "matchNumber": 14,
+      "scoreRedFinal": 241,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 58,
+      "scoreBlueFinal": 257,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 59,
+      "autoStartTime": "2025-04-19T11:15:18.607",
+      "actualStartTime": "2025-04-19T11:15:18.607",
+      "tournamentLevel": "Playoff",
+      "postResultTime": "2025-04-19T11:19:44.537",
+      "teams": [
+        {
+          "teamNumber": 5895,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 324,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 118,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5940,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1477,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 254,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=wGrUF1AC_G8",
+      "description": "Final 2",
+      "matchNumber": 15,
+      "scoreRedFinal": 262,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 65,
+      "scoreBlueFinal": 261,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 51,
+      "autoStartTime": "2025-04-19T11:41:25.843",
+      "actualStartTime": "2025-04-19T11:41:25.843",
+      "tournamentLevel": "Playoff",
+      "postResultTime": "2025-04-19T11:45:53.137",
+      "teams": [
+        {
+          "teamNumber": 5895,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 324,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 118,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5940,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1477,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 254,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=eeJjN4r7vL4",
+      "description": "Final Tiebreaker",
+      "matchNumber": 16,
+      "scoreRedFinal": 284,
+      "scoreRedFoul": 6,
+      "scoreRedAuto": 54,
+      "scoreBlueFinal": 235,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 50,
+      "autoStartTime": "2025-04-19T12:04:39.103",
+      "actualStartTime": "2025-04-19T12:04:39.103",
+      "tournamentLevel": "Playoff",
+      "postResultTime": "2025-04-19T12:11:21.083",
+      "teams": [
+        {
+          "teamNumber": 5895,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 324,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 118,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5940,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1477,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 254,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    }
+  ]
+}

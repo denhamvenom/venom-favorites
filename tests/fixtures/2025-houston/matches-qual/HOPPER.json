@@ -1,0 +1,6004 @@
+{
+  "Matches": [
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=O-neYb6Xcq0",
+      "description": "Qualification 1",
+      "matchNumber": 1,
+      "scoreRedFinal": 251,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 58,
+      "scoreBlueFinal": 202,
+      "scoreBlueFoul": 2,
+      "scoreBlueAuto": 65,
+      "autoStartTime": "2025-04-17T08:25:58.717",
+      "actualStartTime": "2025-04-17T08:25:58.717",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T08:29:19.757",
+      "teams": [
+        {
+          "teamNumber": 6324,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4907,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9496,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 6647,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1241,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3045,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=ym1CA03xWZ0",
+      "description": "Qualification 2",
+      "matchNumber": 2,
+      "scoreRedFinal": 145,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 16,
+      "scoreBlueFinal": 102,
+      "scoreBlueFoul": 2,
+      "scoreBlueAuto": 23,
+      "autoStartTime": "2025-04-17T08:33:17.247",
+      "actualStartTime": "2025-04-17T08:33:17.247",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T08:36:47.02",
+      "teams": [
+        {
+          "teamNumber": 5985,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 51,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 10224,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2080,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 7421,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2470,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=2iZgxpMLALI",
+      "description": "Qualification 3",
+      "matchNumber": 3,
+      "scoreRedFinal": 223,
+      "scoreRedFoul": 6,
+      "scoreRedAuto": 50,
+      "scoreBlueFinal": 195,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-17T08:41:32.52",
+      "actualStartTime": "2025-04-17T08:41:32.52",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T08:45:39.107",
+      "teams": [
+        {
+          "teamNumber": 3339,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2706,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9450,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3656,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4728,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2075,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=97T_Gb7eR8M",
+      "description": "Qualification 4",
+      "matchNumber": 4,
+      "scoreRedFinal": 82,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 19,
+      "scoreBlueFinal": 135,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-17T08:49:02.72",
+      "actualStartTime": "2025-04-17T08:49:02.72",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T08:52:18.69",
+      "teams": [
+        {
+          "teamNumber": 2485,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 801,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 86,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3473,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2783,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3882,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=np_MN0hEA0E",
+      "description": "Qualification 5",
+      "matchNumber": 5,
+      "scoreRedFinal": 138,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 34,
+      "scoreBlueFinal": 178,
+      "scoreBlueFoul": 14,
+      "scoreBlueAuto": 26,
+      "autoStartTime": "2025-04-17T09:06:27.84",
+      "actualStartTime": "2025-04-17T09:06:27.84",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T09:10:21.36",
+      "teams": [
+        {
+          "teamNumber": 2767,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 8177,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 540,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 6621,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 6652,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5181,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=WXM_h8Hw78U",
+      "description": "Qualification 6",
+      "matchNumber": 6,
+      "scoreRedFinal": 132,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 16,
+      "scoreBlueFinal": 149,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 23,
+      "autoStartTime": "2025-04-17T09:14:09.833",
+      "actualStartTime": "2025-04-17T09:14:09.833",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T09:17:19.26",
+      "teams": [
+        {
+          "teamNumber": 7902,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 781,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6873,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5013,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9134,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5987,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=mu0-C_1MFRk",
+      "description": "Qualification 7",
+      "matchNumber": 7,
+      "scoreRedFinal": 191,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 16,
+      "scoreBlueFinal": 168,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-17T09:24:53.307",
+      "actualStartTime": "2025-04-17T09:24:53.307",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T09:28:58.887",
+      "teams": [
+        {
+          "teamNumber": 3794,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3970,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2200,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 230,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2539,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1700,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=qaaqzIQBzhs",
+      "description": "Qualification 8",
+      "matchNumber": 8,
+      "scoreRedFinal": 225,
+      "scoreRedFoul": 6,
+      "scoreRedAuto": 50,
+      "scoreBlueFinal": 205,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 42,
+      "autoStartTime": "2025-04-17T09:34:16.183",
+      "actualStartTime": "2025-04-17T09:34:16.183",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T09:37:46.407",
+      "teams": [
+        {
+          "teamNumber": 1153,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4145,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1768,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 8595,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 973,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 8570,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=oBPTkKRVdEc",
+      "description": "Qualification 9",
+      "matchNumber": 9,
+      "scoreRedFinal": 227,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 51,
+      "scoreBlueFinal": 167,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 36,
+      "autoStartTime": "2025-04-17T09:42:59.32",
+      "actualStartTime": "2025-04-17T09:42:59.32",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T09:46:55.923",
+      "teams": [
+        {
+          "teamNumber": 1902,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 7632,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2877,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2383,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 467,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3928,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=-tFA6ot5TJc",
+      "description": "Qualification 10",
+      "matchNumber": 10,
+      "scoreRedFinal": 148,
+      "scoreRedFoul": 12,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 113,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 29,
+      "autoStartTime": "2025-04-17T09:51:20.407",
+      "actualStartTime": "2025-04-17T09:51:20.407",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T09:55:31.443",
+      "teams": [
+        {
+          "teamNumber": 1506,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2491,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3814,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5193,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9245,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9635,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=diLdftl1rBI",
+      "description": "Qualification 11",
+      "matchNumber": 11,
+      "scoreRedFinal": 181,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 47,
+      "scoreBlueFinal": 208,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-17T09:58:32.837",
+      "actualStartTime": "2025-04-17T09:58:32.837",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T10:01:52.763",
+      "teams": [
+        {
+          "teamNumber": 888,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5736,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5817,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3130,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 195,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2960,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=u5DYIB2WAYw",
+      "description": "Qualification 12",
+      "matchNumber": 12,
+      "scoreRedFinal": 157,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 26,
+      "scoreBlueFinal": 160,
+      "scoreBlueFoul": 18,
+      "scoreBlueAuto": 9,
+      "autoStartTime": "2025-04-17T10:07:06.797",
+      "actualStartTime": "2025-04-17T10:07:06.797",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T10:11:39.143",
+      "teams": [
+        {
+          "teamNumber": 10479,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 70,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9545,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3197,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4009,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 33,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=McbiGBLo7I4",
+      "description": "Qualification 13",
+      "matchNumber": 13,
+      "scoreRedFinal": 103,
+      "scoreRedFoul": 2,
+      "scoreRedAuto": 30,
+      "scoreBlueFinal": 117,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-17T10:19:09.613",
+      "actualStartTime": "2025-04-17T10:19:09.613",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T10:22:35.71",
+      "teams": [
+        {
+          "teamNumber": 2522,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1038,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6652,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 86,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2706,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 10157,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=W0NE35aeO48",
+      "description": "Qualification 14",
+      "matchNumber": 14,
+      "scoreRedFinal": 236,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 51,
+      "scoreBlueFinal": 154,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 23,
+      "autoStartTime": "2025-04-17T10:27:07.577",
+      "actualStartTime": "2025-04-17T10:27:07.577",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T10:30:21.24",
+      "teams": [
+        {
+          "teamNumber": 4728,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2767,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3882,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5987,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2080,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6647,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=g81LL_2ZffM",
+      "description": "Qualification 15",
+      "matchNumber": 15,
+      "scoreRedFinal": 232,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 58,
+      "scoreBlueFinal": 245,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 50,
+      "autoStartTime": "2025-04-17T10:34:15.52",
+      "actualStartTime": "2025-04-17T10:34:15.52",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T10:37:29.213",
+      "teams": [
+        {
+          "teamNumber": 4907,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2783,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 51,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3339,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 7902,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 230,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=7H_OBxhT0B8",
+      "description": "Qualification 16",
+      "matchNumber": 16,
+      "scoreRedFinal": 131,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 16,
+      "scoreBlueFinal": 252,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 54,
+      "autoStartTime": "2025-04-17T10:42:41.53",
+      "actualStartTime": "2025-04-17T10:42:41.53",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T10:46:04.327",
+      "teams": [
+        {
+          "teamNumber": 6873,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 10224,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 540,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 1768,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2075,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1241,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=kEI3IoUsUFo",
+      "description": "Qualification 17",
+      "matchNumber": 17,
+      "scoreRedFinal": 192,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 51,
+      "scoreBlueFinal": 194,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 43,
+      "autoStartTime": "2025-04-17T10:50:06.02",
+      "actualStartTime": "2025-04-17T10:50:06.02",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T10:53:23.033",
+      "teams": [
+        {
+          "teamNumber": 2877,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 6324,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 973,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3473,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5181,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9450,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=DPWmjhxgCNc",
+      "description": "Qualification 18",
+      "matchNumber": 18,
+      "scoreRedFinal": 150,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 19,
+      "scoreBlueFinal": 174,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 39,
+      "autoStartTime": "2025-04-17T10:58:53.593",
+      "actualStartTime": "2025-04-17T10:58:53.593",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T11:02:52.31",
+      "teams": [
+        {
+          "teamNumber": 3814,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 7421,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1902,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3656,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 8570,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 8177,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=9QE-LPHZDNQ",
+      "description": "Qualification 19",
+      "matchNumber": 19,
+      "scoreRedFinal": 91,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 12,
+      "scoreBlueFinal": 196,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 44,
+      "autoStartTime": "2025-04-17T11:08:01.187",
+      "actualStartTime": "2025-04-17T11:08:01.187",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T11:11:24.05",
+      "teams": [
+        {
+          "teamNumber": 8595,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5817,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 467,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 9496,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5193,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 781,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=l-6dPgxeTaE",
+      "description": "Qualification 20",
+      "matchNumber": 20,
+      "scoreRedFinal": 173,
+      "scoreRedFoul": 2,
+      "scoreRedAuto": 19,
+      "scoreBlueFinal": 225,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-17T11:15:46.92",
+      "actualStartTime": "2025-04-17T11:15:46.92",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T11:19:35.323",
+      "teams": [
+        {
+          "teamNumber": 801,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4009,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2383,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3197,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4145,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2539,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=qrIaIzkaXL8",
+      "description": "Qualification 21",
+      "matchNumber": 21,
+      "scoreRedFinal": 204,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 22,
+      "scoreBlueFinal": 223,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 26,
+      "autoStartTime": "2025-04-17T11:23:48.827",
+      "actualStartTime": "2025-04-17T11:23:48.827",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T11:27:00.567",
+      "teams": [
+        {
+          "teamNumber": 5013,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2491,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3045,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 33,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 195,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3928,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=uEHQnYWyiFg",
+      "description": "Qualification 22",
+      "matchNumber": 22,
+      "scoreRedFinal": 187,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 172,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 51,
+      "autoStartTime": "2025-04-17T11:30:47.21",
+      "actualStartTime": "2025-04-17T11:30:47.21",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T11:34:22.9",
+      "teams": [
+        {
+          "teamNumber": 3130,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1506,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1038,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2200,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 10479,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9134,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=iMW7Qnu6Shk",
+      "description": "Qualification 23",
+      "matchNumber": 23,
+      "scoreRedFinal": 113,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 23,
+      "scoreBlueFinal": 148,
+      "scoreBlueFoul": 10,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-17T11:38:15.88",
+      "actualStartTime": "2025-04-17T11:38:15.88",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T11:42:59.103",
+      "teams": [
+        {
+          "teamNumber": 10157,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 6621,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3794,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5985,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5736,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3970,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=DdYhCBhz9XI",
+      "description": "Qualification 24",
+      "matchNumber": 24,
+      "scoreRedFinal": 132,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 16,
+      "scoreBlueFinal": 193,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 48,
+      "autoStartTime": "2025-04-17T11:46:27.213",
+      "actualStartTime": "2025-04-17T11:46:27.213",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T11:49:48.96",
+      "teams": [
+        {
+          "teamNumber": 2485,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9635,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1700,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2960,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 70,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 7632,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=vjFl3u98fbY",
+      "description": "Qualification 25",
+      "matchNumber": 25,
+      "scoreRedFinal": 111,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 16,
+      "scoreBlueFinal": 203,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 32,
+      "autoStartTime": "2025-04-17T11:53:55.18",
+      "actualStartTime": "2025-04-17T11:53:55.18",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T11:57:12.963",
+      "teams": [
+        {
+          "teamNumber": 2470,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9545,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 888,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 1153,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9245,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2522,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=xEYth-yxZqU",
+      "description": "Qualification 26",
+      "matchNumber": 26,
+      "scoreRedFinal": 160,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 161,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 23,
+      "autoStartTime": "2025-04-17T12:01:02.513",
+      "actualStartTime": "2025-04-17T12:01:02.513",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T12:04:14.107",
+      "teams": [
+        {
+          "teamNumber": 7421,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2783,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2767,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 9450,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3814,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6873,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=oltC8B9U3zw",
+      "description": "Qualification 27",
+      "matchNumber": 27,
+      "scoreRedFinal": 233,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 185,
+      "scoreBlueFoul": 2,
+      "scoreBlueAuto": 33,
+      "autoStartTime": "2025-04-17T12:08:48.803",
+      "actualStartTime": "2025-04-17T12:08:48.803",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T12:12:12.993",
+      "teams": [
+        {
+          "teamNumber": 3656,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4907,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1768,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 781,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3882,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2877,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=YFU4fy2ZIV8",
+      "description": "Qualification 28",
+      "matchNumber": 28,
+      "scoreRedFinal": 161,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 34,
+      "scoreBlueFinal": 220,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-17T12:23:10.78",
+      "actualStartTime": "2025-04-17T12:23:10.78",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T12:26:24.067",
+      "teams": [
+        {
+          "teamNumber": 2539,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5193,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 7902,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 4728,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 86,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6324,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=5-Betqj3cWM",
+      "description": "Qualification 29",
+      "matchNumber": 29,
+      "scoreRedFinal": 150,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 34,
+      "scoreBlueFinal": 178,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 44,
+      "autoStartTime": "2025-04-17T13:32:56.463",
+      "actualStartTime": "2025-04-17T13:32:56.463",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T13:36:19.133",
+      "teams": [
+        {
+          "teamNumber": 6647,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 8570,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3928,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 467,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 540,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 4009,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=yFQgufx9sAM",
+      "description": "Qualification 30",
+      "matchNumber": 30,
+      "scoreRedFinal": 190,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 176,
+      "scoreBlueFoul": 2,
+      "scoreBlueAuto": 40,
+      "autoStartTime": "2025-04-17T13:41:28.977",
+      "actualStartTime": "2025-04-17T13:41:28.977",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T13:44:39.027",
+      "teams": [
+        {
+          "teamNumber": 230,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1038,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9134,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 195,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 801,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 8595,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=E0n_C9DCYW0",
+      "description": "Qualification 31",
+      "matchNumber": 31,
+      "scoreRedFinal": 195,
+      "scoreRedFoul": 2,
+      "scoreRedAuto": 54,
+      "scoreBlueFinal": 198,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 47,
+      "autoStartTime": "2025-04-17T13:49:12.05",
+      "actualStartTime": "2025-04-17T13:49:12.05",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T13:53:56.72",
+      "teams": [
+        {
+          "teamNumber": 3197,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 10157,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1241,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 973,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 51,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6621,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=FNCxAZk24Xw",
+      "description": "Qualification 32",
+      "matchNumber": 32,
+      "scoreRedFinal": 235,
+      "scoreRedFoul": 6,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 193,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 27,
+      "autoStartTime": "2025-04-17T14:00:31.977",
+      "actualStartTime": "2025-04-17T14:00:31.977",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T14:03:40.96",
+      "teams": [
+        {
+          "teamNumber": 9496,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3130,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2075,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 70,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3970,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5013,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=b3-mL7C8o4s",
+      "description": "Qualification 33",
+      "matchNumber": 33,
+      "scoreRedFinal": 107,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 23,
+      "scoreBlueFinal": 123,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 32,
+      "autoStartTime": "2025-04-17T14:08:37.973",
+      "actualStartTime": "2025-04-17T14:08:37.973",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T14:12:08.837",
+      "teams": [
+        {
+          "teamNumber": 2080,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2383,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1700,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 9245,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3045,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9545,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=pPfAlxCE85A",
+      "description": "Qualification 34",
+      "matchNumber": 34,
+      "scoreRedFinal": 154,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 65,
+      "scoreBlueFinal": 132,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 36,
+      "autoStartTime": "2025-04-17T14:16:06.453",
+      "actualStartTime": "2025-04-17T14:16:06.453",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T14:19:21.193",
+      "teams": [
+        {
+          "teamNumber": 5181,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 7632,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 888,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2470,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5987,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2491,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=IlEQ4_DtJXU",
+      "description": "Qualification 35",
+      "matchNumber": 35,
+      "scoreRedFinal": 240,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 193,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 16,
+      "autoStartTime": "2025-04-17T14:23:17.217",
+      "actualStartTime": "2025-04-17T14:23:17.217",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T14:26:34.257",
+      "teams": [
+        {
+          "teamNumber": 3473,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2200,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2960,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2706,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1902,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 10479,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=RPs_aOYWQvE",
+      "description": "Qualification 36",
+      "matchNumber": 36,
+      "scoreRedFinal": 190,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 16,
+      "scoreBlueFinal": 175,
+      "scoreBlueFoul": 12,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-17T14:30:59.047",
+      "actualStartTime": "2025-04-17T14:30:59.047",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T14:34:14.867",
+      "teams": [
+        {
+          "teamNumber": 5817,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3339,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9635,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2522,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 33,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5985,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=Ldksizsb8sE",
+      "description": "Qualification 37",
+      "matchNumber": 37,
+      "scoreRedFinal": 144,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 120,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 28,
+      "autoStartTime": "2025-04-17T14:38:13.203",
+      "actualStartTime": "2025-04-17T14:38:13.203",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T14:41:21.19",
+      "teams": [
+        {
+          "teamNumber": 5736,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1506,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3794,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 6652,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2485,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1153,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=aL_YfByF8mY",
+      "description": "Qualification 38",
+      "matchNumber": 38,
+      "scoreRedFinal": 153,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 36,
+      "scoreBlueFinal": 188,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-17T14:45:12.097",
+      "actualStartTime": "2025-04-17T14:45:12.097",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T14:48:30.13",
+      "teams": [
+        {
+          "teamNumber": 8177,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 10224,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 467,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 6324,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9134,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 4145,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=aZoBrX2_DVI",
+      "description": "Qualification 39",
+      "matchNumber": 39,
+      "scoreRedFinal": 117,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 48,
+      "scoreBlueFinal": 148,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 19,
+      "autoStartTime": "2025-04-17T14:54:55.6",
+      "actualStartTime": "2025-04-17T14:54:55.6",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T14:58:59.873",
+      "teams": [
+        {
+          "teamNumber": 195,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5193,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 8570,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3882,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9450,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 10157,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=q2LyJ47tJOY",
+      "description": "Qualification 40",
+      "matchNumber": 40,
+      "scoreRedFinal": 171,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 35,
+      "scoreBlueFinal": 174,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-17T15:03:05.65",
+      "actualStartTime": "2025-04-17T15:03:05.65",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T15:06:16.78",
+      "teams": [
+        {
+          "teamNumber": 7902,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 70,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3814,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 1038,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2877,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6647,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=UkEyjNVK_zw",
+      "description": "Qualification 41",
+      "matchNumber": 41,
+      "scoreRedFinal": 242,
+      "scoreRedFoul": 12,
+      "scoreRedAuto": 51,
+      "scoreBlueFinal": 237,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 51,
+      "autoStartTime": "2025-04-17T15:12:41.71",
+      "actualStartTime": "2025-04-17T15:12:41.71",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T15:15:59.78",
+      "teams": [
+        {
+          "teamNumber": 2075,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4009,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 4907,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 1700,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 973,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2767,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=wCop6SruO1I",
+      "description": "Qualification 42",
+      "matchNumber": 42,
+      "scoreRedFinal": 212,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 30,
+      "scoreBlueFinal": 225,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 51,
+      "autoStartTime": "2025-04-17T15:19:53.817",
+      "actualStartTime": "2025-04-17T15:19:53.817",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T15:23:04.443",
+      "teams": [
+        {
+          "teamNumber": 51,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3045,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 230,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3130,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1768,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 4728,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=zJNRsWkQcng",
+      "description": "Qualification 43",
+      "matchNumber": 43,
+      "scoreRedFinal": 167,
+      "scoreRedFoul": 6,
+      "scoreRedAuto": 34,
+      "scoreBlueFinal": 130,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 16,
+      "autoStartTime": "2025-04-17T15:27:30.207",
+      "actualStartTime": "2025-04-17T15:27:30.207",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T15:30:59.6",
+      "teams": [
+        {
+          "teamNumber": 2960,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1902,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3928,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 9545,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1241,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 8595,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=Xw6uj_xcolU",
+      "description": "Qualification 44",
+      "matchNumber": 44,
+      "scoreRedFinal": 216,
+      "scoreRedFoul": 20,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 206,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 34,
+      "autoStartTime": "2025-04-17T15:35:48.36",
+      "actualStartTime": "2025-04-17T15:35:48.36",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T15:39:46.26",
+      "teams": [
+        {
+          "teamNumber": 540,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3656,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5987,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 9635,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 801,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3970,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=Z-bU23OEuHU",
+      "description": "Qualification 45",
+      "matchNumber": 45,
+      "scoreRedFinal": 245,
+      "scoreRedFoul": 6,
+      "scoreRedAuto": 57,
+      "scoreBlueFinal": 177,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 44,
+      "autoStartTime": "2025-04-17T15:43:57.663",
+      "actualStartTime": "2025-04-17T15:43:57.663",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T15:47:28.783",
+      "teams": [
+        {
+          "teamNumber": 9245,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9496,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5181,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5736,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 6873,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2539,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=QL8uo-Wsf4E",
+      "description": "Qualification 46",
+      "matchNumber": 46,
+      "scoreRedFinal": 164,
+      "scoreRedFoul": 6,
+      "scoreRedAuto": 40,
+      "scoreBlueFinal": 192,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-17T15:50:51.117",
+      "actualStartTime": "2025-04-17T15:50:51.117",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T15:54:04.54",
+      "teams": [
+        {
+          "teamNumber": 888,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2706,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 4145,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2783,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 781,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5985,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=G4JjEL6Q7EE",
+      "description": "Qualification 47",
+      "matchNumber": 47,
+      "scoreRedFinal": 197,
+      "scoreRedFoul": 6,
+      "scoreRedAuto": 58,
+      "scoreBlueFinal": 145,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 23,
+      "autoStartTime": "2025-04-17T16:01:03.113",
+      "actualStartTime": "2025-04-17T16:01:03.113",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T16:04:22.467",
+      "teams": [
+        {
+          "teamNumber": 1506,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5013,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3197,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 86,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5817,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 10224,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=LyJQ7euoSCo",
+      "description": "Qualification 48",
+      "matchNumber": 48,
+      "scoreRedFinal": 137,
+      "scoreRedFoul": 6,
+      "scoreRedAuto": 26,
+      "scoreBlueFinal": 125,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-17T16:08:56.577",
+      "actualStartTime": "2025-04-17T16:08:56.577",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T16:13:10.49",
+      "teams": [
+        {
+          "teamNumber": 6652,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2470,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3339,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 10479,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2383,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 7421,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=mtG7jAwc6hc",
+      "description": "Qualification 49",
+      "matchNumber": 49,
+      "scoreRedFinal": 179,
+      "scoreRedFoul": 6,
+      "scoreRedAuto": 39,
+      "scoreBlueFinal": 191,
+      "scoreBlueFoul": 4,
+      "scoreBlueAuto": 40,
+      "autoStartTime": "2025-04-17T16:17:48.23",
+      "actualStartTime": "2025-04-17T16:17:48.23",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T16:22:32.453",
+      "teams": [
+        {
+          "teamNumber": 33,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2080,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1153,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 7632,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3473,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6621,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=nb8L1ddf9so",
+      "description": "Qualification 50",
+      "matchNumber": 50,
+      "scoreRedFinal": 144,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 203,
+      "scoreBlueFoul": 24,
+      "scoreBlueAuto": 51,
+      "autoStartTime": "2025-04-17T16:25:37.77",
+      "actualStartTime": "2025-04-17T16:25:37.77",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T16:29:21.317",
+      "teams": [
+        {
+          "teamNumber": 3794,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2485,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2522,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2491,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2200,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 8177,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=_lTWjH9xibQ",
+      "description": "Qualification 51",
+      "matchNumber": 51,
+      "scoreRedFinal": 222,
+      "scoreRedFoul": 2,
+      "scoreRedAuto": 30,
+      "scoreBlueFinal": 171,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 44,
+      "autoStartTime": "2025-04-17T16:33:31.287",
+      "actualStartTime": "2025-04-17T16:33:31.287",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T16:36:45.533",
+      "teams": [
+        {
+          "teamNumber": 973,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3928,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3882,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 230,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3814,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3130,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=Ssf4BaHrm2A",
+      "description": "Qualification 52",
+      "matchNumber": 52,
+      "scoreRedFinal": 191,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 23,
+      "scoreBlueFinal": 138,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 33,
+      "autoStartTime": "2025-04-17T16:40:41.883",
+      "actualStartTime": "2025-04-17T16:40:41.883",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T16:44:13.787",
+      "teams": [
+        {
+          "teamNumber": 2877,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5987,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 195,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 51,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 6647,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9545,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=uTqOzjttxtc",
+      "description": "Qualification 53",
+      "matchNumber": 53,
+      "scoreRedFinal": 232,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 51,
+      "scoreBlueFinal": 194,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 54,
+      "autoStartTime": "2025-04-17T16:50:54.16",
+      "actualStartTime": "2025-04-17T16:50:54.16",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T16:55:41.73",
+      "teams": [
+        {
+          "teamNumber": 801,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1768,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5181,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 9635,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 467,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1241,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=Sxl6Fs_whLo",
+      "description": "Qualification 54",
+      "matchNumber": 54,
+      "scoreRedFinal": 167,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 149,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 42,
+      "autoStartTime": "2025-04-17T16:58:54.81",
+      "actualStartTime": "2025-04-17T16:58:54.81",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T17:02:03.103",
+      "teams": [
+        {
+          "teamNumber": 9134,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4728,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2706,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 8570,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1700,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5736,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=htLksdpTBVY",
+      "description": "Qualification 55",
+      "matchNumber": 55,
+      "scoreRedFinal": 152,
+      "scoreRedFoul": 2,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 165,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 51,
+      "autoStartTime": "2025-04-17T17:06:51.163",
+      "actualStartTime": "2025-04-17T17:06:51.163",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T17:10:51.307",
+      "teams": [
+        {
+          "teamNumber": 9450,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 888,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5985,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 1506,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9496,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 4009,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=touylp2UxCk",
+      "description": "Qualification 56",
+      "matchNumber": 56,
+      "scoreRedFinal": 104,
+      "scoreRedFoul": 4,
+      "scoreRedAuto": 18,
+      "scoreBlueFinal": 179,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 29,
+      "autoStartTime": "2025-04-17T17:15:31.667",
+      "actualStartTime": "2025-04-17T17:15:31.667",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T17:19:15.827",
+      "teams": [
+        {
+          "teamNumber": 1902,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 6652,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 10157,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5817,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 7902,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2783,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=SguThI8Gt2k",
+      "description": "Qualification 57",
+      "matchNumber": 57,
+      "scoreRedFinal": 211,
+      "scoreRedFoul": 24,
+      "scoreRedAuto": 30,
+      "scoreBlueFinal": 149,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 44,
+      "autoStartTime": "2025-04-17T17:22:34.933",
+      "actualStartTime": "2025-04-17T17:22:34.933",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T17:27:54.717",
+      "teams": [
+        {
+          "teamNumber": 7632,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3045,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5193,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 7421,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3970,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 4145,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=D4ZdGRhqUmw",
+      "description": "Qualification 58",
+      "matchNumber": 58,
+      "scoreRedFinal": 196,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 50,
+      "scoreBlueFinal": 163,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-17T17:32:28.223",
+      "actualStartTime": "2025-04-17T17:32:28.223",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T17:35:34.877",
+      "teams": [
+        {
+          "teamNumber": 2539,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3473,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9245,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5013,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2075,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 8177,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=Mg_gPpPzyW4",
+      "description": "Qualification 59",
+      "matchNumber": 59,
+      "scoreRedFinal": 190,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 41,
+      "scoreBlueFinal": 205,
+      "scoreBlueFoul": 12,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-17T17:39:49.973",
+      "actualStartTime": "2025-04-17T17:39:49.973",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T17:44:01.26",
+      "teams": [
+        {
+          "teamNumber": 781,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2522,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 10479,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 10224,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2485,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2767,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=RIM4MqgeLUs",
+      "description": "Qualification 60",
+      "matchNumber": 60,
+      "scoreRedFinal": 172,
+      "scoreRedFoul": 2,
+      "scoreRedAuto": 30,
+      "scoreBlueFinal": 149,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 16,
+      "autoStartTime": "2025-04-17T17:49:05.997",
+      "actualStartTime": "2025-04-17T17:49:05.997",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T17:52:27.85",
+      "teams": [
+        {
+          "teamNumber": 2491,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 8595,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 70,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 4907,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 86,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2080,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=foSAdsEMT24",
+      "description": "Qualification 61",
+      "matchNumber": 61,
+      "scoreRedFinal": 188,
+      "scoreRedFoul": 6,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 159,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 26,
+      "autoStartTime": "2025-04-17T17:56:50.297",
+      "actualStartTime": "2025-04-17T17:56:50.297",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T18:00:14.193",
+      "teams": [
+        {
+          "teamNumber": 1038,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 6324,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3197,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3339,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1153,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 540,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=PlUbEVVUQjo",
+      "description": "Qualification 62",
+      "matchNumber": 62,
+      "scoreRedFinal": 222,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 147,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-17T18:04:34.583",
+      "actualStartTime": "2025-04-17T18:04:34.583",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-17T18:07:57.61",
+      "teams": [
+        {
+          "teamNumber": 6873,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 33,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3656,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3794,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2960,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2383,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=w5xRSr3xhLw",
+      "description": "Qualification 63",
+      "matchNumber": 63,
+      "scoreRedFinal": 231,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 48,
+      "scoreBlueFinal": 211,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 44,
+      "autoStartTime": "2025-04-18T07:59:38.477",
+      "actualStartTime": "2025-04-18T07:59:38.477",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T08:02:48.703",
+      "teams": [
+        {
+          "teamNumber": 2200,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 6647,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 467,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 6621,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2470,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5736,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=VqqQjH4h9_s",
+      "description": "Qualification 64",
+      "matchNumber": 64,
+      "scoreRedFinal": 165,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 23,
+      "scoreBlueFinal": 191,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 50,
+      "autoStartTime": "2025-04-18T08:06:57.78",
+      "actualStartTime": "2025-04-18T08:06:57.78",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T08:10:17.107",
+      "teams": [
+        {
+          "teamNumber": 10157,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 973,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 195,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 9496,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1902,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 4728,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=0CVtJkdovyc",
+      "description": "Qualification 65",
+      "matchNumber": 65,
+      "scoreRedFinal": 191,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 186,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 44,
+      "autoStartTime": "2025-04-18T08:14:26.47",
+      "actualStartTime": "2025-04-18T08:14:26.47",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T08:18:14.92",
+      "teams": [
+        {
+          "teamNumber": 4009,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 7632,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 230,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 1241,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5817,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2706,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=Ci0C-sYIMc4",
+      "description": "Qualification 66",
+      "matchNumber": 66,
+      "scoreRedFinal": 173,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 41,
+      "scoreBlueFinal": 142,
+      "scoreBlueFoul": 12,
+      "scoreBlueAuto": 33,
+      "autoStartTime": "2025-04-18T08:22:41.06",
+      "actualStartTime": "2025-04-18T08:22:41.06",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T08:25:52.57",
+      "teams": [
+        {
+          "teamNumber": 9545,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4145,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2783,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3130,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9635,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5013,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=5etVN_ic_qQ",
+      "description": "Qualification 67",
+      "matchNumber": 67,
+      "scoreRedFinal": 135,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 30,
+      "scoreBlueFinal": 157,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-18T08:30:00.01",
+      "actualStartTime": "2025-04-18T08:30:00.01",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T08:34:32.353",
+      "teams": [
+        {
+          "teamNumber": 5985,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 8177,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5193,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3928,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 10479,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 801,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=PKM19KbJioM",
+      "description": "Qualification 68",
+      "matchNumber": 68,
+      "scoreRedFinal": 165,
+      "scoreRedFoul": 18,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 153,
+      "scoreBlueFoul": 18,
+      "scoreBlueAuto": 36,
+      "autoStartTime": "2025-04-18T08:37:49.17",
+      "actualStartTime": "2025-04-18T08:37:49.17",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T08:41:41.6",
+      "teams": [
+        {
+          "teamNumber": 781,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1700,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2491,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 9450,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 51,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6652,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=clghhj3RQzw",
+      "description": "Qualification 69",
+      "matchNumber": 69,
+      "scoreRedFinal": 185,
+      "scoreRedFoul": 2,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 167,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-18T08:47:46.687",
+      "actualStartTime": "2025-04-18T08:47:46.687",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T08:51:38.76",
+      "teams": [
+        {
+          "teamNumber": 1506,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9134,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 7421,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 540,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4907,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3473,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=q0c7hzQi7Js",
+      "description": "Qualification 70",
+      "matchNumber": 70,
+      "scoreRedFinal": 152,
+      "scoreRedFoul": 2,
+      "scoreRedAuto": 16,
+      "scoreBlueFinal": 156,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 47,
+      "autoStartTime": "2025-04-18T08:57:40.767",
+      "actualStartTime": "2025-04-18T08:57:40.767",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T09:00:55.843",
+      "teams": [
+        {
+          "teamNumber": 3814,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2080,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6324,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3794,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1768,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 888,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=EhZI9xDV8GM",
+      "description": "Qualification 71",
+      "matchNumber": 71,
+      "scoreRedFinal": 140,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 33,
+      "scoreBlueFinal": 195,
+      "scoreBlueFoul": 2,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-18T09:10:25.97",
+      "actualStartTime": "2025-04-18T09:10:25.97",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T09:14:16.977",
+      "teams": [
+        {
+          "teamNumber": 6873,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1153,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2470,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 70,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2539,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3656,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=31E6dRESqqQ",
+      "description": "Qualification 72",
+      "matchNumber": 72,
+      "scoreRedFinal": 233,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 52,
+      "scoreBlueFinal": 171,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-18T09:17:53.653",
+      "actualStartTime": "2025-04-18T09:17:53.653",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T09:21:30.657",
+      "teams": [
+        {
+          "teamNumber": 6621,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 8570,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5987,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 86,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2383,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1038,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=6FoM1D4TyH4",
+      "description": "Qualification 73",
+      "matchNumber": 73,
+      "scoreRedFinal": 224,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 54,
+      "scoreBlueFinal": 231,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 36,
+      "autoStartTime": "2025-04-18T09:25:57.59",
+      "actualStartTime": "2025-04-18T09:25:57.59",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T09:29:12.62",
+      "teams": [
+        {
+          "teamNumber": 2485,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2877,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3970,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 33,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2767,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9245,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=8SaSvWFBpW4",
+      "description": "Qualification 74",
+      "matchNumber": 74,
+      "scoreRedFinal": 219,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 174,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 26,
+      "autoStartTime": "2025-04-18T09:34:13.217",
+      "actualStartTime": "2025-04-18T09:34:13.217",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T09:38:26.063",
+      "teams": [
+        {
+          "teamNumber": 2075,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2522,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 7902,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3197,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2960,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5181,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=L6u3fAS5gBg",
+      "description": "Qualification 75",
+      "matchNumber": 75,
+      "scoreRedFinal": 176,
+      "scoreRedFoul": 18,
+      "scoreRedAuto": 23,
+      "scoreBlueFinal": 219,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-18T09:42:43.703",
+      "actualStartTime": "2025-04-18T09:42:43.703",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T09:49:29.973",
+      "teams": [
+        {
+          "teamNumber": 3045,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3882,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 10224,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2200,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3339,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 8595,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=9-eqZasZ0G4",
+      "description": "Qualification 76",
+      "matchNumber": 76,
+      "scoreRedFinal": 203,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 50,
+      "scoreBlueFinal": 214,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 57,
+      "autoStartTime": "2025-04-18T09:52:16.15",
+      "actualStartTime": "2025-04-18T09:52:16.15",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T09:55:35.43",
+      "teams": [
+        {
+          "teamNumber": 1241,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 230,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 10479,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 467,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9450,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5013,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=SpFKMYzmMyg",
+      "description": "Qualification 77",
+      "matchNumber": 77,
+      "scoreRedFinal": 186,
+      "scoreRedFoul": 12,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 169,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 20,
+      "autoStartTime": "2025-04-18T10:01:41.797",
+      "actualStartTime": "2025-04-18T10:01:41.797",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T10:04:57.223",
+      "teams": [
+        {
+          "teamNumber": 8177,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 7632,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 51,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5736,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9496,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9545,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=8JCdkdvSqWo",
+      "description": "Qualification 78",
+      "matchNumber": 78,
+      "scoreRedFinal": 225,
+      "scoreRedFoul": 2,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 153,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 16,
+      "autoStartTime": "2025-04-18T10:08:33.05",
+      "actualStartTime": "2025-04-18T10:08:33.05",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T10:12:45.45",
+      "teams": [
+        {
+          "teamNumber": 801,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 973,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3130,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2706,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 781,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2080,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=xALPsdtVaMA",
+      "description": "Qualification 79",
+      "matchNumber": 79,
+      "scoreRedFinal": 78,
+      "scoreRedFoul": 4,
+      "scoreRedAuto": 9,
+      "scoreBlueFinal": 213,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 54,
+      "autoStartTime": "2025-04-18T10:17:02.687",
+      "actualStartTime": "2025-04-18T10:17:02.687",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T10:20:32.523",
+      "teams": [
+        {
+          "teamNumber": 10157,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 6873,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9635,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3928,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 888,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 4907,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=Xot0-OPVbjw",
+      "description": "Qualification 80",
+      "matchNumber": 80,
+      "scoreRedFinal": 214,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 40,
+      "scoreBlueFinal": 176,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 33,
+      "autoStartTime": "2025-04-18T10:25:37.57",
+      "actualStartTime": "2025-04-18T10:25:37.57",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T10:30:12.427",
+      "teams": [
+        {
+          "teamNumber": 195,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 6621,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1768,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2783,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1506,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 70,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=wglX4uAo2WI",
+      "description": "Qualification 81",
+      "matchNumber": 81,
+      "scoreRedFinal": 152,
+      "scoreRedFoul": 6,
+      "scoreRedAuto": 30,
+      "scoreBlueFinal": 225,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 58,
+      "autoStartTime": "2025-04-18T10:33:59.21",
+      "actualStartTime": "2025-04-18T10:33:59.21",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T10:37:48.02",
+      "teams": [
+        {
+          "teamNumber": 4728,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3794,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2470,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 4145,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 540,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2877,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=GYvVWMkf0_M",
+      "description": "Qualification 82",
+      "matchNumber": 82,
+      "scoreRedFinal": 243,
+      "scoreRedFoul": 28,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 159,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-18T10:41:10.61",
+      "actualStartTime": "2025-04-18T10:41:10.61",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T10:45:33.327",
+      "teams": [
+        {
+          "teamNumber": 2491,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2539,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6647,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3473,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1038,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5817,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=-GBMpx8MR9w",
+      "description": "Qualification 83",
+      "matchNumber": 83,
+      "scoreRedFinal": 214,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 180,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 29,
+      "autoStartTime": "2025-04-18T10:49:09.213",
+      "actualStartTime": "2025-04-18T10:49:09.213",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T10:52:44.333",
+      "teams": [
+        {
+          "teamNumber": 2960,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3882,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2522,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 4009,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3045,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9134,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=io93sp1cSJM",
+      "description": "Qualification 84",
+      "matchNumber": 84,
+      "scoreRedFinal": 167,
+      "scoreRedFoul": 2,
+      "scoreRedAuto": 33,
+      "scoreBlueFinal": 179,
+      "scoreBlueFoul": 8,
+      "scoreBlueAuto": 27,
+      "autoStartTime": "2025-04-18T10:56:07.787",
+      "actualStartTime": "2025-04-18T10:56:07.787",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T11:03:14.627",
+      "teams": [
+        {
+          "teamNumber": 6324,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5987,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 7421,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 1700,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 33,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1902,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=SZgt2i1PK8g",
+      "description": "Qualification 85",
+      "matchNumber": 85,
+      "scoreRedFinal": 210,
+      "scoreRedFoul": 14,
+      "scoreRedAuto": 47,
+      "scoreBlueFinal": 186,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 25,
+      "autoStartTime": "2025-04-18T11:06:41.517",
+      "actualStartTime": "2025-04-18T11:06:41.517",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T11:11:47.58",
+      "teams": [
+        {
+          "teamNumber": 2485,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5181,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3339,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 8570,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3970,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3814,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=rRfdeT4NfWA",
+      "description": "Qualification 86",
+      "matchNumber": 86,
+      "scoreRedFinal": 148,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 30,
+      "scoreBlueFinal": 148,
+      "scoreBlueFoul": 30,
+      "scoreBlueAuto": 39,
+      "autoStartTime": "2025-04-18T11:14:56.703",
+      "actualStartTime": "2025-04-18T11:14:56.703",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T11:20:46.233",
+      "teams": [
+        {
+          "teamNumber": 6652,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3197,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3656,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5985,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9245,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 8595,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=Ygy2-YT3AQs",
+      "description": "Qualification 87",
+      "matchNumber": 87,
+      "scoreRedFinal": 210,
+      "scoreRedFoul": 6,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 239,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 27,
+      "autoStartTime": "2025-04-18T11:22:59.04",
+      "actualStartTime": "2025-04-18T11:22:59.04",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T11:26:29.983",
+      "teams": [
+        {
+          "teamNumber": 1153,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5193,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 86,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2075,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2767,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2200,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=I1UWtLPrlng",
+      "description": "Qualification 88",
+      "matchNumber": 88,
+      "scoreRedFinal": 188,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 207,
+      "scoreBlueFoul": 8,
+      "scoreBlueAuto": 22,
+      "autoStartTime": "2025-04-18T11:30:28.203",
+      "actualStartTime": "2025-04-18T11:30:28.203",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T11:34:30.097",
+      "teams": [
+        {
+          "teamNumber": 10224,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9450,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5736,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2383,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 7902,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 4907,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=d5rJswgqSV0",
+      "description": "Qualification 89",
+      "matchNumber": 89,
+      "scoreRedFinal": 150,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 30,
+      "scoreBlueFinal": 169,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-18T11:38:55.053",
+      "actualStartTime": "2025-04-18T11:38:55.053",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T11:42:59.283",
+      "teams": [
+        {
+          "teamNumber": 2877,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9635,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2080,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 8177,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 10157,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 230,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=vVgYbzuoh5Y",
+      "description": "Qualification 90",
+      "matchNumber": 90,
+      "scoreRedFinal": 187,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 152,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-18T11:45:44.74",
+      "actualStartTime": "2025-04-18T11:45:44.74",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T11:49:04.567",
+      "teams": [
+        {
+          "teamNumber": 5817,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 51,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 10479,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 70,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 540,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 801,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=Aab5mZhTtN8",
+      "description": "Qualification 91",
+      "matchNumber": 91,
+      "scoreRedFinal": 169,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 174,
+      "scoreBlueFoul": 12,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-18T13:20:18.073",
+      "actualStartTime": "2025-04-18T13:20:18.073",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T13:23:28.773",
+      "teams": [
+        {
+          "teamNumber": 9545,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2491,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2706,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3882,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 6873,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6621,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=6P5FIxMDzq0",
+      "description": "Qualification 92",
+      "matchNumber": 92,
+      "scoreRedFinal": 253,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 50,
+      "scoreBlueFinal": 243,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 51,
+      "autoStartTime": "2025-04-18T13:28:05.527",
+      "actualStartTime": "2025-04-18T13:28:05.527",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T13:31:25.413",
+      "teams": [
+        {
+          "teamNumber": 3045,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 467,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 973,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2539,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5987,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1506,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=BtZDrqn0D38",
+      "description": "Qualification 93",
+      "matchNumber": 93,
+      "scoreRedFinal": 216,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 53,
+      "scoreBlueFinal": 191,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 47,
+      "autoStartTime": "2025-04-18T13:35:37.16",
+      "actualStartTime": "2025-04-18T13:35:37.16",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T13:38:44.227",
+      "teams": [
+        {
+          "teamNumber": 8570,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2522,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6324,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 7632,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5013,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2783,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=Amxl5IziyVA",
+      "description": "Qualification 94",
+      "matchNumber": 94,
+      "scoreRedFinal": 217,
+      "scoreRedFoul": 6,
+      "scoreRedAuto": 30,
+      "scoreBlueFinal": 169,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-18T13:43:40.893",
+      "actualStartTime": "2025-04-18T13:43:40.893",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T13:50:13.343",
+      "teams": [
+        {
+          "teamNumber": 4728,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3928,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9245,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 1038,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 7421,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 781,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=201Et-mkOMI",
+      "description": "Qualification 95",
+      "matchNumber": 95,
+      "scoreRedFinal": 163,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 204,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 42,
+      "autoStartTime": "2025-04-18T13:52:38.283",
+      "actualStartTime": "2025-04-18T13:52:38.283",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T13:55:55.703",
+      "teams": [
+        {
+          "teamNumber": 5181,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5985,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6647,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 9134,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1153,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1902,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=BWVAbYyYDWo",
+      "description": "Qualification 96",
+      "matchNumber": 96,
+      "scoreRedFinal": 191,
+      "scoreRedFoul": 10,
+      "scoreRedAuto": 49,
+      "scoreBlueFinal": 80,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 29,
+      "autoStartTime": "2025-04-18T14:01:15.91",
+      "actualStartTime": "2025-04-18T14:01:15.91",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T14:04:25.52",
+      "teams": [
+        {
+          "teamNumber": 3970,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 8595,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 4009,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2470,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 7902,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2485,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=uvmsTaBOeVI",
+      "description": "Qualification 97",
+      "matchNumber": 97,
+      "scoreRedFinal": 126,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 20,
+      "scoreBlueFinal": 152,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 41,
+      "autoStartTime": "2025-04-18T14:11:11.297",
+      "actualStartTime": "2025-04-18T14:11:11.297",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T14:14:22.677",
+      "teams": [
+        {
+          "teamNumber": 10224,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3197,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3794,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5193,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3130,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3473,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=Vaj5opak_iA",
+      "description": "Qualification 98",
+      "matchNumber": 98,
+      "scoreRedFinal": 149,
+      "scoreRedFoul": 2,
+      "scoreRedAuto": 30,
+      "scoreBlueFinal": 163,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-18T14:23:21.863",
+      "actualStartTime": "2025-04-18T14:23:21.863",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T14:28:04.047",
+      "teams": [
+        {
+          "teamNumber": 33,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1241,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 86,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 1700,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3656,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 888,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=ndzfWonDb7k",
+      "description": "Qualification 99",
+      "matchNumber": 99,
+      "scoreRedFinal": 224,
+      "scoreRedFoul": 14,
+      "scoreRedAuto": 58,
+      "scoreBlueFinal": 256,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 58,
+      "autoStartTime": "2025-04-18T14:31:09.087",
+      "actualStartTime": "2025-04-18T14:31:09.087",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T14:36:23.91",
+      "teams": [
+        {
+          "teamNumber": 1768,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2960,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9496,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2767,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4145,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3339,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=L4A8Awg0HFM",
+      "description": "Qualification 100",
+      "matchNumber": 100,
+      "scoreRedFinal": 167,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 30,
+      "scoreBlueFinal": 178,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-18T14:39:26.273",
+      "actualStartTime": "2025-04-18T14:39:26.273",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T14:42:48.103",
+      "teams": [
+        {
+          "teamNumber": 3814,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 195,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2075,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 6652,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2200,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2383,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=iO5byiwVXVw",
+      "description": "Qualification 101",
+      "matchNumber": 101,
+      "scoreRedFinal": 156,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 38,
+      "scoreBlueFinal": 192,
+      "scoreBlueFoul": 18,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-18T14:47:48.823",
+      "actualStartTime": "2025-04-18T14:47:48.823",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T14:52:28.773",
+      "teams": [
+        {
+          "teamNumber": 6873,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 8570,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2877,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3045,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 801,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1506,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=9fh8LaLM2d4",
+      "description": "Qualification 102",
+      "matchNumber": 102,
+      "scoreRedFinal": 226,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 46,
+      "scoreBlueFinal": 221,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 40,
+      "autoStartTime": "2025-04-18T14:56:27.793",
+      "actualStartTime": "2025-04-18T14:56:27.793",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T14:59:48.153",
+      "teams": [
+        {
+          "teamNumber": 9245,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 6621,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5817,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3882,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 10479,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6324,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=4Eg896Y-wns",
+      "description": "Qualification 103",
+      "matchNumber": 103,
+      "scoreRedFinal": 218,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 50,
+      "scoreBlueFinal": 193,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 40,
+      "autoStartTime": "2025-04-18T15:03:38.207",
+      "actualStartTime": "2025-04-18T15:03:38.207",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T15:07:01.41",
+      "teams": [
+        {
+          "teamNumber": 2539,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 540,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9450,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2080,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2522,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1902,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=5up09iiYuT8",
+      "description": "Qualification 104",
+      "matchNumber": 104,
+      "scoreRedFinal": 150,
+      "scoreRedFoul": 12,
+      "scoreRedAuto": 30,
+      "scoreBlueFinal": 144,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 39,
+      "autoStartTime": "2025-04-18T15:11:20.7",
+      "actualStartTime": "2025-04-18T15:11:20.7",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T15:14:38.74",
+      "teams": [
+        {
+          "teamNumber": 4009,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5181,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5013,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 8595,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 10157,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 7632,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=cIHn94VtrUU",
+      "description": "Qualification 105",
+      "matchNumber": 105,
+      "scoreRedFinal": 112,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 9,
+      "scoreBlueFinal": 50,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 6,
+      "autoStartTime": "2025-04-18T15:19:56.627",
+      "actualStartTime": "2025-04-18T15:19:56.627",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T15:23:10.91",
+      "teams": [
+        {
+          "teamNumber": 6647,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 7421,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 7902,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 9635,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3794,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2706,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=aOEr-F72uv0",
+      "description": "Qualification 106",
+      "matchNumber": 106,
+      "scoreRedFinal": 185,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 26,
+      "scoreBlueFinal": 213,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 44,
+      "autoStartTime": "2025-04-18T15:27:10.21",
+      "actualStartTime": "2025-04-18T15:27:10.21",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T15:30:19.377",
+      "teams": [
+        {
+          "teamNumber": 9134,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3656,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5193,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 51,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 888,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2485,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=oN4YEVvVTNc",
+      "description": "Qualification 107",
+      "matchNumber": 107,
+      "scoreRedFinal": 253,
+      "scoreRedFoul": 12,
+      "scoreRedAuto": 58,
+      "scoreBlueFinal": 208,
+      "scoreBlueFoul": 14,
+      "scoreBlueAuto": 47,
+      "autoStartTime": "2025-04-18T15:33:39.583",
+      "actualStartTime": "2025-04-18T15:33:39.583",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T15:38:38.36",
+      "teams": [
+        {
+          "teamNumber": 4907,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3130,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 33,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 1768,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2470,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 8177,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=CCCjybth6yo",
+      "description": "Qualification 108",
+      "matchNumber": 108,
+      "scoreRedFinal": 198,
+      "scoreRedFoul": 8,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 234,
+      "scoreBlueFoul": 18,
+      "scoreBlueAuto": 54,
+      "autoStartTime": "2025-04-18T15:43:55.747",
+      "actualStartTime": "2025-04-18T15:43:55.747",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T15:49:18.247",
+      "teams": [
+        {
+          "teamNumber": 2767,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2383,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 70,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 1241,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4728,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2491,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=YZcqYi6r6TM",
+      "description": "Qualification 109",
+      "matchNumber": 109,
+      "scoreRedFinal": 188,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 16,
+      "scoreBlueFinal": 239,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 44,
+      "autoStartTime": "2025-04-18T15:52:55.59",
+      "actualStartTime": "2025-04-18T15:52:55.59",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T15:56:07.637",
+      "teams": [
+        {
+          "teamNumber": 2783,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3928,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2200,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5987,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3197,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9496,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=S1po1qMkVT8",
+      "description": "Qualification 110",
+      "matchNumber": 110,
+      "scoreRedFinal": 194,
+      "scoreRedFoul": 8,
+      "scoreRedAuto": 30,
+      "scoreBlueFinal": 141,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-18T16:00:34.577",
+      "actualStartTime": "2025-04-18T16:00:34.577",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T16:04:03.793",
+      "teams": [
+        {
+          "teamNumber": 3970,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9545,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1038,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 973,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 10224,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6652,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=B4N850WWGO8",
+      "description": "Qualification 111",
+      "matchNumber": 111,
+      "scoreRedFinal": 130,
+      "scoreRedFoul": 6,
+      "scoreRedAuto": 36,
+      "scoreBlueFinal": 175,
+      "scoreBlueFoul": 8,
+      "scoreBlueAuto": 51,
+      "autoStartTime": "2025-04-18T16:10:58.663",
+      "actualStartTime": "2025-04-18T16:10:58.663",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T16:14:36.263",
+      "teams": [
+        {
+          "teamNumber": 1700,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3473,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 467,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 3339,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5985,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 195,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=8sUdiJeyMRk",
+      "description": "Qualification 112",
+      "matchNumber": 112,
+      "scoreRedFinal": 214,
+      "scoreRedFoul": 12,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 165,
+      "scoreBlueFoul": 2,
+      "scoreBlueAuto": 39,
+      "autoStartTime": "2025-04-18T16:19:04.173",
+      "actualStartTime": "2025-04-18T16:19:04.173",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T16:22:59.243",
+      "teams": [
+        {
+          "teamNumber": 86,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 230,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2960,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 781,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3814,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1153,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=N-G9ZgYlJbw",
+      "description": "Qualification 113",
+      "matchNumber": 113,
+      "scoreRedFinal": 190,
+      "scoreRedFoul": 6,
+      "scoreRedAuto": 30,
+      "scoreBlueFinal": 185,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-18T16:27:46.81",
+      "actualStartTime": "2025-04-18T16:27:46.81",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T16:31:06.213",
+      "teams": [
+        {
+          "teamNumber": 4145,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5736,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 9635,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 1902,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2075,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3882,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=Ns5s9SCvJ3g",
+      "description": "Qualification 114",
+      "matchNumber": 114,
+      "scoreRedFinal": 167,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 23,
+      "scoreBlueFinal": 212,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 44,
+      "autoStartTime": "2025-04-18T16:36:23.087",
+      "actualStartTime": "2025-04-18T16:36:23.087",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T16:39:42.227",
+      "teams": [
+        {
+          "teamNumber": 888,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 8595,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2539,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 7421,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2877,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6621,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=AiuelpDGMNg",
+      "description": "Qualification 115",
+      "matchNumber": 115,
+      "scoreRedFinal": 259,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 55,
+      "scoreBlueFinal": 70,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 26,
+      "autoStartTime": "2025-04-18T16:43:35.24",
+      "actualStartTime": "2025-04-18T16:43:35.24",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T16:47:02.69",
+      "teams": [
+        {
+          "teamNumber": 9450,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9245,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 7632,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 9134,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3794,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3130,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=pqLppWvtQ0o",
+      "description": "Qualification 116",
+      "matchNumber": 116,
+      "scoreRedFinal": 145,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 33,
+      "scoreBlueFinal": 226,
+      "scoreBlueFoul": 12,
+      "scoreBlueAuto": 51,
+      "autoStartTime": "2025-04-18T16:51:20.233",
+      "actualStartTime": "2025-04-18T16:51:20.233",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T16:55:06.36",
+      "teams": [
+        {
+          "teamNumber": 2383,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5013,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 10157,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 1768,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 6647,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2485,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=N8UZuzN4NQ8",
+      "description": "Qualification 117",
+      "matchNumber": 117,
+      "scoreRedFinal": 220,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 55,
+      "scoreBlueFinal": 230,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 36,
+      "autoStartTime": "2025-04-18T16:59:51.257",
+      "actualStartTime": "2025-04-18T16:59:51.257",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T17:03:29.78",
+      "teams": [
+        {
+          "teamNumber": 10479,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9496,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 8570,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 7902,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3656,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2491,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=_WUFobrzeDk",
+      "description": "Qualification 118",
+      "matchNumber": 118,
+      "scoreRedFinal": 189,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 51,
+      "scoreBlueFinal": 171,
+      "scoreBlueFoul": 8,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-18T17:08:07.953",
+      "actualStartTime": "2025-04-18T17:08:07.953",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T17:13:04.787",
+      "teams": [
+        {
+          "teamNumber": 3928,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2767,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2470,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2706,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 6324,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1506,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=qIHSVM_DHE4",
+      "description": "Qualification 119",
+      "matchNumber": 119,
+      "scoreRedFinal": 196,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 37,
+      "scoreBlueFinal": 165,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 31,
+      "autoStartTime": "2025-04-18T17:16:42.563",
+      "actualStartTime": "2025-04-18T17:16:42.563",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T17:20:10.623",
+      "teams": [
+        {
+          "teamNumber": 2080,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3339,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 1038,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5193,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4009,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 6873,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=vuXLvaPbo84",
+      "description": "Qualification 120",
+      "matchNumber": 120,
+      "scoreRedFinal": 255,
+      "scoreRedFoul": 4,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 149,
+      "scoreBlueFoul": 2,
+      "scoreBlueAuto": 13,
+      "autoStartTime": "2025-04-18T17:24:44.647",
+      "actualStartTime": "2025-04-18T17:24:44.647",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T17:28:30.817",
+      "teams": [
+        {
+          "teamNumber": 2200,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 4907,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 4728,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5181,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 9545,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 5817,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=iLZcCsJa3eU",
+      "description": "Qualification 121",
+      "matchNumber": 121,
+      "scoreRedFinal": 218,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 30,
+      "scoreBlueFinal": 203,
+      "scoreBlueFoul": 6,
+      "scoreBlueAuto": 37,
+      "autoStartTime": "2025-04-18T17:31:53.683",
+      "actualStartTime": "2025-04-18T17:31:53.683",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T17:35:08.417",
+      "teams": [
+        {
+          "teamNumber": 467,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 2075,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 33,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2522,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 3814,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 51,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=FiGdBSu0dS4",
+      "description": "Qualification 122",
+      "matchNumber": 122,
+      "scoreRedFinal": 126,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 25,
+      "scoreBlueFinal": 158,
+      "scoreBlueFoul": 8,
+      "scoreBlueAuto": 44,
+      "autoStartTime": "2025-04-18T17:39:23.283",
+      "actualStartTime": "2025-04-18T17:39:23.283",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T17:42:48.263",
+      "teams": [
+        {
+          "teamNumber": 1153,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1700,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 2960,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 2783,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 10224,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 801,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=ydhuRK3JhIw",
+      "description": "Qualification 123",
+      "matchNumber": 123,
+      "scoreRedFinal": 176,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 44,
+      "scoreBlueFinal": 210,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 30,
+      "autoStartTime": "2025-04-18T17:46:31.5",
+      "actualStartTime": "2025-04-18T17:46:31.5",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T17:50:18.773",
+      "teams": [
+        {
+          "teamNumber": 4145,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 6652,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3473,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5987,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 230,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 70,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=3sWG3_Is_jw",
+      "description": "Qualification 124",
+      "matchNumber": 124,
+      "scoreRedFinal": 145,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 51,
+      "scoreBlueFinal": 207,
+      "scoreBlueFoul": 12,
+      "scoreBlueAuto": 48,
+      "autoStartTime": "2025-04-18T17:54:25.673",
+      "actualStartTime": "2025-04-18T17:54:25.673",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T17:58:18.313",
+      "teams": [
+        {
+          "teamNumber": 540,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 5985,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3045,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 5736,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 86,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 973,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    },
+    {
+      "isReplay": false,
+      "matchVideoLink": "https://www.youtube.com/watch?v=dQGDmdEK0mY",
+      "description": "Qualification 125",
+      "matchNumber": 125,
+      "scoreRedFinal": 216,
+      "scoreRedFoul": 24,
+      "scoreRedAuto": 65,
+      "scoreBlueFinal": 180,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 51,
+      "autoStartTime": "2025-04-18T18:02:26.783",
+      "actualStartTime": "2025-04-18T18:02:26.783",
+      "tournamentLevel": "Qualification",
+      "postResultTime": "2025-04-18T18:05:41.927",
+      "teams": [
+        {
+          "teamNumber": 3970,
+          "station": "Red1",
+          "dq": false
+        },
+        {
+          "teamNumber": 1241,
+          "station": "Red2",
+          "dq": false
+        },
+        {
+          "teamNumber": 781,
+          "station": "Red3",
+          "dq": false
+        },
+        {
+          "teamNumber": 195,
+          "station": "Blue1",
+          "dq": false
+        },
+        {
+          "teamNumber": 8177,
+          "station": "Blue2",
+          "dq": false
+        },
+        {
+          "teamNumber": 3197,
+          "station": "Blue3",
+          "dq": false
+        }
+      ]
+    }
+  ]
+}
