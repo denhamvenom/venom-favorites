@@ -5,8 +5,11 @@ import { getDataSource } from './api/frc';
 import DiagnosticsPanel from './components/DiagnosticsPanel';
 import FavoritesList from './components/FavoritesList';
 import TeamSearch from './components/TeamSearch';
+import Timeline from './components/Timeline';
+import TopBar from './components/TopBar';
 import { logger } from './lib/logger';
 import { useFavorites } from './state/favorites';
+import { useSchedule } from './state/schedule';
 import type { Field } from './types/domain';
 
 const TEAM_NUMBER = 8044;
@@ -16,9 +19,11 @@ export default function App() {
   const [division, setDivision] = useState<Field | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const [diagOpen, setDiagOpen] = useState(false);
+  const [showAllMatches, setShowAllMatches] = useState(false);
   const versionTapsRef = useRef(0);
   const versionTapResetRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { favorites, add, remove, has } = useFavorites();
+  const { matches, drifts, fetchedAt, loading } = useSchedule(favorites);
 
   useEffect(() => {
     const id = setInterval(() => setNow(new Date()), 1000);
@@ -59,7 +64,6 @@ export default function App() {
       setDiagOpen(true);
       return;
     }
-    // Reset tap counter after 1.5s of inactivity so casual taps don't accumulate.
     if (versionTapResetRef.current) clearTimeout(versionTapResetRef.current);
     versionTapResetRef.current = setTimeout(() => {
       versionTapsRef.current = 0;
@@ -68,26 +72,55 @@ export default function App() {
 
   return (
     <div className="min-h-dvh bg-neutral-950 text-neutral-100 flex flex-col">
-      <header className="px-4 pt-4 pb-2 border-b border-neutral-900">
+      <header className="px-4 pt-4 pb-3 border-b border-neutral-900 sticky top-0 bg-neutral-950 z-20">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-xl font-bold text-gold leading-tight">Worlds Watcher</h1>
             <p className="text-xs text-neutral-500">FRC 8044 · Denham Venom{division ? ` · ${division}` : ''}</p>
           </div>
           <div className="text-right">
-            <div className="text-xs uppercase tracking-wider text-neutral-500">now</div>
-            <div className="text-base font-mono">{now.toLocaleTimeString()}</div>
+            <div className="text-[10px] uppercase tracking-wider text-neutral-500">now</div>
+            <div className="text-base font-mono">
+              {now.toLocaleTimeString(undefined, {
+                hour: 'numeric',
+                minute: '2-digit',
+                second: '2-digit',
+                timeZone: 'America/Chicago',
+              })}
+            </div>
           </div>
         </div>
       </header>
 
-      <main className="flex-1 overflow-y-auto px-4 py-4">
+      <main className="flex-1 overflow-y-auto px-4 py-4 pb-28 space-y-6">
+        <TopBar now={now} matches={matches} drifts={drifts} favorites={favorites} />
+
         <section>
-          <div className="flex items-center justify-between mb-3">
-            <h2 className="text-sm uppercase tracking-wider text-neutral-400">My Favorites</h2>
-            <span className="text-xs text-neutral-500">{favorites.length}</span>
+          <div className="flex items-center justify-between mb-2">
+            <h2 className="text-xs uppercase tracking-wider text-neutral-400 font-bold">My Favorites</h2>
+            <span className="text-[10px] text-neutral-500">{favorites.length}</span>
           </div>
           <FavoritesList favorites={favorites} onRemove={remove} />
+        </section>
+
+        <section>
+          <div className="flex items-center justify-between mb-2">
+            <h2 className="text-xs uppercase tracking-wider text-neutral-400 font-bold">Schedule</h2>
+            <button
+              onClick={() => setShowAllMatches((v) => !v)}
+              className="text-[10px] uppercase tracking-wider text-purple-light hover:text-gold transition-colors"
+            >
+              {showAllMatches ? 'show only mine' : 'show all matches'}
+            </button>
+          </div>
+          <Timeline
+            matches={matches}
+            drifts={drifts}
+            favorites={favorites}
+            loading={loading}
+            fetchedAt={fetchedAt}
+            showOnlyFavoriteMatches={!showAllMatches}
+          />
         </section>
       </main>
 
