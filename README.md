@@ -2,7 +2,9 @@
 
 Mobile-first PWA for tracking favorite teams across the 8 division fields at the **2026 FIRST Championship**.
 
-**Live URL:** _TBD — deployed at end of Phase 7_
+**Live URL:** [https://venom-favorites.web.app](https://venom-favorites.web.app)
+
+**QR code:** see [public/venom-favorites-qr.png](public/venom-favorites-qr.png) — print, post in pit, scan to install.
 
 ## What it does
 
