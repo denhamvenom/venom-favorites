@@ -17,7 +17,15 @@ const BRACKET_LABELS: Record<NonNullable<TeamProgress['bracketStatus']>, { label
 
 export default function TeamProgressCard({ progress, favorites, defaultOpen }: Props) {
   const [open, setOpen] = useState(defaultOpen);
-  const { favorite, ranking, qualResults, playoffResults, bracketStatus } = progress;
+  const { favorite, ranking, qualResults, playoffResults, bracketStatus: rawBracket } = progress;
+  // Prefer the favorite's authoritative status (which knows about division_winner via cross-alliance
+  // check) over the loss-count-only derivation from progress.ts.
+  const bracketStatus =
+    favorite.status === 'division_winner'
+      ? 'winner'
+      : favorite.status === 'eliminated'
+        ? 'eliminated'
+        : rawBracket;
   const dim =
     favorite.status === 'eliminated' || favorite.status === 'not_selected' || bracketStatus === 'eliminated';
   const wlt = ranking
