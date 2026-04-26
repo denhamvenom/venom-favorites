@@ -4,6 +4,8 @@ import { findTeamDivision } from './api/divisionLookup';
 import { getDataSource } from './api/frc';
 import DiagnosticsPanel from './components/DiagnosticsPanel';
 import FavoritesList from './components/FavoritesList';
+import ResultsList from './components/ResultsList';
+import TabBar, { type Tab } from './components/TabBar';
 import TeamSearch from './components/TeamSearch';
 import Timeline from './components/Timeline';
 import TopBar from './components/TopBar';
@@ -11,6 +13,7 @@ import WalkTimeEditor from './components/WalkTimeEditor';
 import { logger } from './lib/logger';
 import { planSchedule, summarize } from './logic/conflicts';
 import { useFavorites } from './state/favorites';
+import { useRankings } from './state/rankings';
 import { useSchedule } from './state/schedule';
 import { useWalkTimes } from './state/walkTimes';
 import type { Field, FieldDrift } from './types/domain';
@@ -19,6 +22,7 @@ const TEAM_NUMBER = 8044;
 
 export default function App() {
   const [now, setNow] = useState(() => new Date());
+  const [tab, setTab] = useState<Tab>('schedule');
   const [division, setDivision] = useState<Field | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const [diagOpen, setDiagOpen] = useState(false);
@@ -29,6 +33,7 @@ export default function App() {
   const versionTapResetRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { favorites, add, remove, has } = useFavorites();
   const { matches, drifts, fetchedAt, loading } = useSchedule(favorites);
+  const { rankings } = useRankings(favorites);
   const { overrides, setOverride, reset: resetWalkTimes } = useWalkTimes();
 
   const driftMap = useMemo(() => {
@@ -109,72 +114,87 @@ export default function App() {
           </div>
         </div>
       </header>
+      <TabBar active={tab} onChange={setTab} />
 
       <main className="flex-1 overflow-y-auto px-4 py-4 pb-28 space-y-6">
-        <TopBar now={now} matches={matches} drifts={drifts} favorites={favorites} />
+        {tab === 'schedule' && (
+          <>
+            <TopBar now={now} matches={matches} drifts={drifts} favorites={favorites} />
 
-        <section>
-          <div className="flex items-center justify-between mb-2">
-            <h2 className="text-xs uppercase tracking-wider text-neutral-400 font-bold">My Favorites</h2>
-            <span className="text-[10px] text-neutral-500">{favorites.length}</span>
-          </div>
-          <FavoritesList favorites={favorites} onRemove={remove} />
-        </section>
+            <section>
+              <div className="flex items-center justify-between mb-2">
+                <h2 className="text-xs uppercase tracking-wider text-neutral-400 font-bold">My Favorites</h2>
+                <span className="text-[10px] text-neutral-500">{favorites.length}</span>
+              </div>
+              <FavoritesList favorites={favorites} onRemove={remove} />
+            </section>
 
-        {entries.length > 0 && (
-          <section className="bg-neutral-900 border border-neutral-800 rounded-lg p-3">
-            <div className="flex items-center justify-between gap-2 flex-wrap">
-              <div className="text-xs">
-                <span className="text-feasible font-bold">{summary.suggested}</span>
-                <span className="text-neutral-500"> of </span>
-                <span className="text-neutral-300">{summary.total}</span>
-                <span className="text-neutral-500"> matches in suggested path</span>
-                {summary.conflicts > 0 && (
-                  <span className="text-loss ml-2">· {summary.conflicts} conflict{summary.conflicts === 1 ? '' : 's'}</span>
-                )}
-                {summary.tight > 0 && (
-                  <span className="text-tight ml-2">· {summary.tight} tight</span>
-                )}
-              </div>
-              <div className="flex gap-2 text-[10px] uppercase tracking-wider">
+            {entries.length > 0 && (
+              <section className="bg-neutral-900 border border-neutral-800 rounded-lg p-3">
+                <div className="flex items-center justify-between gap-2 flex-wrap">
+                  <div className="text-xs">
+                    <span className="text-feasible font-bold">{summary.suggested}</span>
+                    <span className="text-neutral-500"> of </span>
+                    <span className="text-neutral-300">{summary.total}</span>
+                    <span className="text-neutral-500"> matches in suggested path</span>
+                    {summary.conflicts > 0 && (
+                      <span className="text-loss ml-2">· {summary.conflicts} conflict{summary.conflicts === 1 ? '' : 's'}</span>
+                    )}
+                    {summary.tight > 0 && (
+                      <span className="text-tight ml-2">· {summary.tight} tight</span>
+                    )}
+                  </div>
+                  <div className="flex gap-2 text-[10px] uppercase tracking-wider">
+                    <button
+                      onClick={() => setShowSuggestedOnly((v) => !v)}
+                      className={`px-2 py-1 rounded border ${showSuggestedOnly ? 'bg-feasible/20 text-feasible border-feasible/40' : 'bg-neutral-800 text-neutral-400 border-neutral-700'}`}
+                    >
+                      suggested only
+                    </button>
+                    <button
+                      onClick={() => setWalkEditorOpen(true)}
+                      className="px-2 py-1 rounded border bg-neutral-800 text-neutral-400 border-neutral-700 hover:text-gold"
+                    >
+                      walk times
+                    </button>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            <section>
+              <div className="flex items-center justify-between mb-2">
+                <h2 className="text-xs uppercase tracking-wider text-neutral-400 font-bold">Schedule</h2>
                 <button
-                  onClick={() => setShowSuggestedOnly((v) => !v)}
-                  className={`px-2 py-1 rounded border ${showSuggestedOnly ? 'bg-feasible/20 text-feasible border-feasible/40' : 'bg-neutral-800 text-neutral-400 border-neutral-700'}`}
+                  onClick={() => setShowAllMatches((v) => !v)}
+                  className="text-[10px] uppercase tracking-wider text-purple-light hover:text-gold transition-colors"
                 >
-                  suggested only
-                </button>
-                <button
-                  onClick={() => setWalkEditorOpen(true)}
-                  className="px-2 py-1 rounded border bg-neutral-800 text-neutral-400 border-neutral-700 hover:text-gold"
-                >
-                  walk times
+                  {showAllMatches ? 'show only mine' : 'show all matches'}
                 </button>
               </div>
-            </div>
-          </section>
+              <Timeline
+                matches={matches}
+                drifts={drifts}
+                favorites={favorites}
+                loading={loading}
+                fetchedAt={fetchedAt}
+                showOnlyFavoriteMatches={!showAllMatches}
+                showSuggestedOnly={showSuggestedOnly}
+                entries={entries}
+              />
+            </section>
+          </>
         )}
 
-        <section>
-          <div className="flex items-center justify-between mb-2">
-            <h2 className="text-xs uppercase tracking-wider text-neutral-400 font-bold">Schedule</h2>
-            <button
-              onClick={() => setShowAllMatches((v) => !v)}
-              className="text-[10px] uppercase tracking-wider text-purple-light hover:text-gold transition-colors"
-            >
-              {showAllMatches ? 'show only mine' : 'show all matches'}
-            </button>
-          </div>
-          <Timeline
-            matches={matches}
-            drifts={drifts}
-            favorites={favorites}
-            loading={loading}
-            fetchedAt={fetchedAt}
-            showOnlyFavoriteMatches={!showAllMatches}
-            showSuggestedOnly={showSuggestedOnly}
-            entries={entries}
-          />
-        </section>
+        {tab === 'results' && (
+          <section>
+            <div className="flex items-center justify-between mb-3">
+              <h2 className="text-xs uppercase tracking-wider text-neutral-400 font-bold">Team Progress</h2>
+              <span className="text-[10px] text-neutral-500">{favorites.length} team{favorites.length === 1 ? '' : 's'}</span>
+            </div>
+            <ResultsList favorites={favorites} matches={matches} rankings={rankings} />
+          </section>
+        )}
       </main>
 
       <button
