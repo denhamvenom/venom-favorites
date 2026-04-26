@@ -161,6 +161,62 @@ describe('planSchedule — super-favorite anchors', () => {
   });
 });
 
+describe('planSchedule — cycle time', () => {
+  it('uses observed cycle time over the per-year default', () => {
+    // Two ARCHIMEDES matches the planner has no actualEnd for. With default cycle
+    // 8 min, M1 ends +8. With observed cycle 12 min (slow field), M1 ends +12.
+    // Same-field consecutive feasibility ignores walk + buffer, so both feasible.
+    // But for a CROSS-FIELD jump, the difference matters.
+    const m1: Match = { ...mkMatch(1, 'ARCHIMEDES', 0), myFavorites: [8044] };
+    const m2: Match = { ...mkMatch(2, 'CURIE', 13), myFavorites: [8044] };
+    // Default 8-min cycle: M1 ends +8, M2 starts +13, gap 5 min. Walk ARC→CUR is 2 min + 2 buffer = 4. Slack 1 → feasible.
+    expect(
+      planSchedule([m1, m2], ZERO_DRIFTS)[1].feasible,
+    ).toBe(true);
+    // Observed 12-min cycle for ARCHIMEDES: M1 ends +12. Gap 1 min. Need 4. Slack -3 → infeasible.
+    const cycles = new Map([
+      [
+        'ARCHIMEDES',
+        {
+          field: 'ARCHIMEDES' as const,
+          cycleSeconds: 720,
+          basedOn: 4,
+          computedAt: new Date(),
+        },
+      ],
+    ]);
+    expect(
+      planSchedule([m1, m2], ZERO_DRIFTS, { cycles })[1].feasible,
+    ).toBe(false);
+  });
+
+  it('observation needs basedOn >= 2 — single-sample falls back to default', () => {
+    const m1: Match = { ...mkMatch(1, 'ARCHIMEDES', 0), myFavorites: [8044] };
+    const m2: Match = { ...mkMatch(2, 'CURIE', 13), myFavorites: [8044] };
+    const cycles = new Map([
+      [
+        'ARCHIMEDES',
+        {
+          field: 'ARCHIMEDES' as const,
+          cycleSeconds: 720, // 12 min — but only 1 sample
+          basedOn: 1,
+          computedAt: new Date(),
+        },
+      ],
+    ]);
+    expect(planSchedule([m1, m2], ZERO_DRIFTS, { cycles })[1].feasible).toBe(true);
+  });
+
+  it('honors a defaultCycleTimeMin override (e.g. user set 10)', () => {
+    const m1: Match = { ...mkMatch(1, 'ARCHIMEDES', 0), myFavorites: [8044] };
+    const m2: Match = { ...mkMatch(2, 'CURIE', 13), myFavorites: [8044] };
+    // Override cycle to 10 min: M1 ends +10, gap 3 min, need 4 → infeasible.
+    expect(
+      planSchedule([m1, m2], ZERO_DRIFTS, { defaultCycleTimeMin: 10 })[1].feasible,
+    ).toBe(false);
+  });
+});
+
 describe('summarize', () => {
   it('counts conflicts, tights, and suggestions per consecutive feasibility', () => {
     // M1 ARCHIMEDES +0 (ends +7) → M2 NEWTON +12: 7-hop walk needs 12 min, only 5 → infeasible

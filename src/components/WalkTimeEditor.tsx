@@ -1,6 +1,11 @@
 import { useMemo, useState } from 'react';
-import { fullMatrix, walkMinutes, type WalkOverrides } from '../logic/walking';
-import type { Field } from '../types/domain';
+import {
+  DEFAULT_CYCLE_TIME_MIN,
+  fullMatrix,
+  walkMinutes,
+  type WalkOverrides,
+} from '../logic/walking';
+import type { Field, FieldCycle } from '../types/domain';
 
 const FIELDS: Field[] = [
   'ARCHIMEDES',
@@ -18,16 +23,44 @@ interface Props {
   onClose: () => void;
   overrides: WalkOverrides;
   setOverride: (from: Field, to: Field, minutes: number | null) => void;
+  cycleOverrideMin: number | null;
+  setCycleOverrideMin: (value: number | null) => void;
+  cycles: FieldCycle[];
   reset: () => void;
 }
 
-export default function WalkTimeEditor({ open, onClose, overrides, setOverride, reset }: Props) {
+export default function WalkTimeEditor({
+  open,
+  onClose,
+  overrides,
+  setOverride,
+  cycleOverrideMin,
+  setCycleOverrideMin,
+  cycles,
+  reset,
+}: Props) {
   const [editing, setEditing] = useState<{ from: Field; to: Field } | null>(null);
   const [draft, setDraft] = useState('');
+  const [cycleDraft, setCycleDraft] = useState<string>(
+    cycleOverrideMin !== null ? String(cycleOverrideMin) : '',
+  );
 
   const matrix = useMemo(() => fullMatrix(overrides), [overrides]);
+  const observedCycles = useMemo(() => cycles.filter((c) => c.basedOn >= 2), [cycles]);
 
   if (!open) return null;
+
+  function commitCycle() {
+    const trimmed = cycleDraft.trim();
+    if (trimmed === '') {
+      setCycleOverrideMin(null);
+      return;
+    }
+    const n = Number.parseFloat(trimmed);
+    if (Number.isFinite(n) && n > 0) {
+      setCycleOverrideMin(Math.round(n * 10) / 10);
+    }
+  }
 
   function startEdit(from: Field, to: Field) {
     if (from === to) return;
@@ -67,7 +100,10 @@ export default function WalkTimeEditor({ open, onClose, overrides, setOverride, 
           </div>
           <div className="flex gap-2">
             <button
-              onClick={reset}
+              onClick={() => {
+                reset();
+                setCycleDraft('');
+              }}
               className="text-xs px-3 py-1 rounded bg-neutral-800 hover:bg-neutral-700 text-neutral-300"
             >
               Reset
@@ -80,6 +116,44 @@ export default function WalkTimeEditor({ open, onClose, overrides, setOverride, 
             </button>
           </div>
         </header>
+        <div className="px-5 py-3 border-b border-neutral-800">
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <div>
+              <div className="text-xs text-neutral-300 font-bold">Cycle time</div>
+              <p className="text-[11px] text-neutral-500">
+                Field reset interval — used to estimate when a match ends.
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <input
+                type="number"
+                min={0}
+                step={0.5}
+                placeholder={String(DEFAULT_CYCLE_TIME_MIN)}
+                value={cycleDraft}
+                onChange={(e) => setCycleDraft(e.target.value)}
+                onBlur={commitCycle}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') (e.target as HTMLInputElement).blur();
+                }}
+                className={`w-16 h-9 text-center font-mono rounded outline-none ${cycleOverrideMin !== null ? 'bg-gold/20 text-gold border border-gold/40' : 'bg-neutral-800 text-neutral-300 border border-neutral-700 focus:border-gold'}`}
+              />
+              <span className="text-xs text-neutral-500">min</span>
+            </div>
+          </div>
+          {observedCycles.length > 0 && (
+            <div className="mt-2 flex gap-2 flex-wrap">
+              {observedCycles.map((c) => (
+                <span
+                  key={c.field}
+                  className="text-[10px] font-mono uppercase tracking-wider text-neutral-400"
+                >
+                  {c.field.slice(0, 3)} · {(c.cycleSeconds / 60).toFixed(1)} min
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
         <div className="p-3 overflow-x-auto">
           <table className="border-collapse text-xs font-mono">
             <thead>
@@ -145,7 +219,8 @@ export default function WalkTimeEditor({ open, onClose, overrides, setOverride, 
             </tbody>
           </table>
           <p className="mt-3 text-[11px] text-neutral-500">
-            Default formula: ~1.5 min/hop, clamped 2–10. +2 min settle buffer is added on top.
+            Default formula: ~1.5 min/hop, clamped 2–10. +2 min settle buffer added.
+            Default cycle: {DEFAULT_CYCLE_TIME_MIN} min, observed values override when ≥2 samples.
           </p>
         </div>
       </div>

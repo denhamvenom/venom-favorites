@@ -115,6 +115,18 @@ export interface FieldDrift {
   computedAt: Date;
 }
 
+/**
+ * Per-field observed cycle time — the median start-to-start interval across
+ * the most recent completed matches at that field. Falls back to a per-year
+ * baseline when fewer than two consecutive matches have been completed.
+ */
+export interface FieldCycle {
+  field: Field;
+  cycleSeconds: number;
+  basedOn: number;
+  computedAt: Date;
+}
+
 export interface ScheduleEntry {
   match: Match;
   adjustedStart: Date;

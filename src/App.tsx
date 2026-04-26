@@ -17,7 +17,7 @@ import { useFavorites } from './state/favorites';
 import { useRankings } from './state/rankings';
 import { useSchedule } from './state/schedule';
 import { useWalkTimes } from './state/walkTimes';
-import type { Field, FieldDrift } from './types/domain';
+import type { Field, FieldCycle, FieldDrift } from './types/domain';
 
 const TEAM_NUMBER = 8044;
 
@@ -33,14 +33,17 @@ export default function App() {
   const versionTapsRef = useRef(0);
   const versionTapResetRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { favorites, add, remove, has, update, setSuper, superTeamNumber } = useFavorites();
+  const { overrides, setOverride, cycleOverrideMin, setCycleOverrideMin, reset: resetWalkTimes } =
+    useWalkTimes();
   const {
     matches,
     drifts,
+    cycles,
     alliancesByDivision,
     fetchedAt,
     loading,
     refresh: refreshSchedule,
-  } = useSchedule(favorites);
+  } = useSchedule(favorites, { defaultCycleTimeMin: cycleOverrideMin ?? undefined });
   const { rankings, refresh: refreshRankings } = useRankings(favorites);
 
   function refreshAll() {
@@ -48,7 +51,6 @@ export default function App() {
     void refreshRankings();
     logger.info('app', 'manual refresh triggered');
   }
-  const { overrides, setOverride, reset: resetWalkTimes } = useWalkTimes();
 
   // Saturday Mode: derive each favorite's status from latest alliances + playoff results
   // and persist when it changes. Drives status badges in FavoritesList.
@@ -87,11 +89,27 @@ export default function App() {
     return m;
   }, [drifts]);
 
+  const cycleMap = useMemo(() => {
+    const m = new Map<string, FieldCycle>();
+    for (const c of cycles) m.set(c.field, c);
+    return m;
+  }, [cycles]);
+
   const entries = useMemo(
-    () => planSchedule(matches, driftMap, { overrides, now, superFavorite: superTeamNumber }),
-    [matches, driftMap, overrides, now, superTeamNumber],
+    () =>
+      planSchedule(matches, driftMap, {
+        overrides,
+        now,
+        superFavorite: superTeamNumber,
+        cycles: cycleMap,
+        defaultCycleTimeMin: cycleOverrideMin ?? undefined,
+      }),
+    [matches, driftMap, overrides, now, superTeamNumber, cycleMap, cycleOverrideMin],
   );
-  const summary = useMemo(() => summarize(entries, driftMap, overrides), [entries, driftMap, overrides]);
+  const summary = useMemo(
+    () => summarize(entries, driftMap, overrides, cycleMap, cycleOverrideMin ?? undefined),
+    [entries, driftMap, overrides, cycleMap, cycleOverrideMin],
+  );
 
   // Map from each favorite's alliance to all team numbers in it (for Saturday
   // playoff filter — we want to see matches involving alliance-mates, not just
@@ -304,6 +322,9 @@ export default function App() {
         onClose={() => setWalkEditorOpen(false)}
         overrides={overrides}
         setOverride={setOverride}
+        cycleOverrideMin={cycleOverrideMin}
+        setCycleOverrideMin={setCycleOverrideMin}
+        cycles={cycles}
         reset={resetWalkTimes}
       />
     </div>

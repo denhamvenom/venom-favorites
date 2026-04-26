@@ -10,6 +10,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { frcFetch } from '../api/frc';
 import { logger } from '../lib/logger';
+import { buildFieldCycles } from '../logic/cycle';
 import { buildFieldDrifts } from '../logic/drift';
 import type { RawAllianceEnvelope } from '../logic/status';
 import {
@@ -17,7 +18,8 @@ import {
   type RawMatchesEnvelope,
   type RawScheduleEnvelope,
 } from '../logic/transform';
-import type { Favorite, Field, FieldDrift, Match } from '../types/domain';
+import { DEFAULT_CYCLE_TIME_MIN } from '../logic/walking';
+import type { Favorite, Field, FieldCycle, FieldDrift, Match } from '../types/domain';
 
 const SEASON = 2026;
 const POLL_INTERVAL_MS = 60_000;
@@ -39,12 +41,18 @@ interface RawByDivision {
 export interface UseSchedule {
   matches: Match[];
   drifts: FieldDrift[];
+  cycles: FieldCycle[];
   /** Raw alliance envelope per division (Saturday Mode). */
   alliancesByDivision: Record<string, RawAllianceEnvelope>;
   fetchedAt: Date | null;
   loading: boolean;
   error: string | null;
   refresh(): Promise<void>;
+}
+
+interface UseScheduleOptions {
+  /** Per-year + user-override baseline for cycle time when no observation exists. */
+  defaultCycleTimeMin?: number;
 }
 
 function readCache(): CachePayload | null {
@@ -99,7 +107,8 @@ async function safe<T>(fn: () => Promise<T>): Promise<T | undefined> {
   }
 }
 
-export function useSchedule(favorites: Favorite[]): UseSchedule {
+export function useSchedule(favorites: Favorite[], options: UseScheduleOptions = {}): UseSchedule {
+  const defaultCycleMin = options.defaultCycleTimeMin ?? DEFAULT_CYCLE_TIME_MIN;
   const [byDivision, setByDivision] = useState<Record<string, RawByDivision>>(
     () => readCache()?.byDivision ?? {},
   );
@@ -172,15 +181,32 @@ export function useSchedule(favorites: Favorite[]): UseSchedule {
     return all.sort((a, b) => a.scheduledStart.getTime() - b.scheduledStart.getTime());
   }, [byDivision, divisions, favoriteSet]);
 
-  const drifts = useMemo<FieldDrift[]>(() => {
-    const byField = new Map<string, Match[]>();
-    for (const m of matches) {
-      const list = byField.get(m.field) ?? [];
-      list.push(m);
-      byField.set(m.field, list);
+  const byField = useMemo(() => {
+    const m = new Map<string, Match[]>();
+    for (const match of matches) {
+      const list = m.get(match.field) ?? [];
+      list.push(match);
+      m.set(match.field, list);
     }
-    return buildFieldDrifts(byField);
+    return m;
   }, [matches]);
+
+  const drifts = useMemo<FieldDrift[]>(() => buildFieldDrifts(byField), [byField]);
+  const cycles = useMemo<FieldCycle[]>(
+    () => buildFieldCycles(byField, defaultCycleMin),
+    [byField, defaultCycleMin],
+  );
+
+  // Log per-field cycle on every cycles update — surfaces in DiagnosticsPanel.
+  useEffect(() => {
+    for (const c of cycles) {
+      if (c.basedOn >= 2) {
+        logger.debug('schedule', `${c.field} cycle: ${(c.cycleSeconds / 60).toFixed(1)} min`, {
+          basedOn: c.basedOn,
+        });
+      }
+    }
+  }, [cycles]);
 
   const alliancesByDivision = useMemo<Record<string, RawAllianceEnvelope>>(() => {
     const out: Record<string, RawAllianceEnvelope> = {};
@@ -193,6 +219,7 @@ export function useSchedule(favorites: Favorite[]): UseSchedule {
   return {
     matches,
     drifts,
+    cycles,
     alliancesByDivision,
     fetchedAt,
     loading,

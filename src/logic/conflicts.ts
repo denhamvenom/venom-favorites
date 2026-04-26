@@ -15,13 +15,14 @@
  */
 
 import {
-  DEFAULT_MATCH_DURATION_MIN,
+  DEFAULT_CYCLE_TIME_MIN,
   SETTLE_BUFFER_MIN,
   walkMinutes,
   type WalkOverrides,
 } from './walking';
 import { applyDrift } from './drift';
-import type { Field, FieldDrift, Match, ScheduleEntry } from '../types/domain';
+import { effectiveCycleMin } from './cycle';
+import type { Field, FieldCycle, FieldDrift, Match, ScheduleEntry } from '../types/domain';
 
 export interface PlanOptions {
   overrides?: WalkOverrides;
@@ -33,6 +34,14 @@ export interface PlanOptions {
    * super match in time, and always marks super matches as suggested.
    */
   superFavorite?: number;
+  /** Per-field observed cycle times (median start-to-start over last 5 completed). */
+  cycles?: Map<string, FieldCycle>;
+  /**
+   * Override of the per-year baseline cycle. Daniel may want to force a tighter
+   * (or looser) value if observed data is jittery on Day 1. Loses to a confident
+   * observed cycle (basedOn >= 2). Defaults to DEFAULT_CYCLE_TIME_MIN.
+   */
+  defaultCycleTimeMin?: number;
 }
 
 interface AdjustedMatch {
@@ -41,12 +50,19 @@ interface AdjustedMatch {
   adjustedEnd: Date;
 }
 
-function adjustMatch(match: Match, drift: FieldDrift | undefined): AdjustedMatch {
+function adjustMatch(
+  match: Match,
+  drift: FieldDrift | undefined,
+  cycles: Map<string, FieldCycle> | undefined,
+  defaultCycleMin: number,
+): AdjustedMatch {
   const adjustedStart = drift ? applyDrift(match.scheduledStart, drift.driftSeconds) : match.scheduledStart;
-  // Prefer actualEnd; otherwise estimate (start + 7 min default match window).
+  // Prefer real actualEnd; otherwise estimate as start + (observed cycle | default).
   const adjustedEnd = match.actualEnd
     ? new Date(match.actualEnd.getTime())
-    : new Date(adjustedStart.getTime() + DEFAULT_MATCH_DURATION_MIN * 60_000);
+    : new Date(
+        adjustedStart.getTime() + effectiveCycleMin(match.field, cycles, defaultCycleMin) * 60_000,
+      );
   return { match, adjustedStart, adjustedEnd };
 }
 
@@ -80,11 +96,12 @@ export function planSchedule(
   drifts: Map<string, FieldDrift>,
   options: PlanOptions = {},
 ): ScheduleEntry[] {
+  const defaultCycleMin = options.defaultCycleTimeMin ?? DEFAULT_CYCLE_TIME_MIN;
   // Only matches that involve a favorite participate in conflict detection.
   const favoriteMatches = matches.filter((m) => m.myFavorites.length > 0);
   // Sort by drift-adjusted start; tied scheduledStart breaks at field index.
   const adjusted = favoriteMatches
-    .map((m) => adjustMatch(m, drifts.get(m.field)))
+    .map((m) => adjustMatch(m, drifts.get(m.field), options.cycles, defaultCycleMin))
     .sort((a, b) => {
       const diff = a.adjustedStart.getTime() - b.adjustedStart.getTime();
       if (diff !== 0) return diff;
@@ -181,7 +198,10 @@ export function summarize(
   entries: ScheduleEntry[],
   drifts: Map<string, FieldDrift>,
   overrides?: WalkOverrides,
+  cycles?: Map<string, FieldCycle>,
+  defaultCycleTimeMin?: number,
 ): ScheduleSummary {
+  const defaultCycleMin = defaultCycleTimeMin ?? DEFAULT_CYCLE_TIME_MIN;
   let conflicts = 0;
   let tight = 0;
   let suggested = 0;
@@ -191,8 +211,8 @@ export function summarize(
     if (e.suggested) suggested++;
     if (i > 0 && e.feasible) {
       const prev = entries[i - 1];
-      const prevAdjusted = adjustMatch(prev.match, drifts.get(prev.match.field));
-      const curAdjusted = adjustMatch(e.match, drifts.get(e.match.field));
+      const prevAdjusted = adjustMatch(prev.match, drifts.get(prev.match.field), cycles, defaultCycleMin);
+      const curAdjusted = adjustMatch(e.match, drifts.get(e.match.field), cycles, defaultCycleMin);
       const fb = walkBetween(prevAdjusted, curAdjusted, overrides);
       if (fb.feasible && fb.slackMinutes <= TIGHT_SLACK_MIN) tight++;
     }

@@ -26,8 +26,16 @@ export const FIELD_INDEX: Record<Exclude<Field, 'EINSTEIN'>, number> = {
 
 export const SETTLE_BUFFER_MIN = 2;
 
-/** Default match duration estimate when actualEnd is unknown (qual matches are scheduled ~7 min apart). */
-export const DEFAULT_MATCH_DURATION_MIN = 7;
+/**
+ * Per-year baseline cycle time (start-to-start interval at the same field).
+ * 2026 ≈ 8 min. Used as the proxy for "by when can the user leave their seat?"
+ * when a match has no `actualEnd` yet — by that point the field is being reset
+ * for the next match. The conflict planner prefers an observed median cycle
+ * (see src/logic/cycle.ts) and falls back to this value.
+ *
+ * When the season rolls over, bump this constant for the new cycle.
+ */
+export const DEFAULT_CYCLE_TIME_MIN = 8;
 
 export type WalkOverrides = Partial<Record<Field, Partial<Record<Field, number>>>>;
 
