@@ -11,6 +11,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { frcFetch } from '../api/frc';
 import { logger } from '../lib/logger';
 import { buildFieldDrifts } from '../logic/drift';
+import type { RawAllianceEnvelope } from '../logic/status';
 import {
   buildMatches,
   type RawMatchesEnvelope,
@@ -32,11 +33,14 @@ interface RawByDivision {
   schedulePlayoff?: RawScheduleEnvelope;
   matchesQual?: RawMatchesEnvelope;
   matchesPlayoff?: RawMatchesEnvelope;
+  alliances?: RawAllianceEnvelope;
 }
 
 export interface UseSchedule {
   matches: Match[];
   drifts: FieldDrift[];
+  /** Raw alliance envelope per division (Saturday Mode). */
+  alliancesByDivision: Record<string, RawAllianceEnvelope>;
   fetchedAt: Date | null;
   loading: boolean;
   error: string | null;
@@ -66,7 +70,7 @@ function writeCache(payload: CachePayload): void {
 }
 
 async function fetchDivision(division: Field): Promise<RawByDivision> {
-  const [scheduleQual, schedulePlayoff, matchesQual, matchesPlayoff] = await Promise.all([
+  const [scheduleQual, schedulePlayoff, matchesQual, matchesPlayoff, alliances] = await Promise.all([
     safe(() => frcFetch<RawScheduleEnvelope>(`/${SEASON}/schedule/${division}/qual`)),
     safe(() => frcFetch<RawScheduleEnvelope>(`/${SEASON}/schedule/${division}/playoff`)),
     safe(() =>
@@ -79,8 +83,9 @@ async function fetchDivision(division: Field): Promise<RawByDivision> {
         query: { tournamentLevel: 'playoff' },
       }),
     ),
+    safe(() => frcFetch<RawAllianceEnvelope>(`/${SEASON}/alliances/${division}`)),
   ]);
-  return { scheduleQual, schedulePlayoff, matchesQual, matchesPlayoff };
+  return { scheduleQual, schedulePlayoff, matchesQual, matchesPlayoff, alliances };
 }
 
 async function safe<T>(fn: () => Promise<T>): Promise<T | undefined> {
@@ -177,9 +182,18 @@ export function useSchedule(favorites: Favorite[]): UseSchedule {
     return buildFieldDrifts(byField);
   }, [matches]);
 
+  const alliancesByDivision = useMemo<Record<string, RawAllianceEnvelope>>(() => {
+    const out: Record<string, RawAllianceEnvelope> = {};
+    for (const [division, raw] of Object.entries(byDivision)) {
+      if (raw.alliances) out[division] = raw.alliances;
+    }
+    return out;
+  }, [byDivision]);
+
   return {
     matches,
     drifts,
+    alliancesByDivision,
     fetchedAt,
     loading,
     error,

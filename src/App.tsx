@@ -12,6 +12,7 @@ import TopBar from './components/TopBar';
 import WalkTimeEditor from './components/WalkTimeEditor';
 import { logger } from './lib/logger';
 import { planSchedule, summarize } from './logic/conflicts';
+import { deriveStatus, type RawAlliance } from './logic/status';
 import { useFavorites } from './state/favorites';
 import { useRankings } from './state/rankings';
 import { useSchedule } from './state/schedule';
@@ -31,10 +32,41 @@ export default function App() {
   const [showSuggestedOnly, setShowSuggestedOnly] = useState(false);
   const versionTapsRef = useRef(0);
   const versionTapResetRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const { favorites, add, remove, has } = useFavorites();
-  const { matches, drifts, fetchedAt, loading } = useSchedule(favorites);
+  const { favorites, add, remove, has, update } = useFavorites();
+  const { matches, drifts, alliancesByDivision, fetchedAt, loading } = useSchedule(favorites);
   const { rankings } = useRankings(favorites);
   const { overrides, setOverride, reset: resetWalkTimes } = useWalkTimes();
+
+  // Saturday Mode: derive each favorite's status from latest alliances + playoff results
+  // and persist when it changes. Drives status badges in FavoritesList.
+  useEffect(() => {
+    for (const fav of favorites) {
+      const alliancesEnv = alliancesByDivision[fav.division];
+      const alliances: RawAlliance[] = alliancesEnv?.Alliances ?? [];
+      const inputs = {
+        qualMatches: matches.filter((m) => m.field === fav.division && m.level === 'qual'),
+        playoffMatches: matches.filter((m) => m.field === fav.division && m.level === 'playoff'),
+        alliances,
+      };
+      const derived = deriveStatus(fav, inputs);
+      const changed =
+        fav.status !== derived.status ||
+        fav.allianceNumber !== derived.allianceNumber ||
+        fav.allianceRole !== derived.allianceRole;
+      if (changed) {
+        update(fav.teamNumber, {
+          status: derived.status,
+          allianceNumber: derived.allianceNumber,
+          allianceRole: derived.allianceRole,
+        });
+        logger.info('status', `${fav.teamNumber}: ${fav.status} → ${derived.status}`, {
+          allianceNumber: derived.allianceNumber,
+          allianceRole: derived.allianceRole,
+        });
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [favorites, alliancesByDivision, matches]);
 
   const driftMap = useMemo(() => {
     const m = new Map<string, FieldDrift>();
@@ -47,6 +79,31 @@ export default function App() {
     [matches, driftMap, overrides, now],
   );
   const summary = useMemo(() => summarize(entries, driftMap, overrides), [entries, driftMap, overrides]);
+
+  // Map from each favorite's alliance to all team numbers in it (for Saturday
+  // playoff filter — we want to see matches involving alliance-mates, not just
+  // the literal favorite team numbers).
+  const favoriteAllianceTeams = useMemo(() => {
+    const out = new Set<number>();
+    for (const fav of favorites) {
+      out.add(fav.teamNumber);
+      const env = alliancesByDivision[fav.division];
+      const alliance = env?.Alliances?.find(
+        (a) =>
+          a.captain === fav.teamNumber ||
+          a.round1 === fav.teamNumber ||
+          a.round2 === fav.teamNumber ||
+          a.round3 === fav.teamNumber ||
+          a.backup === fav.teamNumber,
+      );
+      if (alliance) {
+        for (const v of [alliance.captain, alliance.round1, alliance.round2, alliance.round3, alliance.backup]) {
+          if (typeof v === 'number') out.add(v);
+        }
+      }
+    }
+    return out;
+  }, [favorites, alliancesByDivision]);
 
   useEffect(() => {
     const id = setInterval(() => setNow(new Date()), 1000);
@@ -181,6 +238,7 @@ export default function App() {
                 showOnlyFavoriteMatches={!showAllMatches}
                 showSuggestedOnly={showSuggestedOnly}
                 entries={entries}
+                favoriteAllianceTeams={favoriteAllianceTeams}
               />
             </section>
           </>

@@ -13,6 +13,8 @@ interface Props {
   showSuggestedOnly?: boolean;
   /** Pre-computed schedule entries for favorite-involving matches (feasible/suggested/conflict). */
   entries: ScheduleEntry[];
+  /** Set of team numbers belonging to any alliance that contains a favorite. Drives Saturday playoff filter. */
+  favoriteAllianceTeams?: Set<number>;
 }
 
 const HOUR_HEADING_FMT: Intl.DateTimeFormatOptions = {
@@ -30,6 +32,7 @@ export default function Timeline({
   showOnlyFavoriteMatches = true,
   showSuggestedOnly = false,
   entries,
+  favoriteAllianceTeams,
 }: Props) {
   const driftByField = useMemo(() => {
     const m = new Map<string, FieldDrift>();
@@ -43,14 +46,31 @@ export default function Timeline({
     return m;
   }, [entries]);
 
+  // For Saturday's playoff matches, we limit to matches whose teams overlap with
+  // any alliance containing a favorite — derived from the favorite's allianceNumber
+  // and the alliance roster mapping. The alliance roster mapping is captured in
+  // `favoriteAlliances` (passed in via props from App once Saturday Mode is live).
   const visibleMatches = useMemo(() => {
     let v = matches;
-    if (showOnlyFavoriteMatches) v = v.filter((m) => m.myFavorites.length > 0);
+    if (showOnlyFavoriteMatches) {
+      v = v.filter((m) => {
+        if (m.level === 'qual') return m.myFavorites.length > 0;
+        // Playoff: include if any of our allied teams is on the field. We piggyback
+        // on `myFavorites` being recomputed against the favorite team numbers, BUT
+        // for Saturday we want any alliance-mate to count. The transform layer fills
+        // myFavorites only with literal favorite team numbers; alliance-mate filter
+        // happens here using the favoriteAlliances Map provided by App.
+        if (m.myFavorites.length > 0) return true;
+        const allianceTeams = favoriteAllianceTeams;
+        if (!allianceTeams) return false;
+        return [...m.redAlliance, ...m.blueAlliance].some((t) => allianceTeams.has(t));
+      });
+    }
     if (showSuggestedOnly) {
       v = v.filter((m) => entryByKey.get(`${m.field}|${m.level}|${m.matchNumber}`)?.suggested);
     }
     return v;
-  }, [matches, showOnlyFavoriteMatches, showSuggestedOnly, entryByKey]);
+  }, [matches, showOnlyFavoriteMatches, showSuggestedOnly, entryByKey, favoriteAllianceTeams]);
 
   const groups = useMemo(() => {
     const out = new Map<string, { label: string; matches: Match[]; drifts: FieldDrift[] }>();
