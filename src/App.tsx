@@ -33,8 +33,21 @@ export default function App() {
   const versionTapsRef = useRef(0);
   const versionTapResetRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { favorites, add, remove, has, update, setSuper, superTeamNumber } = useFavorites();
-  const { matches, drifts, alliancesByDivision, fetchedAt, loading } = useSchedule(favorites);
-  const { rankings } = useRankings(favorites);
+  const {
+    matches,
+    drifts,
+    alliancesByDivision,
+    fetchedAt,
+    loading,
+    refresh: refreshSchedule,
+  } = useSchedule(favorites);
+  const { rankings, refresh: refreshRankings } = useRankings(favorites);
+
+  function refreshAll() {
+    void refreshSchedule();
+    void refreshRankings();
+    logger.info('app', 'manual refresh triggered');
+  }
   const { overrides, setOverride, reset: resetWalkTimes } = useWalkTimes();
 
   // Saturday Mode: derive each favorite's status from latest alliances + playoff results
@@ -250,6 +263,7 @@ export default function App() {
                 entries={entries}
                 favoriteAllianceTeams={favoriteAllianceTeams}
                 superTeamNumber={superTeamNumber}
+                onRefresh={refreshAll}
               />
             </section>
           </>

@@ -61,6 +61,7 @@ export interface UseRankings {
   rankings: Ranking[];
   fetchedAt: Date | null;
   loading: boolean;
+  refresh(): Promise<void>;
 }
 
 export function useRankings(favorites: Favorite[]): UseRankings {
@@ -141,5 +142,5 @@ export function useRankings(favorites: Favorite[]): UseRankings {
     return out;
   }, [byDivision, divisions, favorites]);
 
-  return { rankings, fetchedAt, loading };
+  return { rankings, fetchedAt, loading, refresh: () => refreshRef.current() };
 }

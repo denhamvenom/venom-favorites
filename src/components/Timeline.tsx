@@ -17,6 +17,7 @@ interface Props {
   favoriteAllianceTeams?: Set<number>;
   /** Super-favorite team number — gold ring on their match cards. */
   superTeamNumber?: number;
+  onRefresh?: () => void;
 }
 
 const HOUR_HEADING_FMT: Intl.DateTimeFormatOptions = {
@@ -36,6 +37,7 @@ export default function Timeline({
   entries,
   favoriteAllianceTeams,
   superTeamNumber,
+  onRefresh,
 }: Props) {
   const driftByField = useMemo(() => {
     const m = new Map<string, FieldDrift>();
@@ -117,14 +119,27 @@ export default function Timeline({
   return (
     <div className="space-y-4">
       {fetchedAt && (
-        <div className="text-[10px] uppercase tracking-widest text-neutral-600">
-          Fetched{' '}
-          {fetchedAt.toLocaleTimeString(undefined, {
-            hour: 'numeric',
-            minute: '2-digit',
-            timeZone: 'America/Chicago',
-          })}
-          {loading ? ' · refreshing…' : ''}
+        <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-neutral-600">
+          <span>
+            Fetched{' '}
+            {fetchedAt.toLocaleTimeString(undefined, {
+              hour: 'numeric',
+              minute: '2-digit',
+              timeZone: 'America/Chicago',
+            })}
+            {loading ? ' · refreshing…' : ''}
+          </span>
+          {onRefresh && (
+            <button
+              onClick={onRefresh}
+              disabled={loading}
+              aria-label="Refresh schedule"
+              title="Refresh schedule + rankings now"
+              className={`text-base leading-none text-neutral-500 hover:text-gold transition-colors disabled:opacity-50 ${loading ? 'animate-spin' : ''}`}
+            >
+              ↻
+            </button>
+          )}
         </div>
       )}
       {groups.map((g, i) => (
