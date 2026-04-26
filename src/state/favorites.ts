@@ -42,6 +42,14 @@ export interface UseFavorites {
   remove(teamNumber: number): void;
   has(teamNumber: number): boolean;
   update(teamNumber: number, patch: Partial<Favorite>): void;
+  /**
+   * Set or clear the super-favorite. Pass a team number to mark that team as super
+   * (clearing any prior super); pass null to clear without setting a new one.
+   * Single-super invariant is enforced here.
+   */
+  setSuper(teamNumber: number | null): void;
+  /** The currently super-favorite team number, or undefined. */
+  superTeamNumber: number | undefined;
   clear(): void;
 }
 
@@ -83,6 +91,30 @@ export function useFavorites(): UseFavorites {
     });
   }, []);
 
+  const setSuper = useCallback((teamNumber: number | null) => {
+    setFavorites((prev) => {
+      if (teamNumber === null) {
+        // Clear any current super.
+        if (!prev.some((f) => f.isSuper)) return prev;
+        logger.info('storage', 'clear super-favorite');
+        return prev.map((f) => (f.isSuper ? { ...f, isSuper: false } : f));
+      }
+      // Toggle: if the target is already super, clear; otherwise set + clear others.
+      const current = prev.find((f) => f.teamNumber === teamNumber);
+      if (!current) return prev;
+      if (current.isSuper) {
+        logger.info('storage', `clear super-favorite (was ${teamNumber})`);
+        return prev.map((f) => (f.isSuper ? { ...f, isSuper: false } : f));
+      }
+      logger.info('storage', `set super-favorite ${teamNumber}`);
+      return prev.map((f) =>
+        f.teamNumber === teamNumber ? { ...f, isSuper: true } : f.isSuper ? { ...f, isSuper: false } : f,
+      );
+    });
+  }, []);
+
+  const superTeamNumber = favorites.find((f) => f.isSuper)?.teamNumber;
+
   const has = useCallback(
     (teamNumber: number) => favorites.some((f) => f.teamNumber === teamNumber),
     [favorites],
@@ -96,5 +128,5 @@ export function useFavorites(): UseFavorites {
 
   const clear = useCallback(() => setFavorites([]), []);
 
-  return { favorites, add, remove, has, update, clear };
+  return { favorites, add, remove, has, update, setSuper, superTeamNumber, clear };
 }

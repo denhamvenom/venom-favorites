@@ -27,6 +27,12 @@ export interface PlanOptions {
   overrides?: WalkOverrides;
   /** "now" — used so greedyPath doesn't reject already-past matches as unreachable. */
   now?: Date;
+  /**
+   * Team number of the super-favorite. Their matches are MUST-INCLUDE anchors:
+   * the planner skips any non-super match that would prevent reaching the next
+   * super match in time, and always marks super matches as suggested.
+   */
+  superFavorite?: number;
 }
 
 interface AdjustedMatch {
@@ -85,11 +91,16 @@ export function planSchedule(
       return a.match.field.localeCompare(b.match.field);
     });
 
+  const isSuper = (match: Match): boolean =>
+    options.superFavorite !== undefined && match.myFavorites.includes(options.superFavorite);
+
   const entries: ScheduleEntry[] = [];
   let lastEntry: AdjustedMatch | undefined;
   let suggestedLocation: Field | undefined;
+  let lastSuggestedAdjusted: AdjustedMatch | undefined;
 
-  for (const cur of adjusted) {
+  for (let i = 0; i < adjusted.length; i++) {
+    const cur = adjusted[i];
     let walkFromPrevious: number | undefined;
     let feasible = true;
     let conflictReason: string | undefined;
@@ -105,24 +116,42 @@ export function planSchedule(
       }
     }
 
-    // Greedy: starting from the user's tracked field (`suggestedLocation`),
-    // can we make this match? If yes, suggest=true and update location.
-    let suggested = true;
-    if (suggestedLocation !== undefined && suggestedLocation !== cur.match.field) {
-      // Compute against the suggested-location's last adjusted-end if we have one.
-      const lastSuggested = entries
-        .filter((e) => e.suggested)
-        .at(-1);
-      if (lastSuggested) {
-        const lastSuggestedAdjusted = adjustMatch(
-          lastSuggested.match,
-          drifts.get(lastSuggested.match.field),
-        );
-        const fb = walkBetween(lastSuggestedAdjusted, cur, options.overrides);
-        suggested = fb.feasible;
+    let suggested: boolean;
+
+    if (isSuper(cur.match)) {
+      // Super matches are always suggested. They become the new anchor location.
+      suggested = true;
+    } else {
+      // Reachable from where greedy currently has us?
+      const reachableNow =
+        lastSuggestedAdjusted === undefined ||
+        suggestedLocation === cur.match.field ||
+        walkBetween(lastSuggestedAdjusted, cur, options.overrides).feasible;
+
+      if (!reachableNow) {
+        suggested = false;
+      } else {
+        // Look ahead: would including this match break the next super match?
+        // Only block if the super was reachable BEFORE we made this detour.
+        const nextSuperIdx = adjusted.findIndex((m, j) => j > i && isSuper(m.match));
+        if (nextSuperIdx >= 0) {
+          const nextSuper = adjusted[nextSuperIdx];
+          const reachAfterDetour = walkBetween(cur, nextSuper, options.overrides).feasible;
+          const reachWithoutDetour =
+            lastSuggestedAdjusted === undefined ||
+            walkBetween(lastSuggestedAdjusted, nextSuper, options.overrides).feasible;
+          // Only refuse if taking this match strictly worsens super reachability.
+          suggested = reachAfterDetour || !reachWithoutDetour;
+        } else {
+          suggested = true;
+        }
       }
     }
-    if (suggested) suggestedLocation = cur.match.field;
+
+    if (suggested) {
+      suggestedLocation = cur.match.field;
+      lastSuggestedAdjusted = cur;
+    }
 
     entries.push({
       match: cur.match,
@@ -133,8 +162,6 @@ export function planSchedule(
       conflictReason,
     });
 
-    // The "lastEntry" for raw consecutive-feasibility tracking advances
-    // regardless of whether greedy chose this match.
     lastEntry = cur;
   }
 

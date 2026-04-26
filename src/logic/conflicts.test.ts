@@ -111,6 +111,56 @@ describe('planSchedule — greedy path', () => {
   });
 });
 
+describe('planSchedule — super-favorite anchors', () => {
+  it('always marks super matches as suggested even when not reachable from greedy location', () => {
+    // M1 ARCHIMEDES at 0 (regular fav) — suggested.
+    // M2 NEWTON at 5 (SUPER fav, but myFavorites doesn't include 8044 here — let's set up properly).
+    // For super behavior we override myFavorites manually below.
+    const m1 = mkMatch(1, 'ARCHIMEDES', 0); // myFavorites = [8044]
+    const m2: Match = { ...mkMatch(2, 'NEWTON', 5), myFavorites: [8044] };
+    const entries = planSchedule([m1, m2], ZERO_DRIFTS, { superFavorite: 8044 });
+    expect(entries[0].suggested).toBe(true);
+    expect(entries[1].suggested).toBe(true); // super override
+    expect(entries[1].feasible).toBe(false); // but consecutive feasibility still flags it
+  });
+
+  it('drops a non-super match that would prevent reaching the next super', () => {
+    // M1 ARCHIMEDES at 0 (regular fav) — would normally be suggested.
+    // M2 NEWTON at 12 (super) — going to M1 first means we leave at +7, need 12 to NEWTON, only 5 min.
+    // Without super-priority, greedy still includes M1.
+    // With super-priority: skipping M1 lets us start at NEWTON cleanly. So M1 should be dropped.
+    const m1: Match = { ...mkMatch(1, 'ARCHIMEDES', 0), myFavorites: [254] }; // regular favorite team
+    const m2: Match = { ...mkMatch(2, 'NEWTON', 12), myFavorites: [8044] }; // super
+    const entries = planSchedule([m1, m2], ZERO_DRIFTS, { superFavorite: 8044 });
+    expect(entries[0].suggested).toBe(false); // dropped to keep super reachable
+    expect(entries[1].suggested).toBe(true);
+  });
+
+  it('drops an in-between match that would block reaching a later super', () => {
+    // M1 ARCHIMEDES at 0 (regular) — easy first pick, location ARC.
+    // M2 NEWTON at 30 (regular) — reachable from ARC in 23 min (>= 12 needed), greedy
+    //   would normally take it. But going to NEWTON makes M3 unreachable.
+    // M3 ARCHIMEDES at 35 (super) — from ARC same field free; from NEWTON not in time.
+    //   Planner should DROP M2 to preserve M3.
+    const m1: Match = { ...mkMatch(1, 'ARCHIMEDES', 0), myFavorites: [254] };
+    const m2: Match = { ...mkMatch(2, 'NEWTON', 30), myFavorites: [254] };
+    const m3: Match = { ...mkMatch(3, 'ARCHIMEDES', 35), myFavorites: [8044] };
+    const entries = planSchedule([m1, m2, m3], ZERO_DRIFTS, { superFavorite: 8044 });
+    expect(entries[0].suggested).toBe(true);
+    expect(entries[1].suggested).toBe(false); // dropped to preserve super
+    expect(entries[2].suggested).toBe(true);
+  });
+
+  it('treats matches without superFavorite option exactly like before', () => {
+    const m1 = mkMatch(1, 'ARCHIMEDES', 0);
+    const m2 = mkMatch(2, 'NEWTON', 12);
+    const entries = planSchedule([m1, m2], ZERO_DRIFTS);
+    // Without super-favorite, M1 is suggested (feasible from nowhere), M2 is dropped (unreachable).
+    expect(entries[0].suggested).toBe(true);
+    expect(entries[1].suggested).toBe(false);
+  });
+});
+
 describe('summarize', () => {
   it('counts conflicts, tights, and suggestions per consecutive feasibility', () => {
     // M1 ARCHIMEDES +0 (ends +7) → M2 NEWTON +12: 7-hop walk needs 12 min, only 5 → infeasible

@@ -7,11 +7,12 @@ interface Props {
   matches: Match[];
   drifts: FieldDrift[];
   favorites: Favorite[];
+  superTeamNumber?: number;
 }
 
 const NEXT_UP_COUNT = 2;
 
-export default function TopBar({ now, matches, drifts, favorites }: Props) {
+export default function TopBar({ now, matches, drifts, favorites, superTeamNumber }: Props) {
   const driftByField = new Map<string, FieldDrift>();
   for (const d of drifts) driftByField.set(d.field, d);
 
@@ -38,6 +39,7 @@ export default function TopBar({ now, matches, drifts, favorites }: Props) {
           drift={driftByField.get(match.field)}
           favorites={favorites}
           variant="next-up"
+          superTeamNumber={superTeamNumber}
         />
       ))}
     </div>

@@ -3,9 +3,10 @@ import type { Favorite, TeamStatus } from '../types/domain';
 interface Props {
   favorites: Favorite[];
   onRemove: (teamNumber: number) => void;
+  onToggleSuper: (teamNumber: number) => void;
 }
 
-export default function FavoritesList({ favorites, onRemove }: Props) {
+export default function FavoritesList({ favorites, onRemove, onToggleSuper }: Props) {
   if (favorites.length === 0) {
     return (
       <div className="border border-dashed border-neutral-800 rounded-lg p-8 text-center text-sm text-neutral-500">
@@ -13,23 +14,49 @@ export default function FavoritesList({ favorites, onRemove }: Props) {
       </div>
     );
   }
+  // Sort: super first, then by status priority, then numerical.
+  const sorted = [...favorites].sort((a, b) => {
+    if (!!a.isSuper !== !!b.isSuper) return a.isSuper ? -1 : 1;
+    return a.teamNumber - b.teamNumber;
+  });
   return (
     <ul className="space-y-2">
-      {favorites.map((fav) => (
+      {sorted.map((fav) => (
         <li key={fav.teamNumber}>
-          <FavoriteRow favorite={fav} onRemove={() => onRemove(fav.teamNumber)} />
+          <FavoriteRow
+            favorite={fav}
+            onRemove={() => onRemove(fav.teamNumber)}
+            onToggleSuper={() => onToggleSuper(fav.teamNumber)}
+          />
         </li>
       ))}
     </ul>
   );
 }
 
-function FavoriteRow({ favorite, onRemove }: { favorite: Favorite; onRemove: () => void }) {
+function FavoriteRow({
+  favorite,
+  onRemove,
+  onToggleSuper,
+}: {
+  favorite: Favorite;
+  onRemove: () => void;
+  onToggleSuper: () => void;
+}) {
   const dim = favorite.status === 'eliminated' || favorite.status === 'not_selected';
+  const superCls = favorite.isSuper ? 'border-gold/60 ring-1 ring-gold/40' : 'border-neutral-800';
   return (
     <div
-      className={`flex items-center gap-3 bg-neutral-900 border border-neutral-800 rounded-lg p-3 ${dim ? 'opacity-50' : ''}`}
+      className={`flex items-center gap-2 bg-neutral-900 border ${superCls} rounded-lg p-3 ${dim ? 'opacity-50' : ''}`}
     >
+      <button
+        onClick={onToggleSuper}
+        title={favorite.isSuper ? 'Unmark super-favorite' : 'Mark as super-favorite — must-see anchor'}
+        aria-label={favorite.isSuper ? 'Unmark super' : 'Mark super'}
+        className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-lg transition-colors ${favorite.isSuper ? 'text-gold hover:text-gold-dark' : 'text-neutral-600 hover:text-gold'}`}
+      >
+        {favorite.isSuper ? '★' : '☆'}
+      </button>
       <div className="flex-1 min-w-0">
         <div className="flex items-baseline gap-2">
           <span className="text-lg font-bold text-gold">{favorite.teamNumber}</span>
@@ -38,6 +65,11 @@ function FavoriteRow({ favorite, onRemove }: { favorite: Favorite; onRemove: () 
         <div className="flex items-center gap-2 mt-1 flex-wrap">
           <span className="text-xs uppercase tracking-wider text-neutral-500">{favorite.division}</span>
           <StatusBadge favorite={favorite} />
+          {favorite.isSuper && (
+            <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-gold/20 text-gold border border-gold/40">
+              Super
+            </span>
+          )}
         </div>
       </div>
       <button

@@ -15,6 +15,8 @@ interface Props {
   entries: ScheduleEntry[];
   /** Set of team numbers belonging to any alliance that contains a favorite. Drives Saturday playoff filter. */
   favoriteAllianceTeams?: Set<number>;
+  /** Super-favorite team number — gold ring on their match cards. */
+  superTeamNumber?: number;
 }
 
 const HOUR_HEADING_FMT: Intl.DateTimeFormatOptions = {
@@ -33,6 +35,7 @@ export default function Timeline({
   showSuggestedOnly = false,
   entries,
   favoriteAllianceTeams,
+  superTeamNumber,
 }: Props) {
   const driftByField = useMemo(() => {
     const m = new Map<string, FieldDrift>();
@@ -140,6 +143,7 @@ export default function Timeline({
                   drift={driftByField.get(m.field)}
                   favorites={favorites}
                   entry={entryByKey.get(`${m.field}|${m.level}|${m.matchNumber}`)}
+                  superTeamNumber={superTeamNumber}
                 />
               </li>
             ))}

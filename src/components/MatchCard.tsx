@@ -8,6 +8,8 @@ interface Props {
   variant?: 'default' | 'next-up';
   /** Optional schedule entry — when present, drives the border color (feasible / tight / suggested / dropped). */
   entry?: ScheduleEntry;
+  /** Team number of the super-favorite, if any — drives the gold ring on must-see matches. */
+  superTeamNumber?: number;
 }
 
 const TIME_FORMAT: Intl.DateTimeFormatOptions = {
@@ -16,7 +18,7 @@ const TIME_FORMAT: Intl.DateTimeFormatOptions = {
   timeZone: 'America/Chicago',
 };
 
-export default function MatchCard({ match, drift, favorites, variant = 'default', entry }: Props) {
+export default function MatchCard({ match, drift, favorites, variant = 'default', entry, superTeamNumber }: Props) {
   const adjusted = drift ? applyDrift(match.scheduledStart, drift.driftSeconds) : match.scheduledStart;
   const myFavoriteSet = new Set(match.myFavorites);
   const myAlliance: 'red' | 'blue' | null =
@@ -31,16 +33,23 @@ export default function MatchCard({ match, drift, favorites, variant = 'default'
   const labelPrefix = match.level === 'qual' ? 'Q' : match.level === 'playoff' ? 'PO' : 'E';
   const big = variant === 'next-up';
 
-  // Border color from entry: red infeasible > amber tight > green suggested > default
+  const isSuperMatch =
+    superTeamNumber !== undefined && match.myFavorites.includes(superTeamNumber);
+
+  // Border priority: super (gold) > infeasible (red) > suggested (green) > dropped (gray) > default.
   let borderClass = 'border-neutral-800';
-  if (entry) {
+  let extraRing = '';
+  if (isSuperMatch) {
+    borderClass = 'border-gold/70';
+    extraRing = 'ring-1 ring-gold/40';
+  } else if (entry) {
     if (!entry.feasible) borderClass = 'border-loss';
     else if (entry.suggested) borderClass = 'border-feasible/60';
     else if (entry.match.myFavorites.length > 0) borderClass = 'border-tie/40 opacity-60';
   }
 
   return (
-    <div className={`bg-neutral-900 border ${borderClass} rounded-lg ${big ? 'p-4' : 'p-3'}`}>
+    <div className={`bg-neutral-900 border ${borderClass} ${extraRing} rounded-lg ${big ? 'p-4' : 'p-3'}`}>
       <div className="flex items-baseline justify-between gap-3">
         <div className="flex items-baseline gap-2 min-w-0">
           <span className={`font-mono font-bold ${big ? 'text-2xl' : 'text-base'} text-gold`}>
@@ -55,6 +64,11 @@ export default function MatchCard({ match, drift, favorites, variant = 'default'
               className={`text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded ${myAlliance === 'red' ? 'bg-alliance-red/30 text-alliance-red' : 'bg-alliance-blue/30 text-alliance-blue'}`}
             >
               {myAlliance.charAt(0)}
+            </span>
+          )}
+          {isSuperMatch && (
+            <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-gold/30 text-gold border border-gold/50">
+              ★ Super
             </span>
           )}
         </div>

@@ -32,7 +32,7 @@ export default function App() {
   const [showSuggestedOnly, setShowSuggestedOnly] = useState(false);
   const versionTapsRef = useRef(0);
   const versionTapResetRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const { favorites, add, remove, has, update } = useFavorites();
+  const { favorites, add, remove, has, update, setSuper, superTeamNumber } = useFavorites();
   const { matches, drifts, alliancesByDivision, fetchedAt, loading } = useSchedule(favorites);
   const { rankings } = useRankings(favorites);
   const { overrides, setOverride, reset: resetWalkTimes } = useWalkTimes();
@@ -75,8 +75,8 @@ export default function App() {
   }, [drifts]);
 
   const entries = useMemo(
-    () => planSchedule(matches, driftMap, { overrides, now }),
-    [matches, driftMap, overrides, now],
+    () => planSchedule(matches, driftMap, { overrides, now, superFavorite: superTeamNumber }),
+    [matches, driftMap, overrides, now, superTeamNumber],
   );
   const summary = useMemo(() => summarize(entries, driftMap, overrides), [entries, driftMap, overrides]);
 
@@ -176,14 +176,24 @@ export default function App() {
       <main className="flex-1 overflow-y-auto px-4 py-4 pb-28 space-y-6">
         {tab === 'schedule' && (
           <>
-            <TopBar now={now} matches={matches} drifts={drifts} favorites={favorites} />
+            <TopBar
+              now={now}
+              matches={matches}
+              drifts={drifts}
+              favorites={favorites}
+              superTeamNumber={superTeamNumber}
+            />
 
             <section>
               <div className="flex items-center justify-between mb-2">
                 <h2 className="text-xs uppercase tracking-wider text-neutral-400 font-bold">My Favorites</h2>
                 <span className="text-[10px] text-neutral-500">{favorites.length}</span>
               </div>
-              <FavoritesList favorites={favorites} onRemove={remove} />
+              <FavoritesList
+                favorites={favorites}
+                onRemove={remove}
+                onToggleSuper={(teamNumber) => setSuper(teamNumber)}
+              />
             </section>
 
             {entries.length > 0 && (
@@ -239,6 +249,7 @@ export default function App() {
                 showSuggestedOnly={showSuggestedOnly}
                 entries={entries}
                 favoriteAllianceTeams={favoriteAllianceTeams}
+                superTeamNumber={superTeamNumber}
               />
             </section>
           </>

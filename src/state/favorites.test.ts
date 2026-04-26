@@ -76,4 +76,49 @@ describe('useFavorites', () => {
     const { result } = renderHook(() => useFavorites());
     expect(result.current.favorites).toEqual([]);
   });
+
+  it('setSuper marks a single favorite super and reports superTeamNumber', () => {
+    const { result } = renderHook(() => useFavorites());
+    act(() => {
+      result.current.add(sampleFav);
+      result.current.add({ ...sampleFav, teamNumber: 118, teamName: 'Robonauts', division: 'MILSTEIN' });
+      result.current.setSuper(254);
+    });
+    expect(result.current.favorites.find((f) => f.teamNumber === 254)?.isSuper).toBe(true);
+    expect(result.current.favorites.find((f) => f.teamNumber === 118)?.isSuper).toBeFalsy();
+    expect(result.current.superTeamNumber).toBe(254);
+  });
+
+  it('setSuper enforces single-super invariant — promoting a different team unsets the prior', () => {
+    const { result } = renderHook(() => useFavorites());
+    act(() => {
+      result.current.add(sampleFav);
+      result.current.add({ ...sampleFav, teamNumber: 118, teamName: 'Robonauts', division: 'MILSTEIN' });
+      result.current.setSuper(254);
+      result.current.setSuper(118);
+    });
+    expect(result.current.favorites.find((f) => f.teamNumber === 254)?.isSuper).toBeFalsy();
+    expect(result.current.favorites.find((f) => f.teamNumber === 118)?.isSuper).toBe(true);
+    expect(result.current.superTeamNumber).toBe(118);
+  });
+
+  it('setSuper(null) clears any current super', () => {
+    const { result } = renderHook(() => useFavorites());
+    act(() => {
+      result.current.add(sampleFav);
+      result.current.setSuper(254);
+      result.current.setSuper(null);
+    });
+    expect(result.current.superTeamNumber).toBeUndefined();
+  });
+
+  it('setSuper(teamNumber) on the existing super clears it (toggle)', () => {
+    const { result } = renderHook(() => useFavorites());
+    act(() => {
+      result.current.add(sampleFav);
+      result.current.setSuper(254);
+      result.current.setSuper(254);
+    });
+    expect(result.current.superTeamNumber).toBeUndefined();
+  });
 });

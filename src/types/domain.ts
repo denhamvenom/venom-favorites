@@ -44,6 +44,8 @@ export interface Favorite {
   status: TeamStatus;
   allianceNumber?: number;
   allianceRole?: AllianceRole;
+  /** Exactly one favorite at a time may be marked super — their matches anchor the path planner. */
+  isSuper?: boolean;
 }
 
 export interface Alliance {
