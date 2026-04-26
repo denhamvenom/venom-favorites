@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { ensureCorsTested } from './api/corsTest';
 import { findTeamDivision } from './api/divisionLookup';
 import { getDataSource } from './api/frc';
@@ -7,10 +7,13 @@ import FavoritesList from './components/FavoritesList';
 import TeamSearch from './components/TeamSearch';
 import Timeline from './components/Timeline';
 import TopBar from './components/TopBar';
+import WalkTimeEditor from './components/WalkTimeEditor';
 import { logger } from './lib/logger';
+import { planSchedule, summarize } from './logic/conflicts';
 import { useFavorites } from './state/favorites';
 import { useSchedule } from './state/schedule';
-import type { Field } from './types/domain';
+import { useWalkTimes } from './state/walkTimes';
+import type { Field, FieldDrift } from './types/domain';
 
 const TEAM_NUMBER = 8044;
 
@@ -19,11 +22,26 @@ export default function App() {
   const [division, setDivision] = useState<Field | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const [diagOpen, setDiagOpen] = useState(false);
+  const [walkEditorOpen, setWalkEditorOpen] = useState(false);
   const [showAllMatches, setShowAllMatches] = useState(false);
+  const [showSuggestedOnly, setShowSuggestedOnly] = useState(false);
   const versionTapsRef = useRef(0);
   const versionTapResetRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { favorites, add, remove, has } = useFavorites();
   const { matches, drifts, fetchedAt, loading } = useSchedule(favorites);
+  const { overrides, setOverride, reset: resetWalkTimes } = useWalkTimes();
+
+  const driftMap = useMemo(() => {
+    const m = new Map<string, FieldDrift>();
+    for (const d of drifts) m.set(d.field, d);
+    return m;
+  }, [drifts]);
+
+  const entries = useMemo(
+    () => planSchedule(matches, driftMap, { overrides, now }),
+    [matches, driftMap, overrides, now],
+  );
+  const summary = useMemo(() => summarize(entries, driftMap, overrides), [entries, driftMap, overrides]);
 
   useEffect(() => {
     const id = setInterval(() => setNow(new Date()), 1000);
@@ -103,6 +121,39 @@ export default function App() {
           <FavoritesList favorites={favorites} onRemove={remove} />
         </section>
 
+        {entries.length > 0 && (
+          <section className="bg-neutral-900 border border-neutral-800 rounded-lg p-3">
+            <div className="flex items-center justify-between gap-2 flex-wrap">
+              <div className="text-xs">
+                <span className="text-feasible font-bold">{summary.suggested}</span>
+                <span className="text-neutral-500"> of </span>
+                <span className="text-neutral-300">{summary.total}</span>
+                <span className="text-neutral-500"> matches in suggested path</span>
+                {summary.conflicts > 0 && (
+                  <span className="text-loss ml-2">· {summary.conflicts} conflict{summary.conflicts === 1 ? '' : 's'}</span>
+                )}
+                {summary.tight > 0 && (
+                  <span className="text-tight ml-2">· {summary.tight} tight</span>
+                )}
+              </div>
+              <div className="flex gap-2 text-[10px] uppercase tracking-wider">
+                <button
+                  onClick={() => setShowSuggestedOnly((v) => !v)}
+                  className={`px-2 py-1 rounded border ${showSuggestedOnly ? 'bg-feasible/20 text-feasible border-feasible/40' : 'bg-neutral-800 text-neutral-400 border-neutral-700'}`}
+                >
+                  suggested only
+                </button>
+                <button
+                  onClick={() => setWalkEditorOpen(true)}
+                  className="px-2 py-1 rounded border bg-neutral-800 text-neutral-400 border-neutral-700 hover:text-gold"
+                >
+                  walk times
+                </button>
+              </div>
+            </div>
+          </section>
+        )}
+
         <section>
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-xs uppercase tracking-wider text-neutral-400 font-bold">Schedule</h2>
@@ -120,6 +171,8 @@ export default function App() {
             loading={loading}
             fetchedAt={fetchedAt}
             showOnlyFavoriteMatches={!showAllMatches}
+            showSuggestedOnly={showSuggestedOnly}
+            entries={entries}
           />
         </section>
       </main>
@@ -141,13 +194,15 @@ export default function App() {
         </button>
       </footer>
 
-      <TeamSearch
-        open={searchOpen}
-        onClose={() => setSearchOpen(false)}
-        onAdd={add}
-        alreadyFavorited={has}
-      />
+      <TeamSearch open={searchOpen} onClose={() => setSearchOpen(false)} onAdd={add} alreadyFavorited={has} />
       <DiagnosticsPanel open={diagOpen} onClose={() => setDiagOpen(false)} />
+      <WalkTimeEditor
+        open={walkEditorOpen}
+        onClose={() => setWalkEditorOpen(false)}
+        overrides={overrides}
+        setOverride={setOverride}
+        reset={resetWalkTimes}
+      />
     </div>
   );
 }

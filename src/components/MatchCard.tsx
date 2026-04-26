@@ -1,11 +1,13 @@
 import { applyDrift } from '../logic/drift';
-import type { Favorite, FieldDrift, Match } from '../types/domain';
+import type { Favorite, FieldDrift, Match, ScheduleEntry } from '../types/domain';
 
 interface Props {
   match: Match;
   drift?: FieldDrift;
   favorites: Favorite[];
   variant?: 'default' | 'next-up';
+  /** Optional schedule entry — when present, drives the border color (feasible / tight / suggested / dropped). */
+  entry?: ScheduleEntry;
 }
 
 const TIME_FORMAT: Intl.DateTimeFormatOptions = {
@@ -14,7 +16,7 @@ const TIME_FORMAT: Intl.DateTimeFormatOptions = {
   timeZone: 'America/Chicago',
 };
 
-export default function MatchCard({ match, drift, favorites, variant = 'default' }: Props) {
+export default function MatchCard({ match, drift, favorites, variant = 'default', entry }: Props) {
   const adjusted = drift ? applyDrift(match.scheduledStart, drift.driftSeconds) : match.scheduledStart;
   const myFavoriteSet = new Set(match.myFavorites);
   const myAlliance: 'red' | 'blue' | null =
@@ -24,17 +26,21 @@ export default function MatchCard({ match, drift, favorites, variant = 'default'
         ? 'blue'
         : null;
   const adjustedDelta =
-    drift && Math.abs(drift.driftSeconds) >= 60
-      ? Math.round(drift.driftSeconds / 60)
-      : 0;
+    drift && Math.abs(drift.driftSeconds) >= 60 ? Math.round(drift.driftSeconds / 60) : 0;
 
   const labelPrefix = match.level === 'qual' ? 'Q' : match.level === 'playoff' ? 'PO' : 'E';
   const big = variant === 'next-up';
 
+  // Border color from entry: red infeasible > amber tight > green suggested > default
+  let borderClass = 'border-neutral-800';
+  if (entry) {
+    if (!entry.feasible) borderClass = 'border-loss';
+    else if (entry.suggested) borderClass = 'border-feasible/60';
+    else if (entry.match.myFavorites.length > 0) borderClass = 'border-tie/40 opacity-60';
+  }
+
   return (
-    <div
-      className={`bg-neutral-900 border border-neutral-800 rounded-lg ${big ? 'p-4' : 'p-3'}`}
-    >
+    <div className={`bg-neutral-900 border ${borderClass} rounded-lg ${big ? 'p-4' : 'p-3'}`}>
       <div className="flex items-baseline justify-between gap-3">
         <div className="flex items-baseline gap-2 min-w-0">
           <span className={`font-mono font-bold ${big ? 'text-2xl' : 'text-base'} text-gold`}>
@@ -73,6 +79,16 @@ export default function MatchCard({ match, drift, favorites, variant = 'default'
           <span className="text-alliance-blue font-mono">{match.blueScore}</span>
         </div>
       )}
+      {entry && !entry.feasible && entry.conflictReason && (
+        <div className="mt-2 pt-2 border-t border-loss/30 text-[11px] text-loss">
+          🔴 {entry.conflictReason}
+        </div>
+      )}
+      {entry && entry.feasible && entry.walkFromPrevious !== undefined && entry.walkFromPrevious > 0 && (
+        <div className="mt-2 pt-2 border-t border-neutral-800 text-[11px] text-neutral-500">
+          {entry.walkFromPrevious} min walk from prev
+        </div>
+      )}
     </div>
   );
 }
@@ -97,11 +113,7 @@ function TeamRow({
           const isFav = myFavorites.has(t);
           const fav = favorites.find((f) => f.teamNumber === t);
           return (
-            <span
-              key={t}
-              className={`font-mono ${isFav ? 'text-gold font-bold' : ''}`}
-              title={fav?.teamName}
-            >
+            <span key={t} className={`font-mono ${isFav ? 'text-gold font-bold' : ''}`} title={fav?.teamName}>
               {t}
             </span>
           );
