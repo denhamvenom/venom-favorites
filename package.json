@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc -b --noEmit"
+    "typecheck": "tsc -b --noEmit",
+    "capture-fixtures": "tsx scripts/capture-2025-fixtures.ts"
   },
   "dependencies": {
     "date-fns": "^4.1.0",
@@ -31,6 +32,7 @@
     "jsdom": "^26.0.0",
     "postcss": "^8.5.1",
     "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.3",
     "vite": "^7.1.0",
     "vite-plugin-pwa": "^1.0.0",
