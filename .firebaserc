@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "scouting-system-352a4"
+  },
+  "targets": {
+    "scouting-system-352a4": {
+      "hosting": {
+        "venom-favorites": [
+          "venom-favorites"
+        ]
+      }
+    }
+  }
+}

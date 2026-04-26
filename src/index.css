@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-neutral-950 text-neutral-100 antialiased;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    /* Prevent iOS Safari pull-to-refresh on a sports-watching app — accidental refresh wipes scroll. */
+    overscroll-behavior-y: contain;
+  }
+}
