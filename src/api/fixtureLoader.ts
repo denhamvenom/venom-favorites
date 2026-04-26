@@ -38,22 +38,46 @@ const ENDPOINT_MIN_PHASE: Record<FixtureEndpoint, FixturePhase> = {
   events: 'A',
   teams: 'A',
   'schedule-qual': 'B',
-  'matches-qual': 'C',
+  // matches-qual is allowed from phase B onwards — but a per-phase cutoff filter
+  // (PHASE_CUTOFFS_MS) trims to only matches actually played by that point in
+  // the simulated event timeline. So phase B shows roughly half the quals with
+  // scores + the rest still upcoming on the schedule.
+  'matches-qual': 'B',
   rankings: 'C',
   alliances: 'D',
   'schedule-playoff': 'D',
-  'matches-playoff': 'E',
+  'matches-playoff': 'D',
 };
 
 /**
- * `import.meta.glob` bundles the fixture JSON. Gated to dev + fixture-mode builds
- * so production deploys (live FRC API) don't ship 1.8 MB of 2025 replay data.
- * The condition is evaluated at compile time — Vite tree-shakes the unused branch.
+ * Per-phase cutoff timestamp (UTC ms) — matches whose `actualStartTime` is
+ * after this cutoff are stripped from the response. The 2025 Championship
+ * ran Apr 16-19; cutoffs are hand-picked to mirror the spec's stage progression:
+ *
+ *   A — before quals begin
+ *   B — Thursday mid-afternoon (about half the qual matches played)
+ *   C — Friday evening (all quals complete; alliance selection not yet)
+ *   D — Saturday morning ~7:30 AM (alliances populated; playoffs not started)
+ *   E — Saturday end-of-day (full replay)
+ *
+ * Houston is America/Chicago (UTC-5 in CDT during Worlds).
  */
-const FIXTURE_FILES: Record<string, () => Promise<{ default: unknown }>> =
-  import.meta.env.DEV || import.meta.env.MODE === 'fixture'
-    ? import.meta.glob<{ default: unknown }>('../../tests/fixtures/2025-houston/**/*.json')
-    : {};
+const PHASE_CUTOFFS_MS: Record<FixturePhase, number> = {
+  A: new Date('2025-04-16T00:00:00-05:00').getTime(),
+  B: new Date('2025-04-17T15:00:00-05:00').getTime(),
+  C: new Date('2025-04-18T20:00:00-05:00').getTime(),
+  D: new Date('2025-04-19T07:30:00-05:00').getTime(),
+  E: new Date('2025-04-20T00:00:00-05:00').getTime(),
+};
+
+/**
+ * `import.meta.glob` bundles the fixture JSON as lazy chunks — they only
+ * download on demand when the user enters demo mode from the diagnostics
+ * panel, keeping the initial page load slim.
+ */
+const FIXTURE_FILES = import.meta.glob<{ default: unknown }>(
+  '../../tests/fixtures/2025-houston/**/*.json',
+);
 
 function fixturePath(endpoint: FixtureEndpoint, division?: Field): string {
   const base = `../../tests/fixtures/2025-houston/${endpoint}`;
@@ -61,6 +85,13 @@ function fixturePath(endpoint: FixtureEndpoint, division?: Field): string {
 }
 
 export function getActivePhase(): FixturePhase {
+  // Runtime override (set by DiagnosticsPanel) takes precedence over build-time env.
+  if (typeof localStorage !== 'undefined') {
+    const fromLS = localStorage.getItem('fixturePhase');
+    if (typeof fromLS === 'string' && PHASE_ORDER.includes(fromLS as FixturePhase)) {
+      return fromLS as FixturePhase;
+    }
+  }
   const fromEnv = import.meta.env.VITE_FIXTURE_PHASE;
   if (typeof fromEnv === 'string' && PHASE_ORDER.includes(fromEnv as FixturePhase)) {
     return fromEnv as FixturePhase;
@@ -182,5 +213,33 @@ export async function fixtureFetch(
     return emptyEnvelope(parsed.endpoint);
   }
   const mod = await loader();
-  return mod.default;
+  const data = mod.default;
+  // For match endpoints, apply the per-phase cutoff so phase B shows only the
+  // matches that were "played" by Thursday afternoon, etc.
+  if (parsed.endpoint === 'matches-qual' || parsed.endpoint === 'matches-playoff') {
+    return filterMatchesByCutoff(data, PHASE_CUTOFFS_MS[phase]);
+  }
+  return data;
+}
+
+interface RawMatchTimestamped {
+  actualStartTime?: string;
+  postResultTime?: string;
+}
+
+interface RawMatchesEnvelopeShape {
+  Matches?: RawMatchTimestamped[];
+}
+
+function filterMatchesByCutoff(envelope: unknown, cutoffMs: number): unknown {
+  if (!envelope || typeof envelope !== 'object') return envelope;
+  const e = envelope as RawMatchesEnvelopeShape;
+  if (!Array.isArray(e.Matches)) return envelope;
+  const filtered = e.Matches.filter((m) => {
+    if (!m.actualStartTime) return false;
+    // Match timestamps are event-local with no offset; attach Houston CDT (UTC-5).
+    const t = new Date(`${m.actualStartTime}-05:00`).getTime();
+    return Number.isFinite(t) && t <= cutoffMs;
+  });
+  return { ...e, Matches: filtered };
 }

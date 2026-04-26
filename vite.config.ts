@@ -46,6 +46,9 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2}'],
+        // Exclude fixture JSON chunks from the precache — they only matter in
+        // demo mode and would otherwise bloat the initial SW install.
+        globIgnores: ['**/assets/{ARCHIMEDES,CURIE,DALY,GALILEO,HOPPER,JOHNSON,MILSTEIN,NEWTON}-*.js'],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/frc-api\.firstinspires\.org\/v3\.0\/\d{4}\/(events|teams)/,

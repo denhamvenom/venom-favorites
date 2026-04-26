@@ -16,6 +16,12 @@ const LIVE_BASE = 'https://frc-api.firstinspires.org/v3.0';
 const PROXY_BASE = '/frcProxy'; // hosted on the same Firebase project; rewrites resolve to the function
 
 export function getDataSource(): DataSource {
+  // Runtime override from DiagnosticsPanel takes precedence over everything.
+  if (typeof localStorage !== 'undefined') {
+    const override = localStorage.getItem('dataSourceOverride');
+    if (override === 'fixture' || override === 'proxy') return override;
+    if (override === 'live') return 'live'; // explicit live ignores env + proxy flag
+  }
   const explicit = import.meta.env.VITE_DATA_SOURCE as string | undefined;
   if (explicit === 'fixture') return 'fixture';
   if (typeof localStorage !== 'undefined' && localStorage.getItem('useProxy') === '1') {
