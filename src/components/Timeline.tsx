@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import type { Favorite, FieldDrift, Match, ScheduleEntry } from '../types/domain';
+import type { WatchingMatch } from '../state/watching';
 import FieldDriftPill from './FieldDriftPill';
 import MatchCard from './MatchCard';
 
@@ -18,6 +19,8 @@ interface Props {
   /** Super-favorite team number — gold ring on their match cards. */
   superTeamNumber?: number;
   onRefresh?: () => void;
+  watching?: WatchingMatch | null;
+  onToggleWatching?: (m: Match) => void;
 }
 
 const HOUR_HEADING_FMT: Intl.DateTimeFormatOptions = {
@@ -38,6 +41,8 @@ export default function Timeline({
   favoriteAllianceTeams,
   superTeamNumber,
   onRefresh,
+  watching,
+  onToggleWatching,
 }: Props) {
   const driftByField = useMemo(() => {
     const m = new Map<string, FieldDrift>();
@@ -185,6 +190,13 @@ export default function Timeline({
                   favorites={favorites}
                   entry={entryByKey.get(`${m.field}|${m.level}|${m.matchNumber}`)}
                   superTeamNumber={superTeamNumber}
+                  isWatching={
+                    !!watching &&
+                    watching.field === m.field &&
+                    watching.level === m.level &&
+                    watching.matchNumber === m.matchNumber
+                  }
+                  onToggleWatching={onToggleWatching ? () => onToggleWatching(m) : undefined}
                 />
               </li>
             ))}

@@ -10,7 +10,10 @@ export type LogTag =
   | 'status'
   | 'fixture'
   | 'pwa'
-  | 'storage';
+  | 'storage'
+  | 'tba'
+  | 'sw'
+  | 'watching';
 
 export interface LogEntry {
   timestamp: number;

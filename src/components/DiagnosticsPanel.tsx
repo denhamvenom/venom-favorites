@@ -1,9 +1,18 @@
 import { useEffect, useState } from 'react';
 import { logger, type LogEntry } from '../lib/logger';
+import {
+  compareFrcVsTba,
+  fetchTbaDivisionMatches,
+  tbaConfigured,
+  type TbaComparison,
+} from '../api/tba';
+import type { Field, Match } from '../types/domain';
 
 interface Props {
   open: boolean;
   onClose: () => void;
+  matches: Match[];
+  divisions: Field[];
 }
 
 const PHASES = ['A', 'B', 'C', 'D', 'E'] as const;
@@ -15,8 +24,30 @@ const PHASE_DESCRIPTIONS: Record<(typeof PHASES)[number], string> = {
   E: 'Full event replay (Saturday end)',
 };
 
-export default function DiagnosticsPanel({ open, onClose }: Props) {
+export default function DiagnosticsPanel({ open, onClose, matches, divisions }: Props) {
   const [entries, setEntries] = useState<LogEntry[]>([]);
+  const [tbaResults, setTbaResults] = useState<TbaComparison[] | null>(null);
+  const [tbaLoading, setTbaLoading] = useState(false);
+  const [tbaError, setTbaError] = useState<string | null>(null);
+
+  async function runTbaCheck() {
+    setTbaLoading(true);
+    setTbaError(null);
+    setTbaResults(null);
+    try {
+      const out: TbaComparison[] = [];
+      for (const d of divisions) {
+        const tbaMatches = await fetchTbaDivisionMatches(d);
+        const frcInDiv = matches.filter((m) => m.field === d);
+        out.push(compareFrcVsTba(d, frcInDiv, tbaMatches));
+      }
+      setTbaResults(out);
+    } catch (err) {
+      setTbaError(err instanceof Error ? err.message : String(err));
+    } finally {
+      setTbaLoading(false);
+    }
+  }
   // Read once on mount — we reload the page after toggling, so no live updates needed.
   const override =
     typeof localStorage !== 'undefined' ? localStorage.getItem('dataSourceOverride') : null;
@@ -94,6 +125,46 @@ export default function DiagnosticsPanel({ open, onClose }: Props) {
         {inDemo && phase && (
           <div className="mt-2 text-[11px] text-gold/80">
             Demo {phase}: {PHASE_DESCRIPTIONS[phase as (typeof PHASES)[number]]}
+          </div>
+        )}
+      </div>
+
+      {/* TBA Verification */}
+      <div className="border-b border-neutral-200 dark:border-neutral-800 px-4 py-3">
+        <div className="flex items-center justify-between mb-2">
+          <div>
+            <div className="text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-500">TBA Cross-Check</div>
+            <div className="text-[10px] text-neutral-500 dark:text-neutral-600 mt-0.5">
+              Compare FRC API match data against The Blue Alliance's authoritative event data.
+            </div>
+          </div>
+          <button
+            onClick={runTbaCheck}
+            disabled={tbaLoading || !tbaConfigured() || divisions.length === 0}
+            className="px-3 py-2 rounded font-bold text-sm bg-purple text-white hover:bg-purple-light disabled:opacity-50"
+          >
+            {tbaLoading ? 'checking…' : 'Verify with TBA'}
+          </button>
+        </div>
+        {!tbaConfigured() && (
+          <div className="text-[11px] text-tight">
+            Set <span className="font-mono">VITE_TBA_API_KEY</span> in <span className="font-mono">.env</span> to enable.
+          </div>
+        )}
+        {tbaError && <div className="text-[11px] text-loss">Error: {tbaError}</div>}
+        {tbaResults && (
+          <div className="mt-2 space-y-1 text-[11px]">
+            {tbaResults.map((r) => (
+              <div key={r.division} className="flex items-center gap-2">
+                <span className="font-bold text-gold w-24">{r.division}</span>
+                <span className={r.mismatches === 0 ? 'text-feasible' : 'text-loss'}>
+                  {r.mismatches} mismatch{r.mismatches === 1 ? '' : 'es'}
+                </span>
+                <span className="text-neutral-500">
+                  · FRC {r.totalFrc} qual / TBA {r.totalTba} qual
+                </span>
+              </div>
+            ))}
           </div>
         )}
       </div>

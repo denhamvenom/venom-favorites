@@ -114,7 +114,7 @@ function formatRole(role: NonNullable<Favorite['allianceRole']>): string {
 }
 
 const STATUS_BADGES: Partial<Record<TeamStatus, { label: string; classes: string }>> = {
-  qualifying: { label: 'Qualifying', classes: 'bg-neutral-200 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400' },
+  // 'qualifying' renders no badge — during regular qual play the team#/division is enough.
   awaiting_selection: { label: 'Awaiting selection', classes: 'bg-tight/20 text-tight' },
   selected: { label: 'Selected', classes: 'bg-purple/40 text-purple-light border border-purple-light' },
   not_selected: { label: 'Not selected', classes: 'bg-neutral-200 dark:bg-neutral-800 text-tie' },

@@ -10,6 +10,10 @@ interface Props {
   entry?: ScheduleEntry;
   /** Team number of the super-favorite, if any — drives the gold ring on must-see matches. */
   superTeamNumber?: number;
+  /** True if this card is the user's actively-watched match. */
+  isWatching?: boolean;
+  /** Toggle handler for "I'm here". When omitted, the button is hidden (e.g., next-up cards). */
+  onToggleWatching?: () => void;
 }
 
 const TIME_FORMAT: Intl.DateTimeFormatOptions = {
@@ -18,7 +22,7 @@ const TIME_FORMAT: Intl.DateTimeFormatOptions = {
   timeZone: 'America/Chicago',
 };
 
-export default function MatchCard({ match, drift, favorites, variant = 'default', entry, superTeamNumber }: Props) {
+export default function MatchCard({ match, drift, favorites, variant = 'default', entry, superTeamNumber, isWatching = false, onToggleWatching }: Props) {
   const adjusted = drift ? applyDrift(match.scheduledStart, drift.driftSeconds) : match.scheduledStart;
   const myFavoriteSet = new Set(match.myFavorites);
   const myAlliance: 'red' | 'blue' | null =
@@ -38,10 +42,13 @@ export default function MatchCard({ match, drift, favorites, variant = 'default'
 
   const played = match.redScore !== undefined && match.blueScore !== undefined;
 
-  // Border priority: super (gold) > infeasible (red) > suggested (green) > dropped (gray) > default.
+  // Border priority: watching (purple) > super (gold) > infeasible (red) > suggested (green) > dropped (gray) > default.
   let borderClass = 'border-neutral-200 dark:border-neutral-800';
   let extraRing = '';
-  if (isSuperMatch) {
+  if (isWatching) {
+    borderClass = 'border-purple-light';
+    extraRing = 'ring-2 ring-purple/40';
+  } else if (isSuperMatch) {
     borderClass = 'border-gold/70';
     extraRing = 'ring-1 ring-gold/40';
   } else if (entry) {
@@ -81,6 +88,11 @@ export default function MatchCard({ match, drift, favorites, variant = 'default'
               Already Played
             </span>
           )}
+          {isWatching && (
+            <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-purple/40 text-purple-light border border-purple-light">
+              I'm watching
+            </span>
+          )}
         </div>
         <div className="text-right shrink-0">
           <div className={`font-mono ${big ? 'text-2xl' : 'text-base'}`}>
@@ -111,6 +123,21 @@ export default function MatchCard({ match, drift, favorites, variant = 'default'
       {entry && entry.feasible && entry.walkFromPrevious !== undefined && entry.walkFromPrevious > 0 && (
         <div className="mt-2 pt-2 border-t border-neutral-200 dark:border-neutral-800 text-[11px] text-neutral-500">
           {entry.walkFromPrevious} min walk from prev
+        </div>
+      )}
+      {onToggleWatching && !played && (
+        <div className="mt-2 pt-2 border-t border-neutral-200 dark:border-neutral-800 flex justify-end">
+          <button
+            onClick={onToggleWatching}
+            className={`text-[10px] uppercase tracking-wider px-2 py-1 rounded border transition-colors ${
+              isWatching
+                ? 'bg-purple/30 text-purple-light border-purple-light hover:bg-purple/40'
+                : 'bg-transparent text-neutral-500 border-neutral-300 dark:border-neutral-700 hover:text-purple-light hover:border-purple-light'
+            }`}
+            aria-label={isWatching ? 'Clear watching' : "I'm watching this match"}
+          >
+            {isWatching ? 'Stop watching' : "I'm here"}
+          </button>
         </div>
       )}
     </div>

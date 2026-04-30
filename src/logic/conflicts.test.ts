@@ -235,3 +235,48 @@ describe('summarize', () => {
     expect(summary.suggested).toBe(2); // M1 + M3
   });
 });
+
+describe('planSchedule — anchor (watching/lastLocation)', () => {
+  it('memory anchor (no busyUntil) walks from anchor.field to first match', () => {
+    // Anchor at ARCHIMEDES, no time constraint. First match in NEWTON at T+30 min.
+    // 1 hop walk (assume ARC↔NEW = 1 hop = 2 min). Plenty of time.
+    const matches = [mkMatch(1, 'NEWTON', 30)];
+    const entries = planSchedule(matches, ZERO_DRIFTS, { anchor: { field: 'ARCHIMEDES' } });
+    expect(entries[0].feasible).toBe(true);
+    expect(entries[0].walkFromPrevious).toBeGreaterThan(0); // walk from anchor
+  });
+
+  it('active anchor (busyUntil) flags an infeasible match starting before busyUntil', () => {
+    // User watching ARCHIMEDES until T+10. Match in CURIE at T+5 (already started). Should be infeasible.
+    const busyUntil = new Date(T0.getTime() + 10 * 60_000);
+    const matches = [mkMatch(99, 'CURIE', 5)];
+    const entries = planSchedule(matches, ZERO_DRIFTS, {
+      anchor: { field: 'ARCHIMEDES', busyUntil, label: 'Q35' },
+    });
+    expect(entries[0].feasible).toBe(false);
+    expect(entries[0].conflictReason).toContain('Q35');
+  });
+
+  it('active anchor (busyUntil) allows a same-field match starting after busyUntil', () => {
+    // User watching ARCHIMEDES until T+10. Next match same field at T+18. 8 min gap, walk 0, feasible.
+    const busyUntil = new Date(T0.getTime() + 10 * 60_000);
+    const matches = [mkMatch(50, 'ARCHIMEDES', 18)];
+    const entries = planSchedule(matches, ZERO_DRIFTS, {
+      anchor: { field: 'ARCHIMEDES', busyUntil, label: 'Q35' },
+    });
+    expect(entries[0].feasible).toBe(true);
+    expect(entries[0].walkFromPrevious).toBe(0);
+  });
+
+  it('active anchor (busyUntil) walks to a different field after busyUntil', () => {
+    // User watching ARCHIMEDES until T+10. Next match in CURIE (1 hop = 2 min) at T+25. 15 min gap.
+    // 2 min walk + 2 buffer = 4 min required → feasible.
+    const busyUntil = new Date(T0.getTime() + 10 * 60_000);
+    const matches = [mkMatch(50, 'CURIE', 25)];
+    const entries = planSchedule(matches, ZERO_DRIFTS, {
+      anchor: { field: 'ARCHIMEDES', busyUntil, label: 'Q35' },
+    });
+    expect(entries[0].feasible).toBe(true);
+    expect(entries[0].walkFromPrevious).toBe(2);
+  });
+});

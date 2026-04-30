@@ -24,6 +24,19 @@ import { applyDrift } from './drift';
 import { effectiveCycleMin } from './cycle';
 import type { Field, FieldCycle, FieldDrift, Match, ScheduleEntry } from '../types/domain';
 
+export interface PlanAnchor {
+  /** Where the user is right now. */
+  field: Field;
+  /**
+   * If set, the user is *actively* in a match (watching) and not free until this time.
+   * Matches scheduled before this become infeasible "you're still watching X".
+   * If undefined, the user is at `field` but free immediately (lastLocation memory).
+   */
+  busyUntil?: Date;
+  /** Display label for the conflict reason (e.g. "Q35"). */
+  label?: string;
+}
+
 export interface PlanOptions {
   overrides?: WalkOverrides;
   /** "now" — used so greedyPath doesn't reject already-past matches as unreachable. */
@@ -42,6 +55,12 @@ export interface PlanOptions {
    * observed cycle (basedOn >= 2). Defaults to DEFAULT_CYCLE_TIME_MIN.
    */
   defaultCycleTimeMin?: number;
+  /**
+   * Where the user is anchored — either actively watching a match (busyUntil set)
+   * or remembered location from a recently-watched match (busyUntil undefined).
+   * The planner treats this as the "previous match" for walk-feasibility math.
+   */
+  anchor?: PlanAnchor;
 }
 
 interface AdjustedMatch {
@@ -116,6 +135,29 @@ export function planSchedule(
   let suggestedLocation: Field | undefined;
   let lastSuggestedAdjusted: AdjustedMatch | undefined;
 
+  // Anchor: synthesise a virtual "previous match" so walks for the first real
+  // match are computed against where the user is right now. busyUntil sets the
+  // virtual match's adjustedEnd; without it, anchor is just a location with no
+  // time constraint (uses Match[0]'s start as both start and end).
+  if (options.anchor) {
+    const a = options.anchor;
+    const stamp = a.busyUntil ?? new Date(0); // 1970 = "free immediately"
+    const virtualMatch: Match = {
+      matchNumber: -1,
+      level: 'qual',
+      field: a.field,
+      scheduledStart: stamp,
+      actualStart: undefined,
+      actualEnd: stamp,
+      redAlliance: [],
+      blueAlliance: [],
+      myFavorites: [],
+    };
+    lastEntry = { match: virtualMatch, adjustedStart: stamp, adjustedEnd: stamp };
+    suggestedLocation = a.field;
+    lastSuggestedAdjusted = lastEntry;
+  }
+
   for (let i = 0; i < adjusted.length; i++) {
     const cur = adjusted[i];
     let walkFromPrevious: number | undefined;
@@ -127,9 +169,16 @@ export function planSchedule(
       walkFromPrevious = fb.walk;
       feasible = fb.feasible;
       if (!feasible) {
-        const need = fb.walk + SETTLE_BUFFER_MIN;
-        const have = Math.max(0, Math.round((cur.adjustedStart.getTime() - lastEntry.adjustedEnd.getTime()) / 60_000));
-        conflictReason = `${fb.walk} min walk + ${SETTLE_BUFFER_MIN} buffer needed (${need} min), only ${have} min between matches`;
+        // Virtual-anchor case: the conflict is "user is still watching previous match",
+        // not a walking-time problem. Surface a clearer message.
+        if (lastEntry.match.matchNumber === -1 && options.anchor?.busyUntil) {
+          const label = options.anchor.label ?? 'current match';
+          conflictReason = `Starts before ${label} ends — you can't make it.`;
+        } else {
+          const need = fb.walk + SETTLE_BUFFER_MIN;
+          const have = Math.max(0, Math.round((cur.adjustedStart.getTime() - lastEntry.adjustedEnd.getTime()) / 60_000));
+          conflictReason = `${fb.walk} min walk + ${SETTLE_BUFFER_MIN} buffer needed (${need} min), only ${have} min between matches`;
+        }
       }
     }
 

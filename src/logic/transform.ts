@@ -97,6 +97,13 @@ function alliancesFromTeams<T extends { teamNumber: number; station: string }>(t
  * `division` is the eventCode the data was fetched for (NEWTON, etc.) —
  * this is what becomes the canonical `Match.field` so walking-time math
  * uses the correct division.
+ *
+ * On Day 1 of an event the FRC API's schedule and matches endpoints can
+ * disagree: schedule rows may lag, station strings can be missing, played
+ * matches sometimes appear in `/matches` before they're in `/schedule`.
+ * We iterate the union of (schedule keys ∪ matches keys) and prefer the
+ * matches-endpoint `teams` array when populated — since it reflects who
+ * actually took the field, including surrogates and replays.
  */
 export function buildMatches(
   division: Field,
@@ -104,30 +111,53 @@ export function buildMatches(
   matches: RawMatchesEnvelope | undefined | null,
   favoriteTeamNumbers: ReadonlySet<number>,
 ): Match[] {
-  const scheduleEntries = schedule?.Schedule ?? [];
-  const matchEntries = matches?.Matches ?? [];
+  const scheduleByKey = new Map<string, RawScheduleEntry>();
+  for (const s of schedule?.Schedule ?? []) {
+    scheduleByKey.set(`${s.tournamentLevel}:${s.matchNumber}`, s);
+  }
   const matchByKey = new Map<string, RawMatch>();
-  for (const m of matchEntries) {
+  for (const m of matches?.Matches ?? []) {
     matchByKey.set(`${m.tournamentLevel}:${m.matchNumber}`, m);
   }
+  const keys = new Set<string>([...scheduleByKey.keys(), ...matchByKey.keys()]);
+
   const out: Match[] = [];
-  for (const sched of scheduleEntries) {
-    const level = levelFromRaw(sched.tournamentLevel);
-    const scheduledStart = parseEventTime(sched.startTime);
+  let emptyAllianceCount = 0;
+  for (const key of keys) {
+    const sched = scheduleByKey.get(key);
+    const live = matchByKey.get(key);
+    const rawLevel = sched?.tournamentLevel ?? live?.tournamentLevel;
+    if (!rawLevel) continue;
+    const level = levelFromRaw(rawLevel);
+
+    // Time: prefer scheduled start; fall back to actualStartTime when only
+    // matches data exists (e.g., schedule row hasn't been published yet).
+    const scheduledStart = parseEventTime(sched?.startTime) ?? parseEventTime(live?.actualStartTime);
     if (!scheduledStart) {
-      logger.warn('schedule', 'skipping match with unparseable startTime', {
+      logger.warn('schedule', 'skipping match with no parseable time', {
         division,
-        matchNumber: sched.matchNumber,
-        startTime: sched.startTime,
+        key,
+        schedTime: sched?.startTime,
+        liveTime: live?.actualStartTime,
       });
       continue;
     }
-    const live = matchByKey.get(`${sched.tournamentLevel}:${sched.matchNumber}`);
-    const { red, blue } = alliancesFromTeams(sched.teams);
+
+    // Alliance source priority: matches.teams (authoritative — who actually
+    // played) over schedule.teams (planned — may be missing or stale).
+    const liveTeams = live?.teams;
+    const useTeams =
+      liveTeams && liveTeams.length > 0 && liveTeams.some((t) => t.station)
+        ? liveTeams
+        : sched?.teams ?? [];
+    const { red, blue } = alliancesFromTeams(useTeams);
+    if (red.length === 0 && blue.length === 0) emptyAllianceCount++;
+
     const teamSet = new Set([...red, ...blue]);
     const myFavorites = [...teamSet].filter((t) => favoriteTeamNumbers.has(t));
+
     out.push({
-      matchNumber: sched.matchNumber,
+      matchNumber: sched?.matchNumber ?? live!.matchNumber,
       level,
       field: division,
       scheduledStart,
@@ -138,6 +168,14 @@ export function buildMatches(
       redScore: live?.scoreRedFinal,
       blueScore: live?.scoreBlueFinal,
       myFavorites,
+    });
+  }
+
+  if (emptyAllianceCount > 0) {
+    logger.debug('schedule', `${division}: ${emptyAllianceCount} match(es) with empty alliance arrays`, {
+      total: out.length,
+      schedRows: scheduleByKey.size,
+      liveRows: matchByKey.size,
     });
   }
   return out;

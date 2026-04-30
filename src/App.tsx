@@ -18,6 +18,10 @@ import { useRankings } from './state/rankings';
 import { useSchedule } from './state/schedule';
 import { useTheme } from './state/theme';
 import { useWalkTimes } from './state/walkTimes';
+import { useSwUpdate } from './state/swUpdate';
+import { useWatching } from './state/watching';
+import { effectiveCycleMin } from './logic/cycle';
+import { DEFAULT_CYCLE_TIME_MIN } from './logic/walking';
 import type { Field, FieldCycle, FieldDrift } from './types/domain';
 
 const TEAM_NUMBER = 8044;
@@ -56,6 +60,17 @@ export default function App() {
     refresh: refreshSchedule,
   } = useSchedule(favorites, { defaultCycleTimeMin: cycleOverrideMin ?? undefined });
   const { rankings, refresh: refreshRankings } = useRankings(favorites);
+  const favoriteTeamNumberSet = useMemo(
+    () => new Set(favorites.map((f) => f.teamNumber)),
+    [favorites],
+  );
+  const { watching, lastLocation, setWatching } = useWatching(matches, favoriteTeamNumberSet);
+  const { needRefresh: swNeedsRefresh, reload: reloadForSw } = useSwUpdate();
+  useEffect(() => {
+    if (!swNeedsRefresh) return;
+    const id = setTimeout(reloadForSw, 3000);
+    return () => clearTimeout(id);
+  }, [swNeedsRefresh, reloadForSw]);
 
   function refreshAll() {
     void refreshSchedule();
@@ -106,6 +121,23 @@ export default function App() {
     return m;
   }, [cycles]);
 
+  // Build the planner anchor from watching (active) or lastLocation (memory).
+  const anchor = useMemo(() => {
+    if (watching) {
+      const m = matches.find(
+        (x) =>
+          x.field === watching.field && x.level === watching.level && x.matchNumber === watching.matchNumber,
+      );
+      if (!m) return undefined;
+      const driftSec = driftMap.get(m.field)?.driftSeconds ?? 0;
+      const cycleMin = effectiveCycleMin(m.field, cycleMap, cycleOverrideMin ?? DEFAULT_CYCLE_TIME_MIN);
+      const busyUntil = new Date(m.scheduledStart.getTime() + driftSec * 1000 + cycleMin * 60_000);
+      return { field: m.field, busyUntil, label: `Q${m.matchNumber}` };
+    }
+    if (lastLocation) return { field: lastLocation.field };
+    return undefined;
+  }, [watching, lastLocation, matches, driftMap, cycleMap, cycleOverrideMin]);
+
   const entries = useMemo(
     () =>
       planSchedule(matches, driftMap, {
@@ -114,8 +146,9 @@ export default function App() {
         superFavorite: superTeamNumber,
         cycles: cycleMap,
         defaultCycleTimeMin: cycleOverrideMin ?? undefined,
+        anchor,
       }),
-    [matches, driftMap, overrides, now, superTeamNumber, cycleMap, cycleOverrideMin],
+    [matches, driftMap, overrides, now, superTeamNumber, cycleMap, cycleOverrideMin, anchor],
   );
   const summary = useMemo(
     () => summarize(entries, driftMap, overrides, cycleMap, cycleOverrideMin ?? undefined),
@@ -234,6 +267,7 @@ export default function App() {
               drifts={drifts}
               favorites={favorites}
               superTeamNumber={superTeamNumber}
+              watching={watching}
             />
 
             <section>
@@ -315,6 +349,24 @@ export default function App() {
                 favoriteAllianceTeams={favoriteAllianceTeams}
                 superTeamNumber={superTeamNumber}
                 onRefresh={refreshAll}
+                watching={watching}
+                onToggleWatching={(m) => {
+                  if (
+                    watching &&
+                    watching.field === m.field &&
+                    watching.level === m.level &&
+                    watching.matchNumber === m.matchNumber
+                  ) {
+                    setWatching(null);
+                  } else {
+                    setWatching({
+                      field: m.field,
+                      level: m.level,
+                      matchNumber: m.matchNumber,
+                      since: Date.now(),
+                    });
+                  }
+                }}
               />
             </section>
           </>
@@ -349,7 +401,21 @@ export default function App() {
       </footer>
 
       <TeamSearch open={searchOpen} onClose={() => setSearchOpen(false)} onAdd={add} alreadyFavorited={has} />
-      <DiagnosticsPanel open={diagOpen} onClose={() => setDiagOpen(false)} />
+      <DiagnosticsPanel
+        open={diagOpen}
+        onClose={() => setDiagOpen(false)}
+        matches={matches}
+        divisions={[...new Set(favorites.map((f) => f.division))].filter((d) => d !== 'EINSTEIN') as Field[]}
+      />
+
+      {swNeedsRefresh && (
+        <div
+          role="status"
+          className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-purple text-white px-4 py-2 rounded-lg shadow-2xl text-xs uppercase tracking-wider"
+        >
+          New version available — reloading…
+        </div>
+      )}
       <WalkTimeEditor
         open={walkEditorOpen}
         onClose={() => setWalkEditorOpen(false)}
