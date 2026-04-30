@@ -140,4 +140,48 @@ describe('buildMatches — schedule + matches join robustness', () => {
     const built = buildMatches('NEWTON', schedule, matches, FAVS);
     expect(built).toHaveLength(1);
   });
+
+  it('coerces null scoreRedFinal/scoreBlueFinal (FRC unplayed shape) to undefined', () => {
+    // Live FRC API returns `scoreRedFinal: null` for unplayed matches.
+    // Our domain treats undefined as "no score yet"; null would slip past
+    // every `=== undefined` check downstream and flip status / fall-off.
+    const schedule: RawScheduleEnvelope = {
+      Schedule: [
+        sched(50, [
+          { teamNumber: 8044, station: 'Red1' },
+          { teamNumber: 11, station: 'Red2' },
+          { teamNumber: 12, station: 'Red3' },
+          { teamNumber: 13, station: 'Blue1' },
+          { teamNumber: 14, station: 'Blue2' },
+          { teamNumber: 15, station: 'Blue3' },
+        ]),
+      ],
+    };
+    const matches: RawMatchesEnvelope = {
+      Matches: [
+        {
+          description: 'Qualification 50',
+          matchNumber: 50,
+          // The exact shape FRC returns for an unplayed match: null scores.
+          scoreRedFinal: null as unknown as undefined,
+          scoreBlueFinal: null as unknown as undefined,
+          actualStartTime: undefined,
+          postResultTime: undefined,
+          tournamentLevel: 'Qualification',
+          teams: [
+            { teamNumber: 8044, station: 'Red1' },
+            { teamNumber: 11, station: 'Red2' },
+            { teamNumber: 12, station: 'Red3' },
+            { teamNumber: 13, station: 'Blue1' },
+            { teamNumber: 14, station: 'Blue2' },
+            { teamNumber: 15, station: 'Blue3' },
+          ],
+        },
+      ],
+    };
+    const built = buildMatches('HOPPER', schedule, matches, FAVS);
+    expect(built).toHaveLength(1);
+    expect(built[0].redScore).toBeUndefined();
+    expect(built[0].blueScore).toBeUndefined();
+  });
 });

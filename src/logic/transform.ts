@@ -165,8 +165,13 @@ export function buildMatches(
       actualEnd: parseEventTime(live?.postResultTime),
       redAlliance: red,
       blueAlliance: blue,
-      redScore: live?.scoreRedFinal,
-      blueScore: live?.scoreBlueFinal,
+      // Coerce null → undefined: the FRC API returns `scoreRedFinal: null`
+      // for unplayed matches, but our domain treats undefined as "no score yet".
+      // Without this, every consumer's `=== undefined` check would misclassify
+      // unplayed matches as played (Day-1 status flipping to "awaiting_selection",
+      // upcoming matches stamped "Already Played", etc.).
+      redScore: live?.scoreRedFinal ?? undefined,
+      blueScore: live?.scoreBlueFinal ?? undefined,
       myFavorites,
     });
   }
