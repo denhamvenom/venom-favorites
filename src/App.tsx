@@ -212,6 +212,26 @@ export default function App() {
     };
   }, []);
 
+  // Shared between TopBar (Next Up + Watching now) and Timeline (full schedule)
+  // so the user can toggle watching from any card without scrolling.
+  function toggleWatchingMatch(m: import('./types/domain').Match) {
+    if (
+      watching &&
+      watching.field === m.field &&
+      watching.level === m.level &&
+      watching.matchNumber === m.matchNumber
+    ) {
+      setWatching(null);
+    } else {
+      setWatching({
+        field: m.field,
+        level: m.level,
+        matchNumber: m.matchNumber,
+        since: Date.now(),
+      });
+    }
+  }
+
   function tapVersion() {
     versionTapsRef.current += 1;
     if (versionTapsRef.current >= 5) {
@@ -268,6 +288,7 @@ export default function App() {
               favorites={favorites}
               superTeamNumber={superTeamNumber}
               watching={watching}
+              onToggleWatching={toggleWatchingMatch}
             />
 
             <section>
@@ -350,23 +371,7 @@ export default function App() {
                 superTeamNumber={superTeamNumber}
                 onRefresh={refreshAll}
                 watching={watching}
-                onToggleWatching={(m) => {
-                  if (
-                    watching &&
-                    watching.field === m.field &&
-                    watching.level === m.level &&
-                    watching.matchNumber === m.matchNumber
-                  ) {
-                    setWatching(null);
-                  } else {
-                    setWatching({
-                      field: m.field,
-                      level: m.level,
-                      matchNumber: m.matchNumber,
-                      since: Date.now(),
-                    });
-                  }
-                }}
+                onToggleWatching={toggleWatchingMatch}
               />
             </section>
           </>

@@ -10,11 +10,12 @@ interface Props {
   favorites: Favorite[];
   superTeamNumber?: number;
   watching?: WatchingMatch | null;
+  onToggleWatching?: (m: Match) => void;
 }
 
 const NEXT_UP_COUNT = 2;
 
-export default function TopBar({ now, matches, drifts, favorites, superTeamNumber, watching }: Props) {
+export default function TopBar({ now, matches, drifts, favorites, superTeamNumber, watching, onToggleWatching }: Props) {
   const driftByField = new Map<string, FieldDrift>();
   for (const d of drifts) driftByField.set(d.field, d);
 
@@ -62,6 +63,7 @@ export default function TopBar({ now, matches, drifts, favorites, superTeamNumbe
             variant="next-up"
             superTeamNumber={superTeamNumber}
             isWatching
+            onToggleWatching={onToggleWatching ? () => onToggleWatching(watchingMatch) : undefined}
           />
         </>
       )}
@@ -76,6 +78,7 @@ export default function TopBar({ now, matches, drifts, favorites, superTeamNumbe
               favorites={favorites}
               variant="next-up"
               superTeamNumber={superTeamNumber}
+              onToggleWatching={onToggleWatching ? () => onToggleWatching(match) : undefined}
             />
           ))}
         </>
