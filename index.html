@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
     <meta name="theme-color" content="#461D7C" />
     <title>Worlds Watcher · FRC 8044</title>
+    <script>
+      // Pre-paint theme apply — avoids a light-flash for users on dark theme.
+      try {
+        var t = localStorage.getItem('theme/v1');
+        if (t !== 'light') document.documentElement.classList.add('dark');
+      } catch (e) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

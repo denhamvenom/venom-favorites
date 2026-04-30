@@ -55,6 +55,15 @@ export function findAllianceForTeam(
   return null;
 }
 
+/**
+ * The FRC API can return pre-populated empty alliance slots (captain 0/null)
+ * well before alliance selection has actually concluded. Treat alliance
+ * selection as "happened" only when at least one alliance has a real captain.
+ */
+export function alliancesPopulated(alliances: RawAlliance[]): boolean {
+  return alliances.some((a) => typeof a.captain === 'number' && a.captain > 0);
+}
+
 export function allianceTeamNumbers(alliance: RawAlliance): number[] {
   const out: number[] = [];
   for (const v of [alliance.captain, alliance.round1, alliance.round2, alliance.round3, alliance.backup]) {
@@ -108,8 +117,8 @@ export function deriveStatus(favorite: Favorite, inputs: StatusInputs): DerivedS
   const { qualMatches, playoffMatches, alliances } = inputs;
   const teamNumber = favorite.teamNumber;
 
-  // 1. Alliance selection has not happened yet.
-  if (alliances.length === 0) {
+  // 1. Alliance selection has not happened yet (no real captains assigned).
+  if (!alliancesPopulated(alliances)) {
     const teamQuals = qualMatches.filter(
       (m) =>
         m.field === favorite.division &&

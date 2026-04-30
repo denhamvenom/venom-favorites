@@ -9,7 +9,7 @@ interface Props {
 export default function FavoritesList({ favorites, onRemove, onToggleSuper }: Props) {
   if (favorites.length === 0) {
     return (
-      <div className="border border-dashed border-neutral-800 rounded-lg p-8 text-center text-sm text-neutral-500">
+      <div className="border border-dashed border-neutral-200 dark:border-neutral-800 rounded-lg p-8 text-center text-sm text-neutral-500 dark:text-neutral-500">
         No favorites yet. Tap <span className="text-gold">Add Favorite</span> to start.
       </div>
     );
@@ -44,26 +44,26 @@ function FavoriteRow({
   onToggleSuper: () => void;
 }) {
   const dim = favorite.status === 'eliminated' || favorite.status === 'not_selected';
-  const superCls = favorite.isSuper ? 'border-gold/60 ring-1 ring-gold/40' : 'border-neutral-800';
+  const superCls = favorite.isSuper ? 'border-gold/60 ring-1 ring-gold/40' : 'border-neutral-200 dark:border-neutral-800';
   return (
     <div
-      className={`flex items-center gap-2 bg-neutral-900 border ${superCls} rounded-lg p-3 ${dim ? 'opacity-50' : ''}`}
+      className={`flex items-center gap-2 bg-white dark:bg-neutral-900 border ${superCls} rounded-lg p-3 ${dim ? 'opacity-50' : ''}`}
     >
       <button
         onClick={onToggleSuper}
         title={favorite.isSuper ? 'Unmark super-favorite' : 'Mark as super-favorite — must-see anchor'}
         aria-label={favorite.isSuper ? 'Unmark super' : 'Mark super'}
-        className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-lg transition-colors ${favorite.isSuper ? 'text-gold hover:text-gold-dark' : 'text-neutral-600 hover:text-gold'}`}
+        className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-lg transition-colors ${favorite.isSuper ? 'text-gold hover:text-gold-dark' : 'text-neutral-500 dark:text-neutral-600 hover:text-gold'}`}
       >
         {favorite.isSuper ? '★' : '☆'}
       </button>
       <div className="flex-1 min-w-0">
         <div className="flex items-baseline gap-2">
           <span className="text-lg font-bold text-gold">{favorite.teamNumber}</span>
-          <span className="text-sm text-neutral-200 truncate">{favorite.teamName}</span>
+          <span className="text-sm text-neutral-800 dark:text-neutral-200 truncate">{favorite.teamName}</span>
         </div>
         <div className="flex items-center gap-2 mt-1 flex-wrap">
-          <span className="text-xs uppercase tracking-wider text-neutral-500">{favorite.division}</span>
+          <span className="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-500">{favorite.division}</span>
           <StatusBadge favorite={favorite} />
           {favorite.isSuper && (
             <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-gold/20 text-gold border border-gold/40">
@@ -74,7 +74,7 @@ function FavoriteRow({
       </div>
       <button
         onClick={onRemove}
-        className="shrink-0 w-8 h-8 rounded-lg bg-neutral-800 hover:bg-loss text-neutral-400 hover:text-white transition-colors"
+        className="shrink-0 w-8 h-8 rounded-lg bg-neutral-200 dark:bg-neutral-800 hover:bg-loss text-neutral-500 dark:text-neutral-400 hover:text-white transition-colors"
         aria-label={`Remove team ${favorite.teamNumber}`}
       >
         ×
@@ -114,10 +114,10 @@ function formatRole(role: NonNullable<Favorite['allianceRole']>): string {
 }
 
 const STATUS_BADGES: Partial<Record<TeamStatus, { label: string; classes: string }>> = {
-  qualifying: { label: 'Qualifying', classes: 'bg-neutral-800 text-neutral-400' },
+  qualifying: { label: 'Qualifying', classes: 'bg-neutral-200 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400' },
   awaiting_selection: { label: 'Awaiting selection', classes: 'bg-tight/20 text-tight' },
   selected: { label: 'Selected', classes: 'bg-purple/40 text-purple-light border border-purple-light' },
-  not_selected: { label: 'Not selected', classes: 'bg-neutral-800 text-tie' },
-  eliminated: { label: 'Eliminated', classes: 'bg-neutral-800 text-tie' },
+  not_selected: { label: 'Not selected', classes: 'bg-neutral-200 dark:bg-neutral-800 text-tie' },
+  eliminated: { label: 'Eliminated', classes: 'bg-neutral-200 dark:bg-neutral-800 text-tie' },
   division_winner: { label: '→ Einstein', classes: 'bg-gold/30 text-gold border border-gold' },
 };

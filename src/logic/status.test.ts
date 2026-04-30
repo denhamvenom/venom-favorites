@@ -132,6 +132,20 @@ describe('deriveStatus', () => {
       deriveStatus(fav, { qualMatches: [], playoffMatches: [], alliances: [ALLIANCE_1, ALLIANCE_8] }),
     ).toEqual({ status: 'not_selected' });
   });
+  it("returns 'qualifying' when alliance slots exist but are all empty (selection not yet held)", () => {
+    // FRC API can pre-populate 8 empty slots before alliance selection happens.
+    const emptySlots: RawAlliance[] = Array.from({ length: 8 }, (_, i) => ({
+      number: i + 1,
+      captain: 0,
+      round1: null,
+      round2: null,
+      round3: null,
+      backup: null,
+    }));
+    expect(
+      deriveStatus(FAV, { qualMatches: [], playoffMatches: [], alliances: emptySlots }),
+    ).toEqual({ status: 'qualifying' });
+  });
   it("returns 'eliminated' after 2 alliance losses", () => {
     const playoff = [
       mkMatch(1, 'playoff', [1323, 2910, 4272], [3937, 294, 449], 100, 200),

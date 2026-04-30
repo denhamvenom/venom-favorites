@@ -11,7 +11,7 @@ export default function FieldDriftPill({ drift }: Props) {
   let cls = 'bg-feasible/20 text-feasible border-feasible/40';
   if (basedOn === 0) {
     label = 'no data';
-    cls = 'bg-neutral-800 text-tie border-neutral-700';
+    cls = 'bg-neutral-200 dark:bg-neutral-800 text-tie border-neutral-300 dark:border-neutral-700';
   } else if (Math.abs(minutes) < 1) {
     label = 'ON TIME';
     cls = 'bg-feasible/20 text-feasible border-feasible/40';

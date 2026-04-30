@@ -23,9 +23,9 @@ export default function MatchResultRow({ result, favorites }: Props) {
     <div>
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center gap-2 py-2 px-2 rounded hover:bg-neutral-800 text-left"
+        className="w-full flex items-center gap-2 py-2 px-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-800 text-left"
       >
-        <span className="font-mono text-sm w-12 shrink-0 text-neutral-300">
+        <span className="font-mono text-sm w-12 shrink-0 text-neutral-700 dark:text-neutral-300">
           {labelPrefix}
           {match.matchNumber}
         </span>
@@ -33,9 +33,9 @@ export default function MatchResultRow({ result, favorites }: Props) {
           {alliance.charAt(0).toUpperCase()}
         </span>
         <span className="flex-1 font-mono text-sm tabular-nums">
-          <span className="text-neutral-100">{ourScore}</span>
-          <span className="text-neutral-500"> — </span>
-          <span className="text-neutral-400">{theirScore}</span>
+          <span className="text-neutral-900 dark:text-neutral-100">{ourScore}</span>
+          <span className="text-neutral-500 dark:text-neutral-500"> — </span>
+          <span className="text-neutral-500 dark:text-neutral-400">{theirScore}</span>
         </span>
         <span className={`text-[11px] font-bold px-2 py-0.5 rounded ${outcomeClass}`}>{outcome}</span>
       </button>
@@ -67,14 +67,14 @@ function Teams({
   highlight: boolean;
 }) {
   return (
-    <span className="text-neutral-300">
+    <span className="text-neutral-700 dark:text-neutral-300">
       {teams.map((t, i) => {
         const fav = favorites.find((f) => f.teamNumber === t);
-        const cls = fav ? 'text-gold font-bold' : highlight && mine.has(t) ? 'text-neutral-100' : '';
+        const cls = fav ? 'text-gold font-bold' : highlight && mine.has(t) ? 'text-neutral-900 dark:text-neutral-100' : '';
         return (
           <span key={t}>
             <span className={cls} title={fav?.teamName}>{t}</span>
-            {i < teams.length - 1 && <span className="text-neutral-600"> · </span>}
+            {i < teams.length - 1 && <span className="text-neutral-500 dark:text-neutral-600"> · </span>}
           </span>
         );
       })}

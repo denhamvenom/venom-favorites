@@ -46,9 +46,9 @@ export function deriveProgress(
     if (m.level === 'qual') qualResults.push(r);
     else if (m.level === 'playoff') playoffResults.push(r);
   }
-  // Newest first
-  qualResults.sort((a, b) => b.match.matchNumber - a.match.matchNumber);
-  playoffResults.sort((a, b) => b.match.matchNumber - a.match.matchNumber);
+  // Earliest first
+  qualResults.sort((a, b) => a.match.matchNumber - b.match.matchNumber);
+  playoffResults.sort((a, b) => a.match.matchNumber - b.match.matchNumber);
 
   const bracketStatus = playoffResults.length > 0 ? deriveBracketStatus(playoffResults) : undefined;
 

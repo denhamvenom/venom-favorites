@@ -36,8 +36,10 @@ export default function MatchCard({ match, drift, favorites, variant = 'default'
   const isSuperMatch =
     superTeamNumber !== undefined && match.myFavorites.includes(superTeamNumber);
 
+  const played = match.redScore !== undefined && match.blueScore !== undefined;
+
   // Border priority: super (gold) > infeasible (red) > suggested (green) > dropped (gray) > default.
-  let borderClass = 'border-neutral-800';
+  let borderClass = 'border-neutral-200 dark:border-neutral-800';
   let extraRing = '';
   if (isSuperMatch) {
     borderClass = 'border-gold/70';
@@ -48,8 +50,11 @@ export default function MatchCard({ match, drift, favorites, variant = 'default'
     else if (entry.match.myFavorites.length > 0) borderClass = 'border-tie/40 opacity-60';
   }
 
+  // Dim already-played cards, but never override a super-match's gold ring.
+  const playedDim = played && !isSuperMatch ? 'opacity-70' : '';
+
   return (
-    <div className={`bg-neutral-900 border ${borderClass} ${extraRing} rounded-lg ${big ? 'p-4' : 'p-3'}`}>
+    <div className={`bg-white dark:bg-neutral-900 border ${borderClass} ${extraRing} ${playedDim} rounded-lg ${big ? 'p-4' : 'p-3'}`}>
       <div className="flex items-baseline justify-between gap-3">
         <div className="flex items-baseline gap-2 min-w-0">
           <span className={`font-mono font-bold ${big ? 'text-2xl' : 'text-base'} text-gold`}>
@@ -71,6 +76,11 @@ export default function MatchCard({ match, drift, favorites, variant = 'default'
               ★ Super
             </span>
           )}
+          {played && (
+            <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-tie/20 text-tie border border-tie/40">
+              Already Played
+            </span>
+          )}
         </div>
         <div className="text-right shrink-0">
           <div className={`font-mono ${big ? 'text-2xl' : 'text-base'}`}>
@@ -84,10 +94,10 @@ export default function MatchCard({ match, drift, favorites, variant = 'default'
           )}
         </div>
       </div>
-      <TeamRow alliance="red" teams={match.redAlliance} myFavorites={myFavoriteSet} favorites={favorites} />
-      <TeamRow alliance="blue" teams={match.blueAlliance} myFavorites={myFavoriteSet} favorites={favorites} />
+      <TeamRow alliance="red" teams={match.redAlliance} myFavorites={myFavoriteSet} favorites={favorites} played={played} />
+      <TeamRow alliance="blue" teams={match.blueAlliance} myFavorites={myFavoriteSet} favorites={favorites} played={played} />
       {match.redScore !== undefined && match.blueScore !== undefined && (
-        <div className="flex items-center justify-between mt-2 pt-2 border-t border-neutral-800 text-xs">
+        <div className="flex items-center justify-between mt-2 pt-2 border-t border-neutral-200 dark:border-neutral-800 text-xs">
           <span className="text-alliance-red font-mono">{match.redScore}</span>
           <span className="text-neutral-500">final</span>
           <span className="text-alliance-blue font-mono">{match.blueScore}</span>
@@ -99,7 +109,7 @@ export default function MatchCard({ match, drift, favorites, variant = 'default'
         </div>
       )}
       {entry && entry.feasible && entry.walkFromPrevious !== undefined && entry.walkFromPrevious > 0 && (
-        <div className="mt-2 pt-2 border-t border-neutral-800 text-[11px] text-neutral-500">
+        <div className="mt-2 pt-2 border-t border-neutral-200 dark:border-neutral-800 text-[11px] text-neutral-500">
           {entry.walkFromPrevious} min walk from prev
         </div>
       )}
@@ -112,22 +122,25 @@ function TeamRow({
   teams,
   myFavorites,
   favorites,
+  played,
 }: {
   alliance: 'red' | 'blue';
   teams: number[];
   myFavorites: Set<number>;
   favorites: Favorite[];
+  played: boolean;
 }) {
   const colorClass = alliance === 'red' ? 'text-alliance-red' : 'text-alliance-blue';
+  const strike = played ? 'line-through decoration-neutral-500' : '';
   return (
     <div className={`flex items-baseline gap-2 mt-2 text-xs ${colorClass}`}>
       <span className="font-bold uppercase tracking-wider w-5">{alliance.charAt(0)}</span>
-      <div className="flex flex-wrap gap-x-3 gap-y-1 text-neutral-300">
+      <div className="flex flex-wrap gap-x-3 gap-y-1 text-neutral-700 dark:text-neutral-300">
         {teams.map((t) => {
           const isFav = myFavorites.has(t);
           const fav = favorites.find((f) => f.teamNumber === t);
           return (
-            <span key={t} className={`font-mono ${isFav ? 'text-gold font-bold' : ''}`} title={fav?.teamName}>
+            <span key={t} className={`font-mono ${isFav ? 'text-gold font-bold' : ''} ${strike}`} title={fav?.teamName}>
               {t}
             </span>
           );

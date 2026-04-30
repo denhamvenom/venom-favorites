@@ -51,6 +51,22 @@ export default function Timeline({
     return m;
   }, [entries]);
 
+  // Per-favorite latest played match timestamp — drives the "fall off after one
+  // match" rule. Older completed matches are hidden; the most recent one stays
+  // visible as an "Already Played" anchor until that favorite plays again.
+  const latestPlayedByFavorite = useMemo(() => {
+    const out = new Map<number, number>();
+    for (const m of matches) {
+      if (m.redScore === undefined || m.blueScore === undefined) continue;
+      const t = m.scheduledStart.getTime();
+      for (const team of m.myFavorites) {
+        const prev = out.get(team) ?? -Infinity;
+        if (t > prev) out.set(team, t);
+      }
+    }
+    return out;
+  }, [matches]);
+
   // For Saturday's playoff matches, we limit to matches whose teams overlap with
   // any alliance containing a favorite — derived from the favorite's allianceNumber
   // and the alliance roster mapping. The alliance roster mapping is captured in
@@ -71,11 +87,21 @@ export default function Timeline({
         return [...m.redAlliance, ...m.blueAlliance].some((t) => allianceTeams.has(t));
       });
     }
+    // Hide stale played matches — keep only the most recent completed match per
+    // favorite. Alliance-mate-only matches (no literal favorites) are unaffected.
+    v = v.filter((m) => {
+      const played = m.redScore !== undefined && m.blueScore !== undefined;
+      if (!played) return true;
+      if (m.myFavorites.length === 0) return true;
+      return m.myFavorites.some(
+        (team) => latestPlayedByFavorite.get(team) === m.scheduledStart.getTime(),
+      );
+    });
     if (showSuggestedOnly) {
       v = v.filter((m) => entryByKey.get(`${m.field}|${m.level}|${m.matchNumber}`)?.suggested);
     }
     return v;
-  }, [matches, showOnlyFavoriteMatches, showSuggestedOnly, entryByKey, favoriteAllianceTeams]);
+  }, [matches, showOnlyFavoriteMatches, showSuggestedOnly, entryByKey, favoriteAllianceTeams, latestPlayedByFavorite]);
 
   const groups = useMemo(() => {
     const out = new Map<string, { label: string; matches: Match[]; drifts: FieldDrift[] }>();
@@ -99,7 +125,7 @@ export default function Timeline({
 
   if (matches.length === 0) {
     return (
-      <div className="border border-dashed border-neutral-800 rounded-lg p-6 text-center text-sm text-neutral-500">
+      <div className="border border-dashed border-neutral-200 dark:border-neutral-800 rounded-lg p-6 text-center text-sm text-neutral-500">
         {loading
           ? 'Fetching schedule…'
           : favorites.length === 0
@@ -110,7 +136,7 @@ export default function Timeline({
   }
   if (visibleMatches.length === 0) {
     return (
-      <div className="border border-dashed border-neutral-800 rounded-lg p-6 text-center text-sm text-neutral-500">
+      <div className="border border-dashed border-neutral-200 dark:border-neutral-800 rounded-lg p-6 text-center text-sm text-neutral-500">
         No matches involve your favorites yet.
       </div>
     );
@@ -119,7 +145,7 @@ export default function Timeline({
   return (
     <div className="space-y-4">
       {fetchedAt && (
-        <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-neutral-600">
+        <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-neutral-500 dark:text-neutral-600">
           <span>
             Fetched{' '}
             {fetchedAt.toLocaleTimeString(undefined, {
@@ -145,7 +171,7 @@ export default function Timeline({
       {groups.map((g, i) => (
         <section key={i}>
           <div className="flex items-center gap-2 mb-2 flex-wrap">
-            <h3 className="text-xs uppercase tracking-wider text-neutral-400 font-bold">{g.label}</h3>
+            <h3 className="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400 font-bold">{g.label}</h3>
             {g.drifts.map((d) => (
               <FieldDriftPill key={d.field} drift={d} />
             ))}

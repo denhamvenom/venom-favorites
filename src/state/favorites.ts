@@ -9,7 +9,7 @@
  * incompatibly so old clients fall back to an empty list rather than crashing.
  */
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { logger } from '../lib/logger';
 import type { Favorite } from '../types/domain';
 
@@ -55,6 +55,11 @@ export interface UseFavorites {
 
 export function useFavorites(): UseFavorites {
   const [favorites, setFavorites] = useState<Favorite[]>(() => readStorage());
+  // Synchronous mirror of state — needed so `add()` can answer correctly when
+  // called more than once in the same render tick (closure-captured `favorites`
+  // would be stale, and React 18's setState updater runs after `return`).
+  const favoritesRef = useRef(favorites);
+  favoritesRef.current = favorites;
 
   useEffect(() => {
     writeStorage(favorites);
@@ -73,14 +78,12 @@ export function useFavorites(): UseFavorites {
   }, []);
 
   const add = useCallback((fav: Favorite): boolean => {
-    let added = false;
-    setFavorites((prev) => {
-      if (prev.some((f) => f.teamNumber === fav.teamNumber)) return prev;
-      added = true;
-      logger.info('storage', `add favorite ${fav.teamNumber} (${fav.division})`);
-      return [...prev, fav];
-    });
-    return added;
+    if (favoritesRef.current.some((f) => f.teamNumber === fav.teamNumber)) return false;
+    const next = [...favoritesRef.current, fav];
+    favoritesRef.current = next; // eager update so a follow-up call in the same tick dedups
+    setFavorites(next);
+    logger.info('storage', `add favorite ${fav.teamNumber} (${fav.division})`);
+    return true;
   }, []);
 
   const remove = useCallback((teamNumber: number) => {

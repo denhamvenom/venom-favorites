@@ -16,6 +16,7 @@ import { deriveStatus, type RawAlliance } from './logic/status';
 import { useFavorites } from './state/favorites';
 import { useRankings } from './state/rankings';
 import { useSchedule } from './state/schedule';
+import { useTheme } from './state/theme';
 import { useWalkTimes } from './state/walkTimes';
 import type { Field, FieldCycle, FieldDrift } from './types/domain';
 
@@ -30,9 +31,19 @@ export default function App() {
   const [walkEditorOpen, setWalkEditorOpen] = useState(false);
   const [showAllMatches, setShowAllMatches] = useState(false);
   const [showSuggestedOnly, setShowSuggestedOnly] = useState(false);
+  const [favoritesOpen, setFavoritesOpen] = useState<boolean>(() => {
+    if (typeof localStorage === 'undefined') return true;
+    return localStorage.getItem('favorites-section-open/v1') !== 'false';
+  });
+  useEffect(() => {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('favorites-section-open/v1', favoritesOpen ? 'true' : 'false');
+    }
+  }, [favoritesOpen]);
   const versionTapsRef = useRef(0);
   const versionTapResetRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { favorites, add, remove, has, update, setSuper, superTeamNumber } = useFavorites();
+  const { theme, toggle: toggleTheme } = useTheme();
   const { overrides, setOverride, cycleOverrideMin, setCycleOverrideMin, reset: resetWalkTimes } =
     useWalkTimes();
   const {
@@ -182,22 +193,32 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-dvh bg-neutral-950 text-neutral-100 flex flex-col">
-      <header className="px-4 pt-4 pb-3 border-b border-neutral-900 sticky top-0 bg-neutral-950 z-20">
+    <div className="min-h-dvh bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 flex flex-col">
+      <header className="px-4 pt-4 pb-3 border-b border-neutral-100 dark:border-neutral-900 sticky top-0 bg-neutral-50 dark:bg-neutral-950 z-20">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-xl font-bold text-gold leading-tight">Worlds Watcher</h1>
             <p className="text-xs text-neutral-500">FRC 8044 · Denham Venom{division ? ` · ${division}` : ''}</p>
           </div>
-          <div className="text-right">
-            <div className="text-[10px] uppercase tracking-wider text-neutral-500">now</div>
-            <div className="text-base font-mono">
-              {now.toLocaleTimeString(undefined, {
-                hour: 'numeric',
-                minute: '2-digit',
-                second: '2-digit',
-                timeZone: 'America/Chicago',
-              })}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+              title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+              className="text-xl leading-none w-9 h-9 flex items-center justify-center rounded-full border border-neutral-200 dark:border-neutral-800 hover:border-gold transition-colors"
+            >
+              {theme === 'dark' ? '☀' : '☾'}
+            </button>
+            <div className="text-right">
+              <div className="text-[10px] uppercase tracking-wider text-neutral-500">now</div>
+              <div className="text-base font-mono">
+                {now.toLocaleTimeString(undefined, {
+                  hour: 'numeric',
+                  minute: '2-digit',
+                  second: '2-digit',
+                  timeZone: 'America/Chicago',
+                })}
+              </div>
             </div>
           </div>
         </div>
@@ -216,24 +237,36 @@ export default function App() {
             />
 
             <section>
-              <div className="flex items-center justify-between mb-2">
-                <h2 className="text-xs uppercase tracking-wider text-neutral-400 font-bold">My Favorites</h2>
+              <button
+                onClick={() => setFavoritesOpen((v) => !v)}
+                className="w-full flex items-center justify-between mb-2 text-left"
+                aria-expanded={favoritesOpen}
+                aria-controls="favorites-section-body"
+              >
+                <h2 className="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400 font-bold flex items-center gap-1">
+                  <span className="text-neutral-500">{favoritesOpen ? '▾' : '▸'}</span>
+                  My Favorites
+                </h2>
                 <span className="text-[10px] text-neutral-500">{favorites.length}</span>
-              </div>
-              <FavoritesList
-                favorites={favorites}
-                onRemove={remove}
-                onToggleSuper={(teamNumber) => setSuper(teamNumber)}
-              />
+              </button>
+              {favoritesOpen && (
+                <div id="favorites-section-body">
+                  <FavoritesList
+                    favorites={favorites}
+                    onRemove={remove}
+                    onToggleSuper={(teamNumber) => setSuper(teamNumber)}
+                  />
+                </div>
+              )}
             </section>
 
             {entries.length > 0 && (
-              <section className="bg-neutral-900 border border-neutral-800 rounded-lg p-3">
+              <section className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-3">
                 <div className="flex items-center justify-between gap-2 flex-wrap">
                   <div className="text-xs">
                     <span className="text-feasible font-bold">{summary.suggested}</span>
                     <span className="text-neutral-500"> of </span>
-                    <span className="text-neutral-300">{summary.total}</span>
+                    <span className="text-neutral-700 dark:text-neutral-300">{summary.total}</span>
                     <span className="text-neutral-500"> matches in suggested path</span>
                     {summary.conflicts > 0 && (
                       <span className="text-loss ml-2">· {summary.conflicts} conflict{summary.conflicts === 1 ? '' : 's'}</span>
@@ -245,13 +278,13 @@ export default function App() {
                   <div className="flex gap-2 text-[10px] uppercase tracking-wider">
                     <button
                       onClick={() => setShowSuggestedOnly((v) => !v)}
-                      className={`px-2 py-1 rounded border ${showSuggestedOnly ? 'bg-feasible/20 text-feasible border-feasible/40' : 'bg-neutral-800 text-neutral-400 border-neutral-700'}`}
+                      className={`px-2 py-1 rounded border ${showSuggestedOnly ? 'bg-feasible/20 text-feasible border-feasible/40' : 'bg-neutral-200 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 border-neutral-300 dark:border-neutral-700'}`}
                     >
                       suggested only
                     </button>
                     <button
                       onClick={() => setWalkEditorOpen(true)}
-                      className="px-2 py-1 rounded border bg-neutral-800 text-neutral-400 border-neutral-700 hover:text-gold"
+                      className="px-2 py-1 rounded border bg-neutral-200 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 border-neutral-300 dark:border-neutral-700 hover:text-gold"
                     >
                       walk times
                     </button>
@@ -262,7 +295,7 @@ export default function App() {
 
             <section>
               <div className="flex items-center justify-between mb-2">
-                <h2 className="text-xs uppercase tracking-wider text-neutral-400 font-bold">Schedule</h2>
+                <h2 className="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400 font-bold">Schedule</h2>
                 <button
                   onClick={() => setShowAllMatches((v) => !v)}
                   className="text-[10px] uppercase tracking-wider text-purple-light hover:text-gold transition-colors"
@@ -290,7 +323,7 @@ export default function App() {
         {tab === 'results' && (
           <section>
             <div className="flex items-center justify-between mb-3">
-              <h2 className="text-xs uppercase tracking-wider text-neutral-400 font-bold">Team Progress</h2>
+              <h2 className="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400 font-bold">Team Progress</h2>
               <span className="text-[10px] text-neutral-500">{favorites.length} team{favorites.length === 1 ? '' : 's'}</span>
             </div>
             <ResultsList favorites={favorites} matches={matches} rankings={rankings} />
@@ -306,10 +339,10 @@ export default function App() {
         + Add Favorite
       </button>
 
-      <footer className="px-4 py-2 border-t border-neutral-900 text-center">
+      <footer className="px-4 py-2 border-t border-neutral-100 dark:border-neutral-900 text-center">
         <button
           onClick={tapVersion}
-          className="text-[10px] uppercase tracking-widest text-neutral-600 hover:text-neutral-400 transition-colors"
+          className="text-[10px] uppercase tracking-widest text-neutral-500 dark:text-neutral-600 hover:text-neutral-700 dark:hover:text-neutral-400 transition-colors"
         >
           v0.1.0 · {getDataSource()}
         </button>

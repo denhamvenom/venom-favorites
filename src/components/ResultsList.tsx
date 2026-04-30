@@ -38,7 +38,7 @@ export default function ResultsList({ favorites, matches, rankings }: Props) {
 
   if (favorites.length === 0) {
     return (
-      <div className="border border-dashed border-neutral-800 rounded-lg p-6 text-center text-sm text-neutral-500">
+      <div className="border border-dashed border-neutral-200 dark:border-neutral-800 rounded-lg p-6 text-center text-sm text-neutral-500 dark:text-neutral-500">
         Add favorites to see results.
       </div>
     );

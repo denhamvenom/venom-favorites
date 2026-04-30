@@ -79,14 +79,14 @@ export default function TeamSearch({ open, onClose, onAdd, alreadyFavorited }: P
       onClick={onClose}
     >
       <div
-        className="w-full max-w-sm bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl overflow-hidden"
+        className="w-full max-w-sm bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        <header className="px-5 py-3 border-b border-neutral-800 flex items-center justify-between">
+        <header className="px-5 py-3 border-b border-neutral-200 dark:border-neutral-800 flex items-center justify-between">
           <h2 className="text-base font-bold text-gold">Add Favorite</h2>
           <button
             onClick={onClose}
-            className="text-neutral-400 hover:text-neutral-100 text-xl leading-none"
+            className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 text-xl leading-none"
             aria-label="Close"
           >
             ×
@@ -94,7 +94,7 @@ export default function TeamSearch({ open, onClose, onAdd, alreadyFavorited }: P
         </header>
 
         <form onSubmit={search} className="px-5 py-4">
-          <label htmlFor="team-num" className="block text-xs uppercase tracking-wider text-neutral-500 mb-2">
+          <label htmlFor="team-num" className="block text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-500 mb-2">
             Team Number
           </label>
           <div className="flex gap-2">
@@ -106,7 +106,7 @@ export default function TeamSearch({ open, onClose, onAdd, alreadyFavorited }: P
               value={input}
               onChange={(e) => setInput(e.target.value)}
               autoFocus
-              className="flex-1 bg-neutral-950 border border-neutral-700 focus:border-gold rounded-lg px-3 py-2 text-lg font-mono outline-none"
+              className="flex-1 bg-neutral-50 dark:bg-neutral-950 border border-neutral-300 dark:border-neutral-700 focus:border-gold rounded-lg px-3 py-2 text-lg font-mono outline-none"
               placeholder="e.g. 1678"
             />
             <button
@@ -121,18 +121,18 @@ export default function TeamSearch({ open, onClose, onAdd, alreadyFavorited }: P
 
         <div className="px-5 pb-5 min-h-[5rem]">
           {state.kind === 'idle' && (
-            <p className="text-xs text-neutral-500">
+            <p className="text-xs text-neutral-500 dark:text-neutral-500">
               Searches all 8 division rosters in parallel.
             </p>
           )}
           {state.kind === 'searching' && (
-            <p className="text-sm text-neutral-400">Searching 8 divisions for team {state.teamNumber}…</p>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400">Searching 8 divisions for team {state.teamNumber}…</p>
           )}
           {state.kind === 'found' && (
             <div>
               <div className="bg-purple/30 border border-purple-light rounded-lg p-3 mb-3">
-                <div className="text-xs uppercase tracking-wider text-neutral-400">Team {state.favorite.teamNumber}</div>
-                <div className="text-lg font-bold text-neutral-100">{state.favorite.teamName}</div>
+                <div className="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Team {state.favorite.teamNumber}</div>
+                <div className="text-lg font-bold text-neutral-900 dark:text-neutral-100">{state.favorite.teamName}</div>
                 <div className="text-sm text-gold mt-1">in {state.favorite.division}</div>
               </div>
               <div className="flex gap-2">
@@ -144,7 +144,7 @@ export default function TeamSearch({ open, onClose, onAdd, alreadyFavorited }: P
                 </button>
                 <button
                   onClick={reset}
-                  className="px-4 bg-neutral-800 hover:bg-neutral-700 rounded-lg text-sm"
+                  className="px-4 bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-lg text-sm"
                 >
                   Cancel
                 </button>

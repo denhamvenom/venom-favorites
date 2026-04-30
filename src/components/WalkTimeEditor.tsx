@@ -90,13 +90,13 @@ export default function WalkTimeEditor({
       onClick={onClose}
     >
       <div
-        className="w-full max-w-2xl max-h-[90dvh] overflow-y-auto bg-neutral-900 border border-neutral-800 rounded-xl"
+        className="w-full max-w-2xl max-h-[90dvh] overflow-y-auto bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <header className="px-5 py-3 border-b border-neutral-800 flex items-center justify-between sticky top-0 bg-neutral-900 z-10">
+        <header className="px-5 py-3 border-b border-neutral-200 dark:border-neutral-800 flex items-center justify-between sticky top-0 bg-white dark:bg-neutral-900 z-10">
           <div>
             <h2 className="text-base font-bold text-gold">Walk Times</h2>
-            <p className="text-xs text-neutral-500">Tap a cell to edit. Symmetric — A → B equals B → A.</p>
+            <p className="text-xs text-neutral-500 dark:text-neutral-500">Tap a cell to edit. Symmetric — A → B equals B → A.</p>
           </div>
           <div className="flex gap-2">
             <button
@@ -104,7 +104,7 @@ export default function WalkTimeEditor({
                 reset();
                 setCycleDraft('');
               }}
-              className="text-xs px-3 py-1 rounded bg-neutral-800 hover:bg-neutral-700 text-neutral-300"
+              className="text-xs px-3 py-1 rounded bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300"
             >
               Reset
             </button>
@@ -116,11 +116,11 @@ export default function WalkTimeEditor({
             </button>
           </div>
         </header>
-        <div className="px-5 py-3 border-b border-neutral-800">
+        <div className="px-5 py-3 border-b border-neutral-200 dark:border-neutral-800">
           <div className="flex items-center justify-between gap-3 flex-wrap">
             <div>
-              <div className="text-xs text-neutral-300 font-bold">Cycle time</div>
-              <p className="text-[11px] text-neutral-500">
+              <div className="text-xs text-neutral-700 dark:text-neutral-300 font-bold">Cycle time</div>
+              <p className="text-[11px] text-neutral-500 dark:text-neutral-500">
                 Field reset interval — used to estimate when a match ends.
               </p>
             </div>
@@ -136,9 +136,9 @@ export default function WalkTimeEditor({
                 onKeyDown={(e) => {
                   if (e.key === 'Enter') (e.target as HTMLInputElement).blur();
                 }}
-                className={`w-16 h-9 text-center font-mono rounded outline-none ${cycleOverrideMin !== null ? 'bg-gold/20 text-gold border border-gold/40' : 'bg-neutral-800 text-neutral-300 border border-neutral-700 focus:border-gold'}`}
+                className={`w-16 h-9 text-center font-mono rounded outline-none ${cycleOverrideMin !== null ? 'bg-gold/20 text-gold border border-gold/40' : 'bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border border-neutral-300 dark:border-neutral-700 focus:border-gold'}`}
               />
-              <span className="text-xs text-neutral-500">min</span>
+              <span className="text-xs text-neutral-500 dark:text-neutral-500">min</span>
             </div>
           </div>
           {observedCycles.length > 0 && (
@@ -146,7 +146,7 @@ export default function WalkTimeEditor({
               {observedCycles.map((c) => (
                 <span
                   key={c.field}
-                  className="text-[10px] font-mono uppercase tracking-wider text-neutral-400"
+                  className="text-[10px] font-mono uppercase tracking-wider text-neutral-500 dark:text-neutral-400"
                 >
                   {c.field.slice(0, 3)} · {(c.cycleSeconds / 60).toFixed(1)} min
                 </span>
@@ -160,7 +160,7 @@ export default function WalkTimeEditor({
               <tr>
                 <th className="p-1"></th>
                 {FIELDS.map((f) => (
-                  <th key={f} className="p-1 text-neutral-500 uppercase tracking-wider text-[10px]">
+                  <th key={f} className="p-1 text-neutral-500 dark:text-neutral-500 uppercase tracking-wider text-[10px]">
                     {f.slice(0, 3)}
                   </th>
                 ))}
@@ -169,7 +169,7 @@ export default function WalkTimeEditor({
             <tbody>
               {FIELDS.map((from) => (
                 <tr key={from}>
-                  <th className="p-1 text-right text-neutral-500 uppercase tracking-wider text-[10px]">
+                  <th className="p-1 text-right text-neutral-500 dark:text-neutral-500 uppercase tracking-wider text-[10px]">
                     {from.slice(0, 3)}
                   </th>
                   {FIELDS.map((to) => {
@@ -202,10 +202,10 @@ export default function WalkTimeEditor({
                             disabled={isSelf}
                             className={`w-10 h-9 rounded transition-colors ${
                               isSelf
-                                ? 'bg-neutral-950 text-neutral-700'
+                                ? 'bg-neutral-50 dark:bg-neutral-950 text-neutral-300 dark:text-neutral-700'
                                 : overridden
                                   ? 'bg-gold/20 text-gold hover:bg-gold/30 border border-gold/40'
-                                  : 'bg-neutral-800 hover:bg-neutral-700 text-neutral-300'
+                                  : 'bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300'
                             }`}
                           >
                             {value}
@@ -218,7 +218,7 @@ export default function WalkTimeEditor({
               ))}
             </tbody>
           </table>
-          <p className="mt-3 text-[11px] text-neutral-500">
+          <p className="mt-3 text-[11px] text-neutral-500 dark:text-neutral-500">
             Default formula: ~1.5 min/hop, clamped 2–10. +2 min settle buffer added.
             Default cycle: {DEFAULT_CYCLE_TIME_MIN} min, observed values override when ≥2 samples.
           </p>

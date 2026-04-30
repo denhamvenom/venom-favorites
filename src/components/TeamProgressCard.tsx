@@ -37,22 +37,22 @@ export default function TeamProgressCard({ progress, favorites, defaultOpen }: P
   const totalCompleted = qualResults.length + playoffResults.length;
 
   return (
-    <div className={`bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden ${dim ? 'opacity-60' : ''}`}>
+    <div className={`bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg overflow-hidden ${dim ? 'opacity-60' : ''}`}>
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center gap-3 p-3 hover:bg-neutral-800/50 text-left"
+        className="w-full flex items-center gap-3 p-3 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 text-left"
       >
         <div className="flex-1 min-w-0">
           <div className="flex items-baseline gap-2">
             <span className="font-mono font-bold text-lg text-gold">{favorite.teamNumber}</span>
-            <span className="text-sm text-neutral-200 truncate">{favorite.teamName}</span>
+            <span className="text-sm text-neutral-800 dark:text-neutral-200 truncate">{favorite.teamName}</span>
           </div>
           <div className="flex items-center gap-2 mt-1 flex-wrap">
-            <span className="text-[10px] uppercase tracking-wider text-neutral-500">{favorite.division}</span>
+            <span className="text-[10px] uppercase tracking-wider text-neutral-500 dark:text-neutral-500">{favorite.division}</span>
             {ranking && (
-              <span className="text-[10px] text-neutral-400">
+              <span className="text-[10px] text-neutral-500 dark:text-neutral-400">
                 #{ranking.rank}
-                <span className="text-neutral-600"> / {ranking.totalTeams}</span>
+                <span className="text-neutral-500 dark:text-neutral-600"> / {ranking.totalTeams}</span>
                 {ranking.rankingPoints > 0 && (
                   <span className="ml-1.5 text-purple-light">{ranking.rankingPoints} RP</span>
                 )}
@@ -66,15 +66,15 @@ export default function TeamProgressCard({ progress, favorites, defaultOpen }: P
           </div>
         </div>
         <div className="text-right shrink-0">
-          <div className="text-2xl font-mono font-bold text-neutral-100">{wlt}</div>
-          <div className="text-[10px] uppercase tracking-wider text-neutral-500">W-L-T</div>
+          <div className="text-2xl font-mono font-bold text-neutral-900 dark:text-neutral-100">{wlt}</div>
+          <div className="text-[10px] uppercase tracking-wider text-neutral-500 dark:text-neutral-500">W-L-T</div>
         </div>
-        <span className="text-neutral-600 text-xl shrink-0">{open ? '−' : '+'}</span>
+        <span className="text-neutral-500 dark:text-neutral-600 text-xl shrink-0">{open ? '−' : '+'}</span>
       </button>
       {open && (
-        <div className="border-t border-neutral-800 p-2 space-y-1">
+        <div className="border-t border-neutral-200 dark:border-neutral-800 p-2 space-y-1">
           {totalCompleted === 0 && (
-            <p className="text-xs text-neutral-500 px-2 py-3">No completed matches yet.</p>
+            <p className="text-xs text-neutral-500 dark:text-neutral-500 px-2 py-3">No completed matches yet.</p>
           )}
           {playoffResults.length > 0 && (
             <Section label="Playoffs">
@@ -107,8 +107,8 @@ export default function TeamProgressCard({ progress, favorites, defaultOpen }: P
 function Section({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div>
-      <div className="text-[10px] uppercase tracking-widest text-neutral-500 px-2 pt-2 pb-1">{label}</div>
-      <div className="divide-y divide-neutral-900">{children}</div>
+      <div className="text-[10px] uppercase tracking-widest text-neutral-500 dark:text-neutral-500 px-2 pt-2 pb-1">{label}</div>
+      <div className="divide-y divide-neutral-100 dark:divide-neutral-900">{children}</div>
     </div>
   );
 }

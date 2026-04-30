@@ -7,7 +7,7 @@ interface Props {
 
 export default function TabBar({ active, onChange }: Props) {
   return (
-    <nav className="flex gap-1 px-4 pt-2 pb-2 border-b border-neutral-900 bg-neutral-950 sticky top-[68px] z-10">
+    <nav className="flex gap-1 px-4 pt-2 pb-2 border-b border-neutral-100 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-950 sticky top-[68px] z-10">
       <TabButton active={active === 'schedule'} onClick={() => onChange('schedule')}>
         Schedule
       </TabButton>
@@ -29,7 +29,7 @@ function TabButton({
 }) {
   const cls = active
     ? 'bg-purple text-white'
-    : 'bg-transparent text-neutral-400 hover:text-neutral-100';
+    : 'bg-transparent text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100';
   return (
     <button
       onClick={onClick}

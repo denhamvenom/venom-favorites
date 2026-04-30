@@ -86,14 +86,14 @@ describe('deriveBracketStatus', () => {
 });
 
 describe('deriveProgress', () => {
-  it('separates qual vs playoff results, sorts newest-first', () => {
+  it('separates qual vs playoff results, sorts earliest-first', () => {
     const matches = [
-      mkMatch({ matchNumber: 1, level: 'qual' }),
       mkMatch({ matchNumber: 5, level: 'qual', redScore: 60, blueScore: 80 }),
+      mkMatch({ matchNumber: 1, level: 'qual' }),
       mkMatch({ matchNumber: 2, level: 'playoff' }),
     ];
     const progress = deriveProgress(FAV, matches);
-    expect(progress.qualResults.map((r) => r.match.matchNumber)).toEqual([5, 1]);
+    expect(progress.qualResults.map((r) => r.match.matchNumber)).toEqual([1, 5]);
     expect(progress.playoffResults).toHaveLength(1);
     expect(progress.bracketStatus).toBe('upper');
   });
